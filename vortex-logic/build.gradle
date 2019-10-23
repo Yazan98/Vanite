@@ -1,0 +1,104 @@
+dependencies {
+    implementation group: 'androidx.lifecycle', name: 'lifecycle-viewmodel', version: '2.2.0-beta01'
+    implementation group: 'androidx.lifecycle', name: 'lifecycle-extensions', version: '2.2.0-beta01'
+    implementation group: 'androidx.lifecycle', name: 'lifecycle-livedata', version: '2.2.0-beta01'
+
+    implementation project(":vortex-data")
+}
+
+
+def artifactID = "vortex-logic-ktx"
+def rootDes = "Vortex Core is the Base Code Layer"
+def repoName = "Vortex-Logic"
+
+
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging rootProject.ext.PackagingType
+            name rootProject.ext.LibraryName
+            description "${rootDes}"
+            url rootProject.ext.GithubUrl
+
+            artifactId "${artifactID}"
+            groupId rootProject.ext.LibraryGroup
+            version rootProject.ext.LibraryVersion
+
+            licenses {
+
+                license {
+                    name rootProject.ext.licenseName
+                    url rootProject.ext.licenseUrl
+                    distribution rootProject.ext.distribution
+                }
+            }
+
+            scm {
+                connection rootProject.ext.GitUrl
+                url rootProject.ext.GithubUrl
+            }
+
+            developers {
+
+                developer {
+                    id rootProject.ext.DeveloperID
+                    name rootProject.ext.DeveloperName
+                    email rootProject.ext.DeveloperEmail
+                }
+
+            }
+
+        }
+    }
+}
+
+
+bintray {
+
+    user = "${rootProject.ext.BintrayUsername}"
+    key = "${rootProject.ext.BintrayApiKey}"
+
+    configurations = ['archives']
+    publications = ['Production']
+
+    publish = true
+
+    pkg {
+        repo = rootProject.ext.LibraryName
+        name = "${repoName}"
+        desc = "${rootDes}"
+
+        dryRun = false
+        publish = true
+        override = true
+
+        userOrg = user
+        licenses = ["${rootProject.ext.licenseName}"]
+        vcsUrl = rootProject.ext.GitUrl
+        issueTrackerUrl = rootProject.ext.GithubIssuesUrl
+
+        publicDownloadNumbers = true
+
+    }
+}
+
+publishing {
+    publications {
+        Production(MavenPublication) {
+            artifact("$buildDir/outputs/aar/vortex-logic-release.aar")
+            groupId rootProject.ext.LibraryGroup
+            artifactId "${artifactID}"
+            version rootProject.ext.LibraryVersion
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                configurations.compile.allDependencies.each {
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', it.group)
+                    dependencyNode.appendNode('artifactId', it.name)
+                    dependencyNode.appendNode('version', it.version)
+                }
+            }
+        }
+    }
+}
