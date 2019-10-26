@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/vortex" />
             <option value="$PROJECT_DIR$/vortex-data" />
+            <option value="$PROJECT_DIR$/vortex-firebase" />
             <option value="$PROJECT_DIR$/vortex-logic" />
             <option value="$PROJECT_DIR$/vortex-permissions" />
             <option value="$PROJECT_DIR$/vortex-prefs" />

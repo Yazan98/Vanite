@@ -12,3 +12,13 @@
 /captures
 .externalNativeBuild
 .cxx
+
+/vortex-data/build
+/vortex/build
+/vortex-firebase/build
+/vortex-prefs/build
+/vortex-permissions/build
+/vortex-ui/build
+/vortex-utils/build
+/vortex-logic/build
+/vortex-data/build

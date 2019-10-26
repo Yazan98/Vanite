@@ -29,9 +29,10 @@ In a lot of times you download all the Libraries and additions to be able to bui
 - [ ] Annotation Processor For Business Logic
 - [ ] Annotation Processor For UI Layer
 - [ ] Application State (User Story Tracker)
-- [ ] Request Executor (Single , Maybe , Observable)
-- [ ] Firebase Auth (Facebook , Google , Sign In Email - Pass , Register)
-- [ ] Firebase Firestore , Realtime Database , Storage
+- [x] Request Executor (Single , Maybe , Observable)
+- [x] Firebase Auth (Facebook , Google , Sign In Email - Pass , Register)
+- [x] Firebase Firestore
+- [ ] Firebase Realtime Database , Storage , Realtime Listening To Collection Changes
 
 # Library Implementation Info
 
@@ -39,6 +40,8 @@ This Library Built On Kotlin coroutines
 every method at this library is suspend function it means every process at the library execute on the background thread
 you can change the thread at your view to ui thread 
 [More Details](https://github.com/Kotlin/kotlinx.coroutines)
+
+#### Stable Version : 1.0.1
 
 # Setup
 
@@ -59,8 +62,18 @@ you can change the thread at your view to ui thread
         implementation "com.vortex:vortex-data-ktx:${final_version}"
         implementation "com.vortex:vortex-utils-ktx:${final_version}"
         implementation "com.vortex:vortex-prefs-ktx:${final_version}"
+        implementation "com.vortex:vortex-firebase-ktx:${final_version}"
     }
 ```
+
+# Contributing
+
+Discussions and pull requests are welcomed. [The GitHub Contributors](https://github.com/Vortex-io/Vortex/graphs/contributors) Page has an entry in the App.
+
+
+# Developers
+
+(Yazan Tarifi) - Author -> yazantarifi1@hotmail.com
 
 # License
 
