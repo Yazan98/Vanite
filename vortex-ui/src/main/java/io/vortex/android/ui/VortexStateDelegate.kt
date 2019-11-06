@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference
  * Time : 11:23 AM
  */
 
-class VortexStateDelegate<State : VortexState>(private val vortexStore: VortexStore<State>) :
+class VortexStateDelegate<State : VortexState>(private val vortexStore: VortexStore<State>?) :
     VortexStateDelegateImpl<State> {
 
     private var stateHandler: WeakReference<VortexRxStore.VortexStateListener<State>>? = null
@@ -33,7 +33,7 @@ class VortexStateDelegate<State : VortexState>(private val vortexStore: VortexSt
         withContext(Dispatchers.IO) {
             context?.let {
                 it.apply {
-                    vortexStore.getStateObserver().observe(this, stateObserver)
+                    vortexStore?.getStateObserver()?.observe(this, stateObserver)
                 }
             }
         }
@@ -42,7 +42,7 @@ class VortexStateDelegate<State : VortexState>(private val vortexStore: VortexSt
     override suspend fun subscribeLoadingHandler(context: FragmentActivity?) {
         withContext(Dispatchers.IO) {
             context?.let {
-                vortexStore.loadingState.observe(it, loadingObserver)
+                vortexStore?.loadingState?.observe(it, loadingObserver)
             }
         }
     }
@@ -71,9 +71,9 @@ class VortexStateDelegate<State : VortexState>(private val vortexStore: VortexSt
     }
 
     override suspend fun unSubscribeStateHandler() {
-        withContext(Dispatchers.IO) {
-            vortexStore.getStateObserver().removeObserver(stateObserver)
-            vortexStore.loadingState.removeObserver(loadingObserver)
+        withContext(Dispatchers.Main) {
+            vortexStore?.getStateObserver()?.removeObserver(stateObserver)
+            vortexStore?.loadingState?.removeObserver(loadingObserver)
             stateHandler?.let {
                 it.clear()
                 stateHandler = null

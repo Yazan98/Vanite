@@ -28,12 +28,12 @@ abstract class VortexFragment<State : VortexState, Action : VortexAction, Reduce
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         GlobalScope.launch {
-            stateDelegation = VortexStateDelegate(getController().getVortexStore() as VortexStore<State>)
-            stateDelegation.apply {
-                this?.commitStoreHandler(this@VortexFragment)
+            stateDelegation = VortexStateDelegate(getController().getVortexStore() as VortexStore<State>?)
+            stateDelegation?.let { state ->
+                state.commitStoreHandler(this@VortexFragment)
                 activity?.let {
-                    this?.subscribeStateHandler(it)
-                    this?.subscribeLoadingHandler(it)
+                    state.subscribeStateHandler(it)
+                    state.subscribeLoadingHandler(it)
                 }
             }
 
