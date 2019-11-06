@@ -38,7 +38,7 @@ abstract class VortexFragment<State : VortexState, Action : VortexAction, Reduce
             }
 
             getController().getVortexStore().apply {
-                this.attachStateListener(this@VortexFragment)
+                this?.attachStateListener(this@VortexFragment)
             }
         }
     }
@@ -47,7 +47,7 @@ abstract class VortexFragment<State : VortexState, Action : VortexAction, Reduce
         GlobalScope.launch {
             stateDelegation?.unSubscribeStateHandler()
             getController().destroyReducer()
-            getController().getVortexStore().destroyStore()
+            getController().getVortexStore()?.destroyStore()
         }
         super.onDestroy()
     }

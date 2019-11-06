@@ -36,7 +36,7 @@ abstract class VortexScreen<State : VortexState, Action : VortexAction, Reducer 
             }
 
             getController().getVortexStore().apply {
-                this.attachStateListener(this@VortexScreen)
+                this?.attachStateListener(this@VortexScreen)
             }
         }
     }
@@ -45,7 +45,7 @@ abstract class VortexScreen<State : VortexState, Action : VortexAction, Reducer 
         GlobalScope.launch {
             stateDelegation?.unSubscribeStateHandler()
             getController().destroyReducer()
-            getController().getVortexStore().destroyStore()
+            getController().getVortexStore()?.destroyStore()
         }
         super.onDestroy()
     }

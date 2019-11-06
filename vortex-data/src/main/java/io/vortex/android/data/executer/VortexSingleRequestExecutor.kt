@@ -20,9 +20,9 @@ class VortexSingleRequestExecutor<Result, Listener : VortexRequestListener.Vorte
     private val repo: CompositeDisposable by lazy { CompositeDisposable() }
     private var listener: WeakReference<Listener>? = null
 
-    override suspend fun addListener(resultListneer: Listener) {
+    override suspend fun addListener(listener: Listener) {
         withContext(Dispatchers.IO) {
-            listener = WeakReference(resultListneer)
+            this@VortexSingleRequestExecutor.listener = WeakReference(listener)
         }
     }
 

@@ -33,20 +33,20 @@ abstract class VortexReducer<State : VortexState, Action : VortexAction> :
 
     init {
         GlobalScope.launch {
-            acceptInitialState(getInitialState())
             reducerStore.postValue(VortexStore())
+            acceptInitialState(getInitialState())
         }
     }
 
     override suspend fun acceptInitialState(initialState: State) {
         withContext(Dispatchers.IO) {
-            getVortexStore().acceptInitialState(initialState)
+            getVortexStore()?.acceptInitialState(initialState)
         }
     }
 
     override suspend fun acceptNewState(newState: State) {
         withContext(Dispatchers.IO) {
-            getVortexStore().getStateObserver().postValue(newState)
+            getVortexStore()?.getStateObserver()?.postValue(newState)
         }
     }
 
@@ -64,13 +64,13 @@ abstract class VortexReducer<State : VortexState, Action : VortexAction> :
 
     override suspend fun attachStateSubscriber(storeSubscriber: VortexRxStore.VortexStateListener<State>) {
         withContext(Dispatchers.IO) {
-            getVortexStore().attachStateListener(storeSubscriber)
+            getVortexStore()?.attachStateListener(storeSubscriber)
         }
     }
 
-    override suspend fun getVortexStore(): VortexRxStore<State, MutableLiveData<State>> {
+    override suspend fun getVortexStore(): VortexRxStore<State, MutableLiveData<State>>? {
         return withContext(Dispatchers.IO) {
-            reducerStore.value!!
+            reducerStore.value
         }
     }
 

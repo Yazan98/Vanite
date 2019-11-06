@@ -3,6 +3,7 @@ Base Code To Build Android Applications Based On Clean , Mvvm Architecture
 
 #### Status
 Under Development
+Version : 1.0.2
 
 # Library Overview
 
@@ -55,21 +56,27 @@ you can change the thread at your view to ui thread
 
 ```
     dependencies {
-        implementation "com.vortex:vortex-ui-ktx:${final_version}"
-        implementation "com.vortex:vortex-permissions-ktx:${final_version}"
-        implementation "com.vortex:vortex-core-ktx:${final_version}"
-        implementation "com.vortex:vortex-logic-ktx:${final_version}"
-        implementation "com.vortex:vortex-data-ktx:${final_version}"
-        implementation "com.vortex:vortex-utils-ktx:${final_version}"
-        implementation "com.vortex:vortex-prefs-ktx:${final_version}"
-        implementation "com.vortex:vortex-firebase-ktx:${final_version}"
+        implementation "io.vortex:vortex-ui-ktx:${final_version}"
+        implementation "io.vortex:vortex-permissions-ktx:${final_version}"
+        implementation "io.vortex:vortex-core-ktx:${final_version}"
+        implementation "io.vortex:vortex-logic-ktx:${final_version}"
+        implementation "io.vortex:vortex-data-ktx:${final_version}"
+        implementation "io.vortex:vortex-utils-ktx:${final_version}"
+        implementation "io.vortex:vortex-prefs-ktx:${final_version}"
+        implementation "io.vortex:vortex-firebase-ktx:${final_version}"
     }
 ```
 
 # Contributing
 
-Discussions and pull requests are welcomed. [The GitHub Contributors](https://github.com/Vortex-io/Vortex/graphs/contributors) Page has an entry in the App.
 
+To contribute to Vortex , follow these steps:
+
+1. Fork this repository.
+2. Create a branch: git checkout -b <branch_name>.
+3. Make your changes and commit them: `git commit -m '<commit_message>'
+4. Push to the original branch: git push origin <project_name>/<location>
+5. Create the pull request.
 
 # Developers
 
