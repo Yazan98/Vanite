@@ -44,8 +44,6 @@ every method at this library is suspend function it means every process at the l
 you can change the thread at your view to ui thread 
 [More Details](https://github.com/Kotlin/kotlinx.coroutines)
 
-#### Stable Version : 1.0.1
-
 # Setup
 
 ```
