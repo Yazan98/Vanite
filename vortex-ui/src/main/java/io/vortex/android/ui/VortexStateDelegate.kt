@@ -1,5 +1,6 @@
 package io.vortex.android.ui
 
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import io.vortex.android.VortexRxStore
@@ -29,20 +30,12 @@ class VortexStateDelegate<State : VortexState>(private val vortexStore: VortexSt
         }
     }
 
-    override suspend fun subscribeStateHandler(context: FragmentActivity?) {
-        withContext(Dispatchers.IO) {
+    override suspend fun subscribeStateHandler(context: Fragment?) {
+        withContext(Dispatchers.Main) {
             context?.let {
                 it.apply {
                     vortexStore?.getStateObserver()?.observe(this, stateObserver)
                 }
-            }
-        }
-    }
-
-    override suspend fun subscribeLoadingHandler(context: FragmentActivity?) {
-        withContext(Dispatchers.IO) {
-            context?.let {
-                vortexStore?.loadingState?.observe(it, loadingObserver)
             }
         }
     }
@@ -57,23 +50,9 @@ class VortexStateDelegate<State : VortexState>(private val vortexStore: VortexSt
         }
     }
 
-    private val loadingObserver: Observer<Boolean> = Observer { loadingState ->
-        stateHandler?.let {
-            it.get()?.let {
-                GlobalScope.launch {
-                    when (loadingState) {
-                        true -> it.onStateChanged(VortexLoadingState(true) as State)
-                        false -> it.onStateChanged(VortexLoadingState(false) as State)
-                    }
-                }
-            }
-        }
-    }
-
     override suspend fun unSubscribeStateHandler() {
         withContext(Dispatchers.Main) {
             vortexStore?.getStateObserver()?.removeObserver(stateObserver)
-            vortexStore?.loadingState?.removeObserver(loadingObserver)
             stateHandler?.let {
                 it.clear()
                 stateHandler = null

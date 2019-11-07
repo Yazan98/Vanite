@@ -12,7 +12,7 @@ import io.vortex.android.state.VortexState
 
 interface VortexRxReducer<State : VortexState , Action: VortexAction , Store: VortexRxStore<State , O> , O> {
 
-    suspend fun reduce(currentState: State, newAction: Action): State
+    suspend fun reduce(newAction: Action)
 
     suspend fun acceptInitialState(initialState: State)
 

@@ -21,14 +21,6 @@ class VortexStore<State : VortexState> : VortexRxStore<State , MutableLiveData<S
         MutableLiveData<State>()
     }
 
-    val loadingState: MutableLiveData<Boolean> by lazy {
-        MutableLiveData<Boolean>()
-    }
-
-    init {
-        loadingState.postValue(false)
-    }
-
     override suspend fun acceptInitialState(initState: State) {
         withContext(Dispatchers.IO) {
             synchronized(stateObserver) {
@@ -48,11 +40,12 @@ class VortexStore<State : VortexState> : VortexRxStore<State , MutableLiveData<S
     }
 
     override suspend fun destroyStore() {
-        withContext(Dispatchers.IO) {
+        withContext(Dispatchers.Main) {
             stateObserver.removeObserver {}
-            viewListener?.let {
-                it.clear()
-            }
+        }
+
+        withContext(Dispatchers.IO) {
+            viewListener?.clear()
             viewListener = null
         }
     }

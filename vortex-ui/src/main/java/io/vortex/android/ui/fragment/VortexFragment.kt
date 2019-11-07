@@ -21,35 +21,5 @@ import kotlinx.coroutines.launch
 
 abstract class VortexFragment<State : VortexState, Action : VortexAction, Reducer : VortexReducer<State, Action>> :
     VortexBaseFragment(), VortexRxStore.VortexStateListener<State>,
-    VortexViewImpl<Action, State, Reducer> {
+    VortexViewImpl<Action, State, Reducer>
 
-    private var stateDelegation: VortexStateDelegate<State>? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        GlobalScope.launch {
-            stateDelegation = VortexStateDelegate(getController().getVortexStore() as VortexStore<State>?)
-            stateDelegation?.let { state ->
-                state.commitStoreHandler(this@VortexFragment)
-                activity?.let {
-                    state.subscribeStateHandler(it)
-                    state.subscribeLoadingHandler(it)
-                }
-            }
-
-            getController().getVortexStore().apply {
-                this?.attachStateListener(this@VortexFragment)
-            }
-        }
-    }
-
-    override fun onDestroy() {
-        GlobalScope.launch {
-            stateDelegation?.unSubscribeStateHandler()
-            getController().destroyReducer()
-            getController().getVortexStore()?.destroyStore()
-        }
-        super.onDestroy()
-    }
-
-}

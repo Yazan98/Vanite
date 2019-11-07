@@ -1,53 +1,81 @@
 package io.vortex.android.ui.activity
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.annotation.CallSuper
-import io.vortex.android.VortexAction
-import io.vortex.android.VortexRxStore
-import io.vortex.android.logic.VortexReducer
-import io.vortex.android.logic.VortexStore
-import io.vortex.android.state.VortexState
-import io.vortex.android.ui.VortexStateDelegate
-import io.vortex.android.ui.VortexViewImpl
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * Created By : Yazan Tarifi
- * Date : 10/10/2019
- * Time : 11:34 AM
+ * Date : 10/9/2019
+ * Time : 8:35 PM
  */
 
-abstract class VortexScreen<State : VortexState, Action : VortexAction, Reducer : VortexReducer<State, Action>> :
-    VortexBaseScreen(), VortexRxStore.VortexStateListener<State>,
-    VortexViewImpl<Action, State, Reducer> {
-
-    private var stateDelegation: VortexStateDelegate<State>? = null
+abstract class VortexScreen : AppCompatActivity() {
 
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        GlobalScope.launch {
-            stateDelegation = VortexStateDelegate<State>(getController().getVortexStore() as VortexStore<State>)
-            stateDelegation.apply {
-                this?.commitStoreHandler(this@VortexScreen)
-                this?.subscribeStateHandler(this@VortexScreen)
-                this?.subscribeLoadingHandler(this@VortexScreen)
-            }
+        setContentView(getLayoutRes())
+    }
 
-            getController().getVortexStore().apply {
-                this?.attachStateListener(this@VortexScreen)
+    protected suspend inline fun <reified T : Any> startScreen(
+        isFinishEnabled: Boolean,
+        options: Bundle? = null,
+        noinline init: Intent.() -> Unit = {}
+    ) {
+        withContext(Dispatchers.Main) {
+            val intent = newIntent<T>(this@VortexScreen)
+            intent.init()
+            startActivity(intent, options)
+            if (isFinishEnabled) {
+                finish()
             }
         }
     }
 
-    override fun onDestroy() {
-        GlobalScope.launch {
-            stateDelegation?.unSubscribeStateHandler()
-            getController().destroyReducer()
-            getController().getVortexStore()?.destroyStore()
+    protected suspend inline fun <reified T : Any> startScreenForResult(
+        reqCode: Int,
+        noinline init: Intent.() -> Unit = {}
+    ) {
+        withContext(Dispatchers.Main) {
+            val intent = newIntent<T>(this@VortexScreen)
+            intent.init()
+            startActivityForResult(intent, reqCode)
         }
-        super.onDestroy()
     }
+
+    @SuppressLint("MissingPermission")
+    protected suspend fun startPhoneCall(phoneNumber: String) {
+        withContext(Dispatchers.Main) {
+            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:$phoneNumber"))
+            startActivity(intent)
+        }
+    }
+
+
+    protected suspend inline fun <reified T> getExtra(extra: String): T? {
+        return withContext(Dispatchers.IO) {
+            intent.extras?.get(extra) as? T?
+        }
+    }
+
+    protected suspend fun startApplicationByPackageName(packageName: String, context: Context) {
+        withContext(Dispatchers.Main) {
+            val launchIntent = context.packageManager.getLaunchIntentForPackage(packageName)
+            context.startActivity(launchIntent)
+        }
+    }
+
+    inline fun <reified T : Any> newIntent(context: Context): Intent = Intent(context, T::class.java)
+
+    @LayoutRes
+    protected abstract fun getLayoutRes(): Int
 
 }

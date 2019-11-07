@@ -1,9 +1,11 @@
 # Vortex
-Base Code To Build Android Applications Based On Clean , Mvvm Architecture
+Base Code To Build Android Applications Based On Clean , Redux Architecture
 
-#### Status
-Under Development
-Version : 1.0.2
+![](https://img.shields.io/badge/License-Apache%202.0-blue)
+![](https://img.shields.io/badge/Project%20Status-Beta%20Version-yellow)
+![](https://img.shields.io/badge/Android%20Status-AndroidX-green)
+![](https://img.shields.io/badge/Version-1.0.8-orange)
+![](https://img.shields.io/badge/Language-Kotlin-orange)
 
 # Library Overview
 
@@ -66,6 +68,12 @@ you can change the thread at your view to ui thread
         implementation "io.vortex:vortex-firebase-ktx:${final_version}"
     }
 ```
+
+# Sample
+
+You Can Find Kotlin Example At The Following Link
+
+![Kotlin Example](https://github.com/Vortex-io/Examples/tree/master/Android)
 
 # Contributing
 

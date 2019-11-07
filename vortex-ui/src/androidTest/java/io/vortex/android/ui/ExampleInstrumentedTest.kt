@@ -1,12 +1,19 @@
 package io.vortex.android.ui
 
-import androidx.test.platform.app.InstrumentationRegistry
+import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-
+import io.vortex.android.VortexAction
+import io.vortex.android.logic.VortexReducer
+import io.vortex.android.state.VortexState
+import io.vortex.android.ui.fragment.VortexFragment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
+import org.w3c.dom.Attr
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -17,8 +24,71 @@ import org.junit.Assert.*
 class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("io.vortex.android.ui.test", appContext.packageName)
+
+    }
+
+    class TestFragment : VortexFragment<TestState , TestAction , TestReducer>() {
+
+        private val controller by lazy {
+            ViewModelProvider(this).get(TestReducer::class.java)
+        }
+
+        override fun getLayoutRes(): Int {
+            return 0
+        }
+
+        @Test
+        public fun fsf() {
+            GlobalScope.launch {
+                println("The State is : Request TO Reducer")
+                controller.reduce(TestAction())
+            }
+        }
+
+        public override fun initScreen(view: View) {
+
+        }
+
+        override suspend fun onStateChanged(newState: TestState) {
+            println("The State is : ${newState}")
+        }
+
+        override suspend fun getController(): TestReducer {
+            return controller
+        }
+
+    }
+
+    class TestReducer : VortexReducer<TestState, TestAction>() {
+
+        override suspend fun reduce(newAction: TestAction) {
+            withContext(Dispatchers.IO) {
+                println("The State is :At Reduce")
+                acceptNewState(TestState.ValidateValueState("Yazan"))
+                acceptNewState(TestState.GetInformationState())
+                acceptNewState(TestState.OnSuccessState("Ahmad"))
+                println("The State is : After All")
+            }
+        }
+
+        override suspend fun getInitialState(): TestState {
+            return TestState.InitState()
+        }
+
+    }
+
+    class TestAction : VortexAction
+    open class TestState : VortexState {
+        class InitState : TestState()
+        class ValidateValueState(private val name: String) : TestState() {
+            fun getName(): String = name
+        }
+
+        class GetInformationState : TestState()
+
+        class OnSuccessState(private val name: String) : TestState() {
+            fun getName(): String = name
+        }
+
     }
 }
