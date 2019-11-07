@@ -71,7 +71,7 @@ you can change the thread at your view to ui thread
 
 You Can Find Kotlin Example At The Following Link
 
-![Kotlin Example](https://github.com/Vortex-io/Examples/tree/master/Android)
+[Kotlin Example](https://github.com/Vortex-io/Examples/tree/master/Android)
 
 # Contributing
 
