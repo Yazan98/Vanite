@@ -1,7 +1,9 @@
 package io.vortex.android.data
 
+import io.vortex.android.data.interceptor.VortexInterceptor
 import io.vortex.android.models.VortexRequestDetails
 import io.vortex.android.models.VortexRequestDetailsProvider
+import io.vortex.android.models.data.VortexRequestController
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -72,6 +74,26 @@ object VortexRetrofitProvider {
                     .build()
             chain.proceed(request)
         }
+
         return httpClient.build()
+    }
+
+    private fun getVortexClient(requestDetails: VortexRequestDetailsProvider): OkHttpClient {
+        val httpClient = OkHttpClient.Builder()
+        httpClient.addInterceptor(VortexInterceptor(requestDetails , VortexRequestController(
+            isLoggingEnabled = requestDetails.isLoggingEnabled,
+            loggingMode = requestDetails.loggingMode,
+            loggingTag = requestDetails.loggingTag
+        )))
+        return httpClient.build()
+    }
+
+    fun getVortexSettingsClient(baseUrl: String , requestDetails: VortexRequestDetailsProvider): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(getVortexClient(requestDetails))
+            .build()
     }
 }

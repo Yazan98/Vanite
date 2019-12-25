@@ -7,5 +7,5 @@ package io.vortex.android.models
  */
 
 enum class VortexServiceProviderType {
-    BASIC , BASIC_REACTIVE , REACTIVE_FULL , REACTIVE_FULL_LOGGER
+    BASIC , BASIC_REACTIVE , REACTIVE_FULL , REACTIVE_FULL_LOGGER , VORTEX_SETTINGS
 }

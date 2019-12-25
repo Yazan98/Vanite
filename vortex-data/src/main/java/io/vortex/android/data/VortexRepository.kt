@@ -43,6 +43,11 @@ abstract class VortexRepository<Api> : VortexRepositoryImpl<Api, Retrofit> {
                     getBaseUrl(),
                     getRequestDetails()
                 )
+
+                VortexServiceProviderType.VORTEX_SETTINGS -> VortexRetrofitProvider.getVortexSettingsClient(
+                    getBaseUrl(),
+                    getRequestDetails()
+                )
             }
         }
     }
