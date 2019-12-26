@@ -77,7 +77,6 @@ class VortexInterceptor(
             Log.d(requestController.loggingTag , "Request Body : (No Body At Request) : ${request.method}")
         }
         Log.d(requestController.loggingTag , "Request Headers : ${getFilteredHeaders(request.headers)}")
-        Log.d(requestController.loggingTag , "Response Headers : ${getFilteredHeaders(response.headers)}")
         Log.d(requestController.loggingTag , """
             Response Information 
             Message : ${response.message}
@@ -100,7 +99,6 @@ class VortexInterceptor(
             Log.d(requestController.loggingTag , "Request Body : (No Body At Request) : ${request.method}")
         }
         Log.d(requestController.loggingTag , "Request Headers : ${getFilteredHeaders(request.headers)}")
-        Log.d(requestController.loggingTag , "Response Headers : ${getFilteredHeaders(response.headers)}")
     }
 
     private fun getFilteredHeaders(headers: Headers): String {

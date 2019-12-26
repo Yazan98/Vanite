@@ -29,12 +29,14 @@ In a lot of times you download all the Libraries and additions to be able to bui
 - [x] Permissions (Single , Multi) Based On (kotlin coroutines)
 - [x] Application Shared Preferences
 - [x] Image Loaders (Picasso , Fresco)
-- [ ] Annotation Processor For Business Logic
-- [ ] Annotation Processor For UI Layer
+- [x] Notifications Channels (Enable , Disable , Create)
+- [x] Network Interceptor
 - [ ] Application State (User Story Tracker)
+- [x] Gif Animation Controller (Fresco , Glide)
 - [x] Request Executor (Single , Maybe , Observable)
 - [x] Firebase Auth (Facebook , Google , Sign In Email - Pass , Register)
 - [x] Firebase Firestore
+- [x] Google Maps
 - [ ] Firebase Realtime Database , Storage , Realtime Listening To Collection Changes
 
 # Library Implementation Info

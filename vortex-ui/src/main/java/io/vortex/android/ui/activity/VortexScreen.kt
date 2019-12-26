@@ -8,6 +8,7 @@ import android.os.Bundle
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import io.vortex.android.ui.VortexMessageDelegation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -18,6 +19,10 @@ import kotlinx.coroutines.withContext
  */
 
 abstract class VortexScreen : AppCompatActivity() {
+
+    protected val messageController: VortexMessageDelegation by lazy {
+        VortexMessageDelegation()
+    }
 
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package io.vortex.android.utils
+package io.vortex.android.utils.ui
 
 import android.net.Uri
 import android.widget.ImageView

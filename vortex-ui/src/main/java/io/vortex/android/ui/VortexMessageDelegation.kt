@@ -1,6 +1,8 @@
 package io.vortex.android.ui
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
@@ -56,6 +58,18 @@ class VortexMessageDelegation : MessageDelegationImpl {
                 Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG)
                     .show()
             }
+        }
+    }
+
+    suspend fun showAlertDialog(context: Context , title: String , message: String) {
+        withContext(Dispatchers.Main) {
+            AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setCancelable(true)
+                .setPositiveButton(android.R.string.ok) { dialogInterface: DialogInterface, i: Int -> dialogInterface.dismiss() }
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show()
         }
     }
 

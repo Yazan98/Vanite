@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import io.vortex.android.ui.VortexMessageDelegation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -21,6 +22,10 @@ import kotlinx.coroutines.withContext
  */
 
 abstract class VortexBaseFragment : Fragment() {
+
+    protected val messageController: VortexMessageDelegation by lazy {
+        VortexMessageDelegation()
+    }
 
     @CallSuper
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
