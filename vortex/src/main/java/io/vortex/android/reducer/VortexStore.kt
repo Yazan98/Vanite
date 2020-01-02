@@ -1,4 +1,4 @@
-package io.vortex.android.logic
+package io.vortex.android.reducer
 
 import androidx.lifecycle.MutableLiveData
 import io.vortex.android.VortexRxStore
@@ -6,7 +6,6 @@ import io.vortex.android.state.VortexState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.lang.ref.WeakReference
-import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Created By : Yazan Tarifi

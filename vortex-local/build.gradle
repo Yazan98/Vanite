@@ -1,15 +1,7 @@
-dependencies {
-    implementation group: 'androidx.lifecycle', name: 'lifecycle-viewmodel', version: '2.2.0-beta01'
-    implementation group: 'androidx.lifecycle', name: 'lifecycle-extensions', version: '2.2.0-beta01'
-    implementation group: 'androidx.lifecycle', name: 'lifecycle-livedata', version: '2.2.0-beta01'
 
-    implementation project(":vortex-data")
-}
-
-
-def artifactID = "vortex-logic-ktx"
+def artifactID = "vortex-local-ktx"
 def rootDes = "Vortex Core is the Base Code Layer"
-def repoName = "Vortex-Logic"
+def repoName = "Vortex-Local"
 
 
 
@@ -86,7 +78,7 @@ bintray {
 publishing {
     publications {
         Production(MavenPublication) {
-            artifact("$buildDir/outputs/aar/vortex-logic-release.aar")
+            artifact("$buildDir/outputs/aar/vortex-local-release.aar")
             groupId rootProject.ext.LibraryGroup
             artifactId "${artifactID}"
             version rootProject.ext.LibraryVersion

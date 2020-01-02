@@ -4,7 +4,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import io.vortex.android.VortexAction
-import io.vortex.android.logic.VortexReducer
+import io.vortex.android.reducer.VortexReducer
 import io.vortex.android.state.VortexState
 import io.vortex.android.ui.fragment.VortexFragment
 import kotlinx.coroutines.Dispatchers
@@ -13,7 +13,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.w3c.dom.Attr
 
 /**
  * Instrumented test, which will execute on an Android device.

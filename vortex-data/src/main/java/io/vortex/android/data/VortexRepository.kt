@@ -27,28 +27,26 @@ abstract class VortexRepository<Api> : VortexRepositoryImpl<Api, Retrofit> {
         return Credentials.basic(details.username, details.password)
     }
 
-    override suspend fun getServiceProvider(type: VortexServiceProviderType): Retrofit {
-        return withContext(Dispatchers.IO) {
-            return@withContext when (type) {
-                VortexServiceProviderType.BASIC -> VortexRetrofitProvider.getBasicRetrofit(
-                    getBaseUrl()
-                )
-                VortexServiceProviderType.BASIC_REACTIVE -> VortexRetrofitProvider.getReactiveRetrofit(
-                    getBaseUrl()
-                )
-                VortexServiceProviderType.REACTIVE_FULL_LOGGER -> VortexRetrofitProvider.getLoggerReactiveRetrofit(
-                    getBaseUrl()
-                )
-                VortexServiceProviderType.REACTIVE_FULL -> VortexRetrofitProvider.getReactiveFullRetrofit(
-                    getBaseUrl(),
-                    getRequestDetails()
-                )
+    override fun getServiceProvider(type: VortexServiceProviderType): Retrofit {
+        return when (type) {
+            VortexServiceProviderType.BASIC -> VortexRetrofitProvider.getBasicRetrofit(
+                getBaseUrl()
+            )
+            VortexServiceProviderType.BASIC_REACTIVE -> VortexRetrofitProvider.getReactiveRetrofit(
+                getBaseUrl()
+            )
+            VortexServiceProviderType.REACTIVE_FULL_LOGGER -> VortexRetrofitProvider.getLoggerReactiveRetrofit(
+                getBaseUrl()
+            )
+            VortexServiceProviderType.REACTIVE_FULL -> VortexRetrofitProvider.getReactiveFullRetrofit(
+                getBaseUrl(),
+                getRequestDetails()
+            )
 
-                VortexServiceProviderType.VORTEX_SETTINGS -> VortexRetrofitProvider.getVortexSettingsClient(
-                    getBaseUrl(),
-                    getRequestDetails()
-                )
-            }
+            VortexServiceProviderType.VORTEX_SETTINGS -> VortexRetrofitProvider.getVortexSettingsClient(
+                getBaseUrl(),
+                getRequestDetails()
+            )
         }
     }
 

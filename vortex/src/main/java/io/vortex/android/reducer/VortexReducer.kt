@@ -1,4 +1,4 @@
-package io.vortex.android.logic
+package io.vortex.android.reducer
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,8 +19,7 @@ import kotlinx.coroutines.withContext
  * Time : 10:32 AM
  */
 
-abstract class VortexReducer<State : VortexState, Action : VortexAction> :
-    ViewModel(),
+abstract class VortexReducer<State : VortexState, Action : VortexAction> : ViewModel(),
     VortexRxReducer<State, Action, VortexStore<State> , MutableLiveData<State>> {
 
     private val reducerStore: MutableLiveData<VortexStore<State>> by lazy {

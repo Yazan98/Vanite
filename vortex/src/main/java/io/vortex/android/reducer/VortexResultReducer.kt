@@ -1,4 +1,4 @@
-package io.vortex.android.logic
+package io.vortex.android.reducer
 
 import io.vortex.android.VortexAction
 import io.vortex.android.rx.VortexRequestProvider
@@ -10,6 +10,6 @@ import io.vortex.android.state.VortexState
  * Time : 2:15 PM
  */
 
-abstract class VortexResultReducer<State : VortexState, Action : VortexAction , Result> : VortexReducer<State , Action>() {
+abstract class VortexResultReducer<State : VortexState, Action : VortexAction , Result> : VortexReducer<State, Action>() {
     protected fun getRequestProvider(): VortexRequestProvider<Result> = VortexRequestProvider<Result>()
 }

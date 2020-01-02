@@ -1,17 +1,10 @@
 package io.vortex.android.ui.fragment
 
-import android.os.Bundle
-import android.view.View
-import androidx.annotation.CallSuper
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexRxStore
-import io.vortex.android.logic.VortexReducer
-import io.vortex.android.logic.VortexStore
+import io.vortex.android.reducer.VortexReducer
 import io.vortex.android.state.VortexState
-import io.vortex.android.ui.VortexStateDelegate
 import io.vortex.android.ui.VortexViewImpl
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 /**
  * Created By : Yazan Tarifi
