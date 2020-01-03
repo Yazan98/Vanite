@@ -1,5 +1,5 @@
 rootProject.name='Vortex'
-include ':vortex-sample'
+//include ':vortex-sample'
 include ':vortex-ui'
 include ':vortex-data'
 include ':vortex-utils'

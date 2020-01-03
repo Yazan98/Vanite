@@ -13,10 +13,9 @@
             <option value="$PROJECT_DIR$/vortex" />
             <option value="$PROJECT_DIR$/vortex-data" />
             <option value="$PROJECT_DIR$/vortex-firebase" />
-            <option value="$PROJECT_DIR$/vortex-logic" />
+            <option value="$PROJECT_DIR$/vortex-local" />
             <option value="$PROJECT_DIR$/vortex-permissions" />
             <option value="$PROJECT_DIR$/vortex-prefs" />
-            <option value="$PROJECT_DIR$/vortex-sample" />
             <option value="$PROJECT_DIR$/vortex-ui" />
             <option value="$PROJECT_DIR$/vortex-utils" />
           </set>

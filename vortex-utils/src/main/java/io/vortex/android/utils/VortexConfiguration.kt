@@ -177,13 +177,11 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
-    override suspend fun registerVortexPrefsConfiguration(details: VortexPrefsDetails): VortexConfiguration {
-        withContext(Dispatchers.IO) {
-            VortexPrefsConfig.init(
-                vortexApplication.applicationContext,
-                vortexApplication.packageName
-            )
-        }
+    override fun registerVortexPrefsConfiguration(details: VortexPrefsDetails): VortexConfiguration {
+        VortexPrefsConfig.init(
+            vortexApplication.applicationContext,
+            vortexApplication.packageName
+        )
         return this
     }
 

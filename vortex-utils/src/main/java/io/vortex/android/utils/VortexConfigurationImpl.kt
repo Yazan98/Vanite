@@ -35,7 +35,7 @@ interface VortexConfigurationImpl<L, I> {
 
     suspend fun checkPlatformRequiredConfiguration(): VortexConfiguration
 
-    suspend fun registerVortexPrefsConfiguration(details: VortexPrefsDetails): VortexConfiguration
+    fun registerVortexPrefsConfiguration(details: VortexPrefsDetails): VortexConfiguration
 
     suspend fun registerUserStoryConfiguration(): VortexConfiguration
 

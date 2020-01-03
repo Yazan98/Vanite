@@ -15,15 +15,8 @@ object VortexPrefsConfig {
 
     lateinit var prefs: SharedPreferences
 
-    suspend fun init(context: Context, packageName: String) {
-        withContext(Dispatchers.IO) {
-            prefs = context.getSharedPreferences(packageName, Context.MODE_PRIVATE)
-        }
+    fun init(context: Context, packageName: String) {
+        prefs = context.getSharedPreferences(packageName, Context.MODE_PRIVATE)
     }
-
-    fun checkStatus(): Boolean {
-        return VortexPrefsConfig::prefs.isInitialized
-    }
-
 
 }

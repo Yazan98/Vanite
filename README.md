@@ -4,7 +4,7 @@ Base Code To Build Android Applications Based On Clean , Redux Architecture
 ![](https://img.shields.io/badge/License-Apache%202.0-blue)
 ![](https://img.shields.io/badge/Project%20Status-Beta%20Version-yellow)
 ![](https://img.shields.io/badge/Android%20Status-AndroidX-green)
-![](https://img.shields.io/badge/Version-1.0.8-orange)
+![](https://img.shields.io/badge/Version-1.0.10-orange)
 ![](https://img.shields.io/badge/Language-Kotlin-orange)
 
 # Library Overview
@@ -37,6 +37,7 @@ In a lot of times you download all the Libraries and additions to be able to bui
 - [x] Firebase Auth (Facebook , Google , Sign In Email - Pass , Register)
 - [x] Firebase Firestore
 - [x] Google Maps
+- [x] Language Manager
 - [ ] Firebase Realtime Database , Storage , Realtime Listening To Collection Changes
 
 # Library Implementation Info
