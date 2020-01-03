@@ -24,7 +24,7 @@ interface VortexRepositoryImpl<Api , Provider> {
 
     fun getServiceProvider(type: VortexServiceProviderType): Provider
 
-    suspend fun <T : Any> getRequestProvider(): VortexRequestProvider<T>
+    fun <T : Any> getRequestProvider(): VortexRequestProvider<T>
 
     fun getRequestDetails(): VortexRequestDetailsProvider
 

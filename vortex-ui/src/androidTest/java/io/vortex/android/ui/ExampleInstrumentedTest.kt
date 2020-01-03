@@ -4,7 +4,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import io.vortex.android.VortexAction
-import io.vortex.android.reducer.VortexReducer
+import io.vortex.android.reducer.VortexViewModel
 import io.vortex.android.state.VortexState
 import io.vortex.android.ui.fragment.VortexFragment
 import kotlinx.coroutines.Dispatchers
@@ -58,7 +58,7 @@ class ExampleInstrumentedTest {
 
     }
 
-    class TestReducer : VortexReducer<TestState, TestAction>() {
+    class TestReducer : VortexViewModel<TestState, TestAction>() {
 
         override suspend fun reduce(newAction: TestAction) {
             withContext(Dispatchers.IO) {

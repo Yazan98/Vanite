@@ -1,9 +1,14 @@
 package io.vortex.android.reducer
 
+import android.content.Context
+import android.net.ConnectivityManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import io.vortex.android.VortexAction
+import io.vortex.android.VortexNetworkListener
 import io.vortex.android.VortexRxReducer
 import io.vortex.android.VortexRxStore
 import io.vortex.android.rx.VortexRxRepository
@@ -19,20 +24,23 @@ import kotlinx.coroutines.withContext
  * Time : 10:32 AM
  */
 
-abstract class VortexReducer<State : VortexState, Action : VortexAction> : ViewModel(),
-    VortexRxReducer<State, Action, VortexStore<State> , MutableLiveData<State>> {
+abstract class VortexViewModel<State : VortexState, Action : VortexAction> : ViewModel(),
+    VortexRxReducer<State, Action, VortexStore<State>, MutableLiveData<State>> {
 
     private val reducerStore: MutableLiveData<VortexStore<State>> by lazy {
         MutableLiveData<VortexStore<State>>()
     }
 
+    private var networkLister: VortexNetworkListener? = null
     private val repo: VortexRxRepository by lazy {
         VortexRxRepository()
     }
 
     init {
         GlobalScope.launch {
-            reducerStore.postValue(VortexStore())
+            if (reducerStore.value == null) {
+                reducerStore.postValue(VortexStore())
+            }
             acceptInitialState(getInitialState())
         }
     }
@@ -40,6 +48,14 @@ abstract class VortexReducer<State : VortexState, Action : VortexAction> : ViewM
     override suspend fun acceptInitialState(initialState: State) {
         withContext(Dispatchers.IO) {
             getVortexStore()?.acceptInitialState(initialState)
+        }
+    }
+
+    override suspend fun acceptLoadingState(newState: Boolean) {
+        withContext(Dispatchers.IO) {
+            getVortexStore()?.let {
+                it.acceptLoadingState(newState)
+            }
         }
     }
 
@@ -58,6 +74,7 @@ abstract class VortexReducer<State : VortexState, Action : VortexAction> : ViewM
     override suspend fun destroyReducer() {
         withContext(Dispatchers.IO) {
             repo.clearRepository()
+            networkLister = null
         }
     }
 
@@ -71,6 +88,33 @@ abstract class VortexReducer<State : VortexState, Action : VortexAction> : ViewM
         return withContext(Dispatchers.IO) {
             reducerStore.value
         }
+    }
+
+    private fun isInternetConnected(context: Context): Observable<Boolean> {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo;
+        return Observable.just(activeNetworkInfo != null && activeNetworkInfo.isConnected);
+    }
+
+    fun executeInternetListener(context: Context) {
+        repo.addRequest(
+            isInternetConnected(context)
+                .subscribeOn(Schedulers.io()).subscribe({
+                    GlobalScope.launch {
+                        when (it) {
+                            true -> networkLister?.onNetworkConnected()
+                            false -> networkLister?.onNetworkDisconnected()
+                        }
+                    }
+                } , {
+
+                })
+        )
+    }
+
+    fun attachNetworkListener(networkListener: VortexNetworkListener) {
+        this.networkLister = networkListener
     }
 
 }

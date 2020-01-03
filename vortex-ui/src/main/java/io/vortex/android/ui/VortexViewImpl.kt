@@ -1,7 +1,7 @@
 package io.vortex.android.ui
 
 import io.vortex.android.VortexAction
-import io.vortex.android.reducer.VortexReducer
+import io.vortex.android.reducer.VortexViewModel
 import io.vortex.android.state.VortexState
 
 /**
@@ -10,7 +10,7 @@ import io.vortex.android.state.VortexState
  * Time : 11:37 AM
  */
 
-interface VortexViewImpl<Action : VortexAction, State : VortexState, Reducer : VortexReducer<State, Action>> {
+interface VortexViewImpl<Action : VortexAction, State : VortexState, Reducer : VortexViewModel<State, Action>> {
 
     suspend fun getController(): Reducer
 

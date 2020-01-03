@@ -2,7 +2,7 @@ package io.vortex.android.ui.fragment
 
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexRxStore
-import io.vortex.android.reducer.VortexReducer
+import io.vortex.android.reducer.VortexViewModel
 import io.vortex.android.state.VortexState
 import io.vortex.android.ui.VortexViewImpl
 
@@ -12,7 +12,7 @@ import io.vortex.android.ui.VortexViewImpl
  * Time : 11:51 AM
  */
 
-abstract class VortexFragment<State : VortexState, Action : VortexAction, Reducer : VortexReducer<State, Action>> :
+abstract class VortexFragment<State : VortexState, Action : VortexAction, Reducer : VortexViewModel<State, Action>> :
     VortexBaseFragment(), VortexRxStore.VortexStateListener<State>,
     VortexViewImpl<Action, State, Reducer>
 

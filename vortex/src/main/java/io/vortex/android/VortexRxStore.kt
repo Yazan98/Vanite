@@ -14,6 +14,8 @@ interface VortexRxStore<State : VortexState , O> {
 
     suspend fun acceptInitialState(initState: State)
 
+    suspend fun acceptLoadingState(newState: Boolean)
+
     suspend fun destroyStore()
 
     suspend fun getStateObserver(): O

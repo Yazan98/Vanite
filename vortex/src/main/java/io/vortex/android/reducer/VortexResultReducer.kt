@@ -10,6 +10,6 @@ import io.vortex.android.state.VortexState
  * Time : 2:15 PM
  */
 
-abstract class VortexResultReducer<State : VortexState, Action : VortexAction , Result> : VortexReducer<State, Action>() {
+abstract class VortexResultReducer<State : VortexState, Action : VortexAction , Result> : VortexViewModel<State, Action>() {
     protected fun getRequestProvider(): VortexRequestProvider<Result> = VortexRequestProvider<Result>()
 }

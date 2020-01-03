@@ -18,6 +18,8 @@ interface VortexRxReducer<State : VortexState , Action: VortexAction , Store: Vo
 
     suspend fun getVortexStore(): VortexRxStore<State , O>?
 
+    suspend fun acceptLoadingState(newState: Boolean)
+
     suspend fun addRxRequest(request: Disposable)
 
     suspend fun getInitialState(): State
