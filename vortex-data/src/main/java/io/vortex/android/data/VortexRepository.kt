@@ -17,10 +17,8 @@ abstract class VortexRepository<Api> : VortexRepositoryImpl<Api, Retrofit> {
 
     open lateinit var serviceProvider: Retrofit
 
-    override suspend fun createService(service: Class<Api>): Api {
-        return withContext(Dispatchers.IO) {
-            serviceProvider.create(service)
-        }
+    override fun createService(service: Class<Api>): Api {
+        return serviceProvider.create(service)
     }
 
     override suspend fun getBasicAuthConfiguration(details: VortexAuth): String {

@@ -18,13 +18,11 @@ interface VortexRepositoryImpl<Api , Provider> {
 
     fun getBaseUrl(): String
 
-    suspend fun createService(service: Class<Api>): Api
+    fun createService(service: Class<Api>): Api
 
     suspend fun getBasicAuthConfiguration(details: VortexAuth): String
 
     fun getServiceProvider(type: VortexServiceProviderType): Provider
-
-    fun <T : Any> getRequestProvider(): VortexRequestProvider<T>
 
     fun getRequestDetails(): VortexRequestDetailsProvider
 

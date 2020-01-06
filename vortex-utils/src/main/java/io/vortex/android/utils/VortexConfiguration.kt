@@ -40,10 +40,8 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
     private lateinit var vortexApplication: Application
     private var isPlatformCheckRequired: Boolean = false
 
-    override suspend fun registerApplicationClass(app: Application): VortexConfiguration {
-        withContext(Dispatchers.IO) {
-            vortexApplication = app
-        }
+    override fun registerApplicationClass(app: Application): VortexConfiguration {
+        vortexApplication = app
         return this
     }
 
@@ -121,7 +119,7 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
     }
 
     override suspend fun registerStrictMode(): VortexConfiguration {
-        withContext(Dispatchers.IO) {
+        withContext(Dispatchers.Main) {
             Handler().postAtFrontOfQueue {
                 if (applicationStatus) {
                     StrictMode.setThreadPolicy(
@@ -177,10 +175,10 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
-    override fun registerVortexPrefsConfiguration(details: VortexPrefsDetails): VortexConfiguration {
+    override fun registerVortexPrefsConfiguration(details: VortexPrefsDetails , application: Application): VortexConfiguration {
         VortexPrefsConfig.init(
-            vortexApplication.applicationContext,
-            vortexApplication.packageName
+            application.applicationContext,
+            application.packageName
         )
         return this
     }

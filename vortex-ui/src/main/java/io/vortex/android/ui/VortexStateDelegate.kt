@@ -3,7 +3,6 @@ package io.vortex.android.ui
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import io.vortex.android.VortexRxStore
-import io.vortex.android.reducer.VortexStore
 import io.vortex.android.state.VortexState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

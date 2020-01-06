@@ -10,21 +10,17 @@ import io.vortex.android.state.VortexState
  * Time : 3:47 AM
  */
 
-interface VortexRxReducer<State : VortexState , Action: VortexAction , Store: VortexRxStore<State , O> , O> {
+interface VortexRxReducer<State : VortexState , Action: VortexAction> {
 
     suspend fun reduce(newAction: Action)
 
     suspend fun acceptInitialState(initialState: State)
-
-    suspend fun getVortexStore(): VortexRxStore<State , O>?
 
     suspend fun acceptLoadingState(newState: Boolean)
 
     suspend fun addRxRequest(request: Disposable)
 
     suspend fun getInitialState(): State
-
-    suspend fun attachStateSubscriber(storeSubscriber: VortexRxStore.VortexStateListener<State>)
 
     suspend fun acceptNewState(newState: State)
 

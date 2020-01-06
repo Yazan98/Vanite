@@ -12,7 +12,7 @@ import io.vortex.android.models.VortexPrefsDetails
 
 interface VortexConfigurationImpl<L, I> {
 
-    suspend fun registerApplicationClass(app: Application): VortexConfiguration
+    fun registerApplicationClass(app: Application): VortexConfiguration
 
     suspend fun registerApplicationLogger(logger: L): VortexConfiguration
 
@@ -35,7 +35,7 @@ interface VortexConfigurationImpl<L, I> {
 
     suspend fun checkPlatformRequiredConfiguration(): VortexConfiguration
 
-    fun registerVortexPrefsConfiguration(details: VortexPrefsDetails): VortexConfiguration
+    fun registerVortexPrefsConfiguration(details: VortexPrefsDetails , application: Application): VortexConfiguration
 
     suspend fun registerUserStoryConfiguration(): VortexConfiguration
 

@@ -14,51 +14,35 @@ import io.reactivex.Single
 class VortexRequestProvider<Result> {
 
     fun getListObservable(request: Observable<List<Result>>): Observable<List<Result>> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     fun getListFlowable(request: Flowable<List<Result>>): Flowable<List<Result>> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     fun getListSingle(request: Single<List<Result>>): Single<List<Result>> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     fun getListMaybe(request: Maybe<List<Result>>): Maybe<List<Result>> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     fun getObservable(request: Observable<Result>): Observable<Result> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     fun getFlowable(request: Flowable<Result>): Flowable<Result> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     fun getSingle(request: Single<Result>): Single<Result> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     fun getMaybe(request: Maybe<Result>): Maybe<Result> {
-        return request
-            .subscribeOn(getThreadProvider().getBackgroundThread())
-            .observeOn(getThreadProvider().getMainThread())
+        return request.subscribeOn(getThreadProvider().getBackgroundThread())
     }
 
     private fun getThreadProvider(): VortexThreadProvider = object : VortexThreadProvider {}
