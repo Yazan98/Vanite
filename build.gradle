@@ -33,7 +33,7 @@ allprojects {
 
 ext {
     LibraryGroup = "io.vortex"
-    LibraryVersion = "1.0.10"
+    LibraryVersion = "1.0.11"
 
     PackagingType = "arr"
     LibraryName = "Vortex"

@@ -4,7 +4,7 @@ Base Code To Build Android Applications Based On Clean , Redux Architecture
 ![](https://img.shields.io/badge/License-Apache%202.0-blue)
 ![](https://img.shields.io/badge/Project%20Status-Beta%20Version-yellow)
 ![](https://img.shields.io/badge/Android%20Status-AndroidX-green)
-![](https://img.shields.io/badge/Version-1.0.10-orange)
+![](https://img.shields.io/badge/Version-1.0.11-orange)
 ![](https://img.shields.io/badge/Language-Kotlin-orange)
 
 # Library Overview
