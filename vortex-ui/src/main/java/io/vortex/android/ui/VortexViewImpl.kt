@@ -14,4 +14,6 @@ interface VortexViewImpl<Action : VortexAction, State : VortexState, Reducer : V
 
     suspend fun getController(): Reducer
 
+    suspend fun getLoadingState(newState: Boolean)
+
 }

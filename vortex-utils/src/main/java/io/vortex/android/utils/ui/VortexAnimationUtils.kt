@@ -67,8 +67,14 @@ suspend fun View.showView() {
     }
 }
 
-suspend fun View.hideView() {
+suspend fun View.goneView() {
     withContext(Dispatchers.Main) {
         visibility = View.GONE
+    }
+}
+
+suspend fun View.invisibleView() {
+    withContext(Dispatchers.Main) {
+        visibility = View.INVISIBLE
     }
 }

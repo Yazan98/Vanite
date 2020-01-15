@@ -180,32 +180,22 @@ abstract class VortexViewModel<State : VortexState, Action : VortexAction> : Vie
         this.networkLister = networkListener
     }
 
-    /**
-     * This Error State Handler is the default Handler at The Common Cases
-     * When Error On Any Stage At ViewModel you should Stop The loader and show message To User
-     */
-    suspend fun handleErrorState(error: Exception?) {
-        withContext(Dispatchers.IO) {
-            error?.let {
-                stateObserver.postValue(VortexErrorState(error as VortexException) as State)
-                loadingState.postValue(VortexLoadingState(false))
-            }
-        }
-    }
 
     /**
      * THis is the Default OnSuccess Senario when The Response is Success Result you should stop the Loader
      * and apply the new State
      */
-    suspend fun handleSuccessState(state: State) {
+    suspend fun handleStateWithLoading(state: State) {
         withContext(Dispatchers.IO) {
             stateObserver.postValue(state)
             loadingState.postValue(VortexLoadingState(false))
         }
     }
 
-    fun checkStringState(target: String): Boolean {
-        return target.trim().isEmpty()
+    suspend fun destroyListeners() {
+        withContext(Dispatchers.IO) {
+            repo.clearRepository()
+        }
     }
 
 }
