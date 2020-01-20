@@ -2,6 +2,7 @@ package io.vortex.android.utils.ui
 
 import android.net.Uri
 import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.drawee.view.SimpleDraweeView
 import com.facebook.imagepipeline.common.ResizeOptions
@@ -47,7 +48,7 @@ object VortexImageLoader {
         }
     }
 
-    suspend fun loadImageWithFresco(url: Int, image: SimpleDraweeView) {
+    suspend fun loadImageWithFresco(@DrawableRes url: Int, image: SimpleDraweeView) {
         withContext(Dispatchers.Main) {
             image.setActualImageResource(url)
         }

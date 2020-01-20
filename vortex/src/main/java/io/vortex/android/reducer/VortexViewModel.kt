@@ -40,6 +40,7 @@ import kotlinx.coroutines.withContext
  * @param Action : This Action is Really Important because The View can just do Two Things
  * 1. Apply The Last State At ViewModel
  * 2. Submit View Actions From User To ViewModel
+ *
  * Examples:
  * AuthRegisterAction should send the User Information To ViewModel To Execute The Register Steps
  * AuthLoginAction Should send The Auth Information (Email , Password) To ViewModel Via Action
@@ -138,7 +139,7 @@ abstract class VortexViewModel<State : VortexState, Action : VortexAction> : Vie
      *
      * To Delete All Requests , Listeners
      */
-    override suspend fun destroyReducer() {
+    override suspend fun destroyViewModel() {
         withContext(Dispatchers.IO) {
             repo.clearRepository()
             networkLister = null
@@ -195,6 +196,13 @@ abstract class VortexViewModel<State : VortexState, Action : VortexAction> : Vie
     suspend fun destroyListeners() {
         withContext(Dispatchers.IO) {
             repo.clearRepository()
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        GlobalScope.launch {
+            destroyViewModel()
         }
     }
 

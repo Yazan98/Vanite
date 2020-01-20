@@ -24,6 +24,6 @@ interface VortexRxReducer<State : VortexState , Action: VortexAction> {
 
     suspend fun acceptNewState(newState: State)
 
-    suspend fun destroyReducer()
+    suspend fun destroyViewModel()
 
 }
