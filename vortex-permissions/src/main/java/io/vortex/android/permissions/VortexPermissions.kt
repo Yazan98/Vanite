@@ -1,9 +1,11 @@
 package io.vortex.android.permissions
 
 import android.app.Activity
+import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -57,6 +59,28 @@ class VortexPermissions : Permissions {
             ActivityCompat.requestPermissions(
                 VortexPermissionsConfiguration.getContext() as Activity,
                 permissions,
+                requestCode
+            )
+        }
+    }
+
+    override suspend fun requestContextMultiPermissions(context: FragmentActivity, vararg permissions: String, reqCode: Int) {
+        withContext(Dispatchers.Main) {
+            requestCode = reqCode
+            ActivityCompat.requestPermissions(
+                context,
+                permissions,
+                requestCode
+            )
+        }
+    }
+
+    override suspend fun requestContextPermission(context: FragmentActivity, permission: String, reqCode: Int) {
+        withContext(Dispatchers.Main) {
+            requestCode = reqCode
+            ActivityCompat.requestPermissions(
+                context,
+                arrayOf(permission),
                 requestCode
             )
         }

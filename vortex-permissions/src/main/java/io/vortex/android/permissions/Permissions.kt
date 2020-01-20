@@ -1,5 +1,8 @@
 package io.vortex.android.permissions
 
+import android.content.Context
+import androidx.fragment.app.FragmentActivity
+
 /**
  * Created By : Yazan Tarifi
  * Date : 10/13/2019
@@ -15,5 +18,9 @@ interface Permissions {
     suspend fun requestPermission(permission: String , requestCode: Int)
 
     suspend fun requestPermissions(permissions: Array<String> , requestCode: Int)
+
+    suspend fun requestContextPermission(context: FragmentActivity, permission: String, reqCode: Int)
+
+    suspend fun requestContextMultiPermissions(context: FragmentActivity, vararg permissions: String, reqCode: Int)
 
 }

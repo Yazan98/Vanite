@@ -66,7 +66,7 @@ object VortexPrefs {
     }
 
     suspend fun getUserStatus(): Boolean? {
-        return get(VortexPrefsConsts.USER_STATUS, "") as Boolean
+        return get(VortexPrefsConsts.USER_STATUS, false) as Boolean
     }
 
     suspend fun saveUserStatus(status: Boolean) {
