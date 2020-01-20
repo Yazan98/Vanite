@@ -34,9 +34,7 @@ interface VortexMultiViewModelImpl<State : VortexState, Action : VortexAction> {
 
     suspend fun execute(newAction: Action)
 
-    suspend fun acceptNewState(newState: State)
-
-    suspend fun createSource(newSource: State, tag: String)
+    suspend fun acceptNewState(newState: LiveData<State>)
 
     suspend fun addRxRequest(request: Disposable)
 
@@ -47,19 +45,5 @@ interface VortexMultiViewModelImpl<State : VortexState, Action : VortexAction> {
     suspend fun getState(): LiveData<State>
 
     suspend fun getLoadingState(): MutableLiveData<VortexLoadingState>
-
-    suspend fun destroyStateByTag(tag: String)
-
-}
-
-interface VortexViewExecutorImpl<State : VortexState, Action : VortexAction> {
-
-    suspend fun createState(state: State, tag: String)
-
-    suspend fun getSourceByTag(tag: String): LiveData<State>
-
-    suspend fun destroyAllStates()
-
-    suspend fun destroyStateByTag(tag: String)
 
 }

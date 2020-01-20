@@ -72,7 +72,7 @@ class VortexInterceptor(
         Log.d(requestController.loggingTag , "Request Url : ${request.url}")
         Log.d(requestController.loggingTag , "Request Method : ${request.method}")
         if (request.body != null) {
-            Log.d(requestController.loggingTag , "Request ${request.body}")
+            Log.d(requestController.loggingTag , "Request ${request.body.toString()}")
         } else {
             Log.d(requestController.loggingTag , "Request Body : (No Body At Request) : ${request.method}")
         }
@@ -86,6 +86,7 @@ class VortexInterceptor(
             Response Body Content Type : ${response.body?.contentType()}
             Response Time : ${response.sentRequestAtMillis}
         """.trimIndent())
+        Log.d(requestController.loggingTag, "Response Body " + response.body?.string())
         //Response Body : ${Gson().toJson(response.body)}
     }
 

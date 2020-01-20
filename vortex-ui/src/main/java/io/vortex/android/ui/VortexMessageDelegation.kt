@@ -3,8 +3,12 @@ package io.vortex.android.ui
 import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.os.Build
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
@@ -59,6 +63,24 @@ class VortexMessageDelegation : MessageDelegationImpl {
                     .show()
             }
         }
+    }
+
+    suspend fun showSnackbarWithColor(context: FragmentActivity?, message: String, @ColorRes color: Int) {
+        withContext(Dispatchers.Main) {
+            context?.let {
+                val parentLayout = it.findViewById<View>(android.R.id.content)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG)
+                        .withColor(it.getColor(color))
+                        .show()
+                }
+            }
+        }
+    }
+
+    private fun Snackbar.withColor(@ColorInt colorInt: Int): Snackbar{
+        this.view.setBackgroundColor(colorInt)
+        return this
     }
 
     suspend fun showAlertDialog(context: Context , title: String , message: String) {
