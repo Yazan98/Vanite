@@ -17,3 +17,11 @@ interface VortexViewImpl<Action : VortexAction, State : VortexState, Reducer : V
     suspend fun getLoadingState(newState: Boolean)
 
 }
+
+interface VortexLoadingView {
+    suspend fun onLoadingChanged(status: Boolean)
+}
+
+interface VortexLoadingStateView<Action : VortexAction, State : VortexState, Reducer : VortexViewModel<State, Action>>: VortexViewImpl<Action, State, Reducer> {
+    suspend fun onLoadingChanged(status: Boolean)
+}

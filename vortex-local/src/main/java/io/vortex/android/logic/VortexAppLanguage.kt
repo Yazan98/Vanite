@@ -21,6 +21,7 @@ object VortexAppLanguage {
         withContext(Dispatchers.IO) {
             val store = VortexLanguageStore(context)
             store.saveNewLanguage(newLanguage)
+            changeApplicationLanguage(context, newLanguage)
         }
     }
 
@@ -28,7 +29,7 @@ object VortexAppLanguage {
         return VortexLanguageStore(context).getCurrentLanguage()
     }
 
-    suspend fun changeApplicationLanguage(context: Context, newLanguage: String) {
+    private suspend fun changeApplicationLanguage(context: Context, newLanguage: String) {
         withContext(Dispatchers.Main) {
             val config = context.resources.configuration;
             val sysLocale: Locale? = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {

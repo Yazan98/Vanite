@@ -40,7 +40,7 @@ class ExampleInstrumentedTest {
         public fun fsf() {
             GlobalScope.launch {
                 println("The State is : Request TO Reducer")
-                controller.reduce(TestAction())
+                controller.execute(TestAction())
             }
         }
 
@@ -60,7 +60,7 @@ class ExampleInstrumentedTest {
 
     class TestReducer : VortexViewModel<TestState, TestAction>() {
 
-        override suspend fun reduce(newAction: TestAction) {
+        override suspend fun execute(newAction: TestAction) {
             withContext(Dispatchers.IO) {
                 println("The State is :At Reduce")
                 acceptNewState(TestState.ValidateValueState("Yazan"))
