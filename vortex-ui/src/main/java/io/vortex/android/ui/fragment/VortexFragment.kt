@@ -72,11 +72,4 @@ abstract class VortexFragment<State : VortexState, Action : VortexAction, Reduce
         }
     }
 
-    override fun onDestroy() {
-        GlobalScope.launch {
-            getController().destroyListeners()
-        }
-        super.onDestroy()
-    }
-
 }

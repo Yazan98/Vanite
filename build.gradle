@@ -33,7 +33,7 @@ allprojects {
 
 ext {
     LibraryGroup = "io.vortex"
-    LibraryVersion = "1.0.12"
+    LibraryVersion = "1.0.13"
 
     PackagingType = "arr"
     LibraryName = "Vortex"
@@ -50,7 +50,7 @@ ext {
 
 
     BintrayUsername = "yt98"
-    BintrayApiKey = "R"
+    BintrayApiKey = ""
 }
 
 subprojects {

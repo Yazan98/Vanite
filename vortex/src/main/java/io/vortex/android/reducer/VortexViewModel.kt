@@ -47,8 +47,7 @@ import kotlinx.coroutines.withContext
  *
  * Each Method At ViewModel executed On Background Thread And The View Handler Should Apply The Result On Main Thread
  */
-abstract class VortexViewModel<State : VortexState, Action : VortexAction> : ViewModel(),
-    VortexRxReducer<State, Action> {
+abstract class VortexViewModel<State : VortexState, Action : VortexAction> : ViewModel(), VortexRxReducer<State, Action> {
 
     /**
      * This State Here is to notify the view that you should start show loading to the user
@@ -179,6 +178,10 @@ abstract class VortexViewModel<State : VortexState, Action : VortexAction> : Vie
 
     fun attachNetworkListener(networkListener: VortexNetworkListener) {
         this.networkLister = networkListener
+    }
+
+    fun getRxRepository(): VortexRxRepository {
+        return repo
     }
 
 
