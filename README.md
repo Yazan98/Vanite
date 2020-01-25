@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/License-Apache%202.0-blue)
 ![](https://img.shields.io/badge/Project%20Status-Beta%20Version-yellow)
 ![](https://img.shields.io/badge/Android%20Status-AndroidX-green)
-![](https://img.shields.io/badge/Download-1.0.12-orange)
+![](https://img.shields.io/badge/Download-1.0.13-orange)
 ![](https://img.shields.io/badge/Language-Kotlin-orange)
 
 # Library Overview
