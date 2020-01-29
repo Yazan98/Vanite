@@ -25,6 +25,8 @@ object VortexAppLanguage {
         }
     }
 
+
+
     suspend fun getCurrentLanguage(context: Context): String {
         return VortexLanguageStore(context).getCurrentLanguage()
     }
