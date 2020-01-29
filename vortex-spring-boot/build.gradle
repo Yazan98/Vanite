@@ -1,0 +1,247 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://maven.google.com" }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:1.4.1"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+        classpath "io.freefair.gradle:github-plugin:4.1.1"
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
+}
+
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://maven.google.com" }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+ext['slf4j.version'] = '1.7.20'
+
+dependencyManagement {
+    imports {
+        mavenBom SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+bootJar {
+    mainClassName = 'io.vortex.spring.boot.base.VortexStarterApp'
+}
+
+bootJar {
+    requiresUnpack '**/jruby-complete-*.jar'
+    manifest {
+        attributes 'Start-Class': 'io.vortex.spring.boot.base.VortexStarterApp'
+    }
+}
+
+bootRun {
+    optimizedLaunch = false
+    sourceResources sourceSets.main
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'com.google.firebase:firebase-admin:6.10.0'
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.2.0.RELEASE'
+
+    implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.0.10'
+    implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.0.10'
+    implementation group: 'io.swagger.core.v3', name: 'swagger-jaxrs2', version: '2.0.10'
+    implementation group: 'io.swagger.core.v3', name: 'swagger-models', version: '2.0.10'
+    implementation group: 'io.swagger.core.v3', name: 'swagger-core', version: '2.0.10'
+    implementation group: 'io.swagger.core.v3', name: 'swagger-integration', version: '2.0.10'
+    implementation group: 'io.swagger.core.v3', name: 'swagger-jaxrs2-servlet-initializer', version: '2.0.10'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.security:spring-security-crypto"
+    implementation "org.springframework.security:spring-security-core:5.1.2.RELEASE"
+    implementation "org.springframework.security:spring-security-config:5.1.2.RELEASE"
+    implementation "io.jsonwebtoken:jjwt:0.6.0"
+    implementation group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.3.7.RELEASE'
+}
+
+
+def artifactID = "vortex-spring-boot"
+def rootDes = "Vortex SpringBoot is the Base Code TO Build Better Backend Projects"
+def repoName = "Vortex-SptingBoot"
+
+version = "1.0.3"
+group = "io.vortex"
+
+ext {
+    LibraryGroup = "io.vortex"
+    LibraryVersion = "1.0.6"
+
+    PackagingType = "arr"
+    LibraryName = "Vortex"
+    GithubUrl = "https://github.com/Vortex-io/Vortex-SpringBoot"
+    GitUrl = "https://github.com/Vortex-io/Vortex-SpringBoot.git"
+    licenseName = "Apache-2.0"
+    licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0"
+    distribution = 'repo'
+    GithubIssuesUrl = "https://github.com/Vortex-io/Vortex-SpringBoot/issues"
+    DeveloperID = "yt98"
+    DeveloperName = "Yazan Tarifi"
+    DeveloperEmail = ""
+    Description = "Architecture To Build SpringBoot Applications"
+
+
+    BintrayUsername = "yt98"
+    BintrayApiKey = ""
+}
+
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging rootProject.ext.PackagingType
+            name rootProject.ext.LibraryName
+            description "${rootDes}"
+            url rootProject.ext.GithubUrl
+
+            artifactId "vortex-spring-boot"
+            groupId rootProject.ext.LibraryGroup
+            version rootProject.ext.LibraryVersion
+
+            licenses {
+
+                license {
+                    name rootProject.ext.licenseName
+                    url rootProject.ext.licenseUrl
+                    distribution rootProject.ext.distribution
+                }
+            }
+
+            scm {
+                connection rootProject.ext.GitUrl
+                url rootProject.ext.GithubUrl
+            }
+
+            developers {
+
+                developer {
+                    id rootProject.ext.DeveloperID
+                    name rootProject.ext.DeveloperName
+                    email rootProject.ext.DeveloperEmail
+                }
+
+            }
+
+        }
+    }
+}
+
+
+bintray {
+
+    user = "${rootProject.ext.BintrayUsername}"
+    key = "${rootProject.ext.BintrayApiKey}"
+
+    configurations = ['archives']
+    publications = ['mavenJava']
+
+    publish = true
+
+    pkg {
+        repo = rootProject.ext.LibraryName
+        name = "${repoName}"
+        desc = "${rootDes}"
+
+        dryRun = false
+        publish = true
+        override = true
+
+        userOrg = user
+        licenses = ["${rootProject.ext.licenseName}"]
+        vcsUrl = rootProject.ext.GitUrl
+        issueTrackerUrl = rootProject.ext.GithubIssuesUrl
+
+        publicDownloadNumbers = true
+
+    }
+}
+
+tasks.register("sourcesJar", Jar) {
+    from sourceSets.main.allJava
+    classifier "sources"
+}
+
+tasks.register("javadocJar", Jar) {
+    from javadoc
+    classifier "javadoc"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            pom {
+                description = "Base COde To BUild SpringBoot Apps"
+                url = "https://github.com/Vortex-io/Vortex-SpringBoot"
+                groupId = "io.vortex"
+                artifactId "${artifactID}"
+                version rootProject.ext.LibraryVersion
+                licenses {
+                    license {
+                        name = "Apache-2.0"
+                        url  = rootProject.ext.licenseUrl
+                        distribution = rootProject.ext.distribution
+                    }
+                }
+                developers {
+                    developer {
+                        id = "Yazan98"
+                        name = "Yazan"
+                        email = "yazantarifi1@hotmail.com"
+                    }
+                }
+                scm {
+                    connection = "scm:git:https://github.com/Vortex-io/Vortex-SpringBoot.git"
+                    developerConnection = "scm:git:https://github.com/Vortex-io/Vortex-SpringBoot.git"
+                    url = "https://github.com/Vortex-io/Vortex-SpringBoot"
+                }
+            }
+        }
+    }
+}
+
+artifacts {
+    archives javadocJar
+}
