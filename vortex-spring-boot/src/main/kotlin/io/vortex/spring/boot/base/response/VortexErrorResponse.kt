@@ -15,6 +15,14 @@ data class VortexErrorResponse(
         val path: String?
 ) : VortexResponse
 
+data class VortexCustomErrorResponse(
+        val code: Int,
+        val message: String?,
+        val status: String = "Failed",
+        val path: String?,
+        val stacktrace: Array<StackTraceElement>
+): VortexResponse
+
 data class VortexError(
         val type: String,
         val details: ErrorDetails,

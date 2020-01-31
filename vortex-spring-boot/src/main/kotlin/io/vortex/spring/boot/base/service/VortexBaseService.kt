@@ -1,6 +1,5 @@
 package io.vortex.spring.boot.base.service
 
-import io.vortex.spring.boot.base.models.database.VortexBaseEntity
 import io.vortex.spring.boot.base.models.database.VortexMysqlEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
@@ -10,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository
  * Time : 9:34 PM
  */
 
-interface VortexBaseService<ID, Entity : VortexBaseEntity<ID>, Repo> {
+interface VortexBaseService<ID, Entity : VortexMysqlEntity, Repo> {
 
     fun create(entity: Entity): Entity
 
@@ -30,5 +29,5 @@ interface VortexBaseService<ID, Entity : VortexBaseEntity<ID>, Repo> {
 
 }
 
-interface VortexMysqlServiceImpl<ID, Entity : VortexMysqlEntity<ID>, Repo : JpaRepository<Entity, ID>>: VortexBaseService<ID , Entity , Repo>
-interface VortexMongoServiceImpl<ID, Entity : VortexBaseEntity<ID>, Repo>
+interface VortexMysqlServiceImpl<ID, Entity : VortexMysqlEntity, Repo : JpaRepository<Entity, ID>>: VortexBaseService<ID , Entity , Repo>
+
