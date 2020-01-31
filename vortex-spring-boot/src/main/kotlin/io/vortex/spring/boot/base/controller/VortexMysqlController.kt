@@ -22,12 +22,12 @@ import javax.validation.Valid
  */
 
 @Component
-open class VortexMysqlController<E : VortexMysqlEntity<ID>, ID, R : JpaRepository<E, ID>, S : VortexMysqlService<ID, E, R>> @Autowired constructor(
+open class VortexMysqlController<E : VortexMysqlEntity, ID, R : JpaRepository<E, ID>, S : VortexMysqlService<ID, E, R>> @Autowired constructor(
         private val controller: S
 ) : VortexMysqlControllerImpl<E, ID, R, S> {
 
     @ResponseBody
-    @RequestMapping(method = [RequestMethod.POST], value = ["/"])
+    @RequestMapping(method = [RequestMethod.POST], value = [""])
     override fun save(@Valid @RequestBody content: E?): ResponseEntity<VortexResponse> {
         if (content == null) {
             throw VortexInvalidValueException("Body Required", BodyErrorDetails(
@@ -45,7 +45,7 @@ open class VortexMysqlController<E : VortexMysqlEntity<ID>, ID, R : JpaRepositor
     }
 
     @ResponseBody
-    @RequestMapping(method = [RequestMethod.PUT], value = ["/"])
+    @RequestMapping(method = [RequestMethod.PUT], value = [""])
     override fun update(@Valid @RequestBody content: E?): ResponseEntity<VortexResponse> {
         if (content == null) {
             throw VortexInvalidValueException("Body Required", BodyErrorDetails(
@@ -111,7 +111,7 @@ open class VortexMysqlController<E : VortexMysqlEntity<ID>, ID, R : JpaRepositor
     }
 
     @ResponseBody
-    @RequestMapping(method = [RequestMethod.GET], value = ["/"])
+    @RequestMapping(method = [RequestMethod.GET], value = ["/all"])
     override fun getAll(): ResponseEntity<VortexResponse> {
         val result = getService().getAllEntities()
         return ResponseEntity.status(HttpStatus.OK).body(VortexListResponse(

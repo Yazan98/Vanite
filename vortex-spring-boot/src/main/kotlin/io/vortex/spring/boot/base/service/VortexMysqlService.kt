@@ -19,8 +19,7 @@ import javax.transaction.Transactional
 
 @Service
 @Transactional
-abstract class VortexMysqlService<ID, Entity : VortexMysqlEntity<ID>, Repo : JpaRepository<Entity, ID>>
-    : VortexMysqlServiceImpl<ID, Entity, Repo> {
+abstract class VortexMysqlService<ID, Entity : VortexMysqlEntity, Repo : JpaRepository<Entity, ID>> : VortexMysqlServiceImpl<ID, Entity, Repo> {
 
     @Throws(VortexNotFoundException::class)
     override fun getAllEntities(): ArrayList<Entity> {
