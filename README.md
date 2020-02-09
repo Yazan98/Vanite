@@ -39,5 +39,16 @@ You Can Find The Bintray Packages At The Following Link
 [https://bintray.com/yt98/Vortex](https://bintray.com/yt98/Vortex)
 {% endhint %}
 
+## Examples
 
+[Api Example](https://github.com/Yazan98/Destiny-Api)
 
+[Android Example](https://github.com/Yazan98/Destiny)
+
+## Generators
+
+The Code Generators, CLI Coming Soon
+
+## Documentation
+
+[Link](https://yazantarifi1.gitbook.io/vortex/)
