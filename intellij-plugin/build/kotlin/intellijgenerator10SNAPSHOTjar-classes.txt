@@ -1,1 +1,0 @@
-D:\Vortex\intellij-plugin\build\classes\kotlin\main\io\vortex\intellij\plugin\actions\AboutPluginAction.class
