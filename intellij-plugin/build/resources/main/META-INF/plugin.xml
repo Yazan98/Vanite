@@ -1,0 +1,23 @@
+<idea-plugin>
+  <version>1.0-SNAPSHOT</version>
+  <change-notes>
+      Add change notes here.&lt;br&gt;
+      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
+  <idea-version since-build="183.4284" until-build="183.*"/>
+  <id>io.vortex.intellij.plugin.intellij-generator</id>
+  <name>Vortex ICG</name>
+  <vendor email="yazantarifi1@hotmail.com" url="http://www.yazan98.io/projects/vortex">Vortex</vendor>
+  <description>
+    &lt;em&gt;Vortex Intellij Code Generator&lt;/em&gt;
+    Build Android Applications With Vortex Implementation
+    Depends on Latest Technologies in Android Platform
+    </description>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij"/>
+  <actions>
+    <group id="Vortex.About" text="About Vortex" description="Generate android applications">
+      <add-to-group group-id="MainMenu" anchor="last"/>
+      <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.AboutPlugin" text="Say Hello :D"/>
+    </group>
+  </actions>
+</idea-plugin>

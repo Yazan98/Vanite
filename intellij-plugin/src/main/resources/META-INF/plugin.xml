@@ -1,15 +1,14 @@
 <idea-plugin>
     <id>io.vortex.intellij.plugin.intellij-generator</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>Vortex ICG</name>
+    <vendor email="yazantarifi1@hotmail.com" url="http://www.yazan98.io/projects/vortex">Vortex</vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    <em>Vortex Intellij Code Generator</em>
+    Build Android Applications With Vortex Implementation
+    Depends on Latest Technologies in Android Platform
     ]]></description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
@@ -17,6 +16,9 @@
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
+        <group id="Vortex.About" text="About Vortex" description="Generate android applications">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.AboutPlugin" text="Say Hello :D"/>
+        </group>
     </actions>
 </idea-plugin>
