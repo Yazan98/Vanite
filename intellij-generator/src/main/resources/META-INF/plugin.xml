@@ -1,0 +1,26 @@
+<idea-plugin>
+  <id>com.yazan98.intellij.theme.thentrom</id>
+  <name>Thentrom</name>
+  <version>1.1</version>
+  <vendor email="yazantarifi1@hotmail.com" url="https://yazan98.github.io">Thentrom</vendor>
+  <description><![CDATA[
+      Thentrom Intellij Theme To Config Orange Theme With Kotlin Language <br>
+      THis plugin is Just For Kotlin Language With Vortex Implementation <br>
+      Version 1.0 <br>
+    ]]></description>
+  <change-notes><![CDATA[
+     First Release From The Kotlin Theme With Vortex-io
+    ]]>
+  </change-notes>
+  <idea-version since-build="173.0"/>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider path="/META-INF/thentrom_theme.theme.json" id="76fa3cce-3d85-455b-a7b6-551f4c8a03d7"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
