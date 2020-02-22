@@ -19,11 +19,7 @@ abstract class VortexBottomDialog<State : VortexState, Action : VortexAction, Re
     BottomSheetDialogFragment() {
 
     private lateinit var mainDialog: BottomSheetBehavior<View>
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(getLayoutRes(), container, false)
     }
 

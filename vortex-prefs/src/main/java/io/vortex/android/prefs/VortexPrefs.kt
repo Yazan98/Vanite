@@ -45,6 +45,31 @@ object VortexPrefs {
         }
     }
 
+    fun putLocalKey(key: String, value: Any) {
+        when (value) {
+            is String -> prefsEditor.putString(key, value)
+            is Long -> prefsEditor.putLong(key, value)
+            is Float -> prefsEditor.putFloat(key, value)
+            is Boolean -> prefsEditor.putBoolean(key, value)
+            is Int -> prefsEditor.putInt(key, value)
+            else -> {
+            }
+        }
+        prefsEditor.commit()
+    }
+
+    fun getLocalKey(key: String, defVal: Any): Any? {
+        when (defVal) {
+            is String -> VortexPrefsConfig.prefs.getString(key, defVal) as Any
+            is Long -> VortexPrefsConfig.prefs.getLong(key, defVal)
+            is Float -> VortexPrefsConfig.prefs.getFloat(key, defVal)
+            is Boolean -> VortexPrefsConfig.prefs.getBoolean(key, defVal)
+            is Int -> VortexPrefsConfig.prefs.getInt(key, defVal)
+            else -> {
+            }
+        }
+    }
+
     suspend fun getAccessToken(): String? {
         return get(VortexPrefsConsts.ACCESS_TOKEN_KEY, "") as String
     }
