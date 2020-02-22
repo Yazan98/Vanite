@@ -1,9 +1,12 @@
 package io.vortex.intellij.plugin.actions.screens
 
 import com.intellij.uiDesigner.core.GridLayoutManager
+import com.jgoodies.forms.layout.FormLayout
 import io.vortex.intellij.plugin.actions.screens.base.BaseScreen
 import io.vortex.intellij.plugin.modules.VortexWindowSize
 import io.vortex.intellij.plugin.modules.content.VortexAboutPluginContent
+import java.awt.Container
+import java.awt.GridLayout
 import javax.swing.BoxLayout
 import javax.swing.JPanel
 import javax.swing.JTextField
@@ -20,7 +23,12 @@ class AboutPlugin : BaseScreen<VortexAboutPluginContent>() {
 
     init {
         screenContainer.let {
-            it.layout = BoxLayout(it, BoxLayout.PAGE_AXIS)
+            it.layout = GridLayout(4,1)
+            screenTitleField.isEditable = false
+            screenDescription.isEditable = false
+            screenListConfigurations.isEditable = false
+            screenLinks.isEditable = false
+
             it.add(screenTitleField)
             it.add(screenDescription)
             it.add(screenListConfigurations)
