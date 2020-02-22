@@ -27,27 +27,20 @@ abstract class VortexFragment<State : VortexState, Action : VortexAction, Reduce
 
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        GlobalScope.launch {
-            subscribeObservers()
-        }
+        getController().getStateHandler().observe(viewLifecycleOwner, Observer {
+            GlobalScope.launch {
+                onStateChanged(it)
+            }
+        })
+
+        getController().getLoadingStateHandler().observe(viewLifecycleOwner, Observer {
+            GlobalScope.launch {
+                getLoadingState(it.getLoadingState())
+            }
+        })
         super.onViewCreated(view, savedInstanceState)
     }
 
-    private suspend fun subscribeObservers() {
-        withContext(Dispatchers.Main) {
-            getController().getStateHandler().observe(viewLifecycleOwner, Observer {
-                GlobalScope.launch {
-                    onStateChanged(it)
-                }
-            })
-
-            getController().getLoadingStateHandler().observe(viewLifecycleOwner, Observer {
-                GlobalScope.launch {
-                    getLoadingState(it.getLoadingState())
-                }
-            })
-        }
-    }
 
     protected suspend fun showError(message: String?, type: VortexErrorType) {
         withContext(Dispatchers.Main) {

@@ -12,7 +12,7 @@ import io.vortex.android.state.VortexState
 
 interface VortexViewImpl<Action : VortexAction, State : VortexState, Reducer : VortexViewModel<State, Action>> {
 
-    suspend fun getController(): Reducer
+    fun getController(): Reducer
 
     suspend fun getLoadingState(newState: Boolean)
 
