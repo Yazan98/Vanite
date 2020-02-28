@@ -6,10 +6,19 @@ package io.vortex.cli
 class App {
     val greeting: String
         get() {
-            return "Hello world."
+            return """
+                ____    ____   ______   .______      .___________. _______ ___   ___ 
+                \   \  /   /  /  __  \  |   _  \     |           ||   ____|\  \ /  / 
+                 \   \/   /  |  |  |  | |  |_)  |    `---|  |----`|  |__    \  V  /  
+                  \      /   |  |  |  | |      /         |  |     |   __|    >   <   
+                   \    /    |  `--'  | |  |\  \----.    |  |     |  |____  /  .  \  
+                    \__/      \______/  | _| `._____|    |__|     |_______|/__/ \__\ 
+                                                                                     
+            """.trimIndent()
         }
 }
 
 fun main(args: Array<String>) {
-    println(App().greeting)
+    VortexPrinter.printCliDetails()
+    VortexPrinter.printTheEnvironments()
 }
