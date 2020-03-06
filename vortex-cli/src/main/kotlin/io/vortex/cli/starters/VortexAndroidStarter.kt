@@ -5,6 +5,7 @@ import io.vortex.cli.generators.gradle.*
 import io.vortex.cli.generators.gradle.modules.AppModuleFileGenerator
 import io.vortex.cli.generators.gradle.modules.DataModuleFileGenerator
 import io.vortex.cli.generators.gradle.modules.DomainModuleFileGenerator
+import io.vortex.cli.generators.manifest.MainfestAppModuleGenerator
 import io.vortex.cli.models.VortexAndroidApp
 import java.util.*
 
@@ -118,6 +119,19 @@ object VortexAndroidStarter : StarterImpl {
         AppModuleFileGenerator().execute()
         DataModuleFileGenerator().execute()
         DomainModuleFileGenerator().execute()
+
+        VortexFileGenerator.generateFiles(arrayListOf(
+                "app/src",
+                "data/src",
+                "domain/src",
+                "gradle/src",
+                "app/src/main",
+                "data/src/main",
+                "domain/src/main",
+                "gradle/src/main"
+        ))
+
+        MainfestAppModuleGenerator(androidApplicationDetails.packageName).execute()
     }
 
     override fun startExampleCodeGenerator() {
