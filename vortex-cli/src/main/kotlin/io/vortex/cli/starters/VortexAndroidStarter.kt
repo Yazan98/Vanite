@@ -1,5 +1,6 @@
 package io.vortex.cli.starters
 
+import io.vortex.cli.generators.gradle.GradleAppInfoFileGenerator
 import io.vortex.cli.generators.gradle.GradleLibrariesFileGenerator
 import io.vortex.cli.models.VortexAndroidApp
 import java.util.*
@@ -96,6 +97,7 @@ object VortexAndroidStarter : StarterImpl {
 
     override fun startConfigurationFilesGenerator() {
         GradleLibrariesFileGenerator().execute()
+        GradleAppInfoFileGenerator(androidApplicationDetails.packageName).execute()
     }
 
     override fun startGradleConfigurationGenerator() {
