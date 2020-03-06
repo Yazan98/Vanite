@@ -50,4 +50,28 @@ object VortexPrinter {
         }
     }
 
+    fun getXmlComment(): String {
+        return """
+            
+            # This File Generated With Vortex CLI
+            # Vortex is an Base Code To Build Android Applications With Latest Technologies
+            # Vortex Version : 1.0.0
+            # Vortex Link : {https://github.com/Yazan98/Vortex}
+            
+        """.trimIndent()
+    }
+
+    fun getNormalComment(): String {
+        return """
+            
+            /**
+              * This File Generated With Vortex CLI
+              * Vortex is an Base Code To Build Android Applications With Latest Technologies
+              * Vortex Version : 1.0.0
+              * Vortex Link : {https://github.com/Yazan98/Vortex}
+              **/
+              
+        """.trimIndent()
+    }
+
 }
