@@ -1,6 +1,10 @@
 package io.vortex.cli.starters
 
+import io.vortex.cli.generators.VortexFileGenerator
 import io.vortex.cli.generators.gradle.*
+import io.vortex.cli.generators.gradle.modules.AppModuleFileGenerator
+import io.vortex.cli.generators.gradle.modules.DataModuleFileGenerator
+import io.vortex.cli.generators.gradle.modules.DomainModuleFileGenerator
 import io.vortex.cli.models.VortexAndroidApp
 import java.util.*
 
@@ -68,6 +72,7 @@ object VortexAndroidStarter : StarterImpl {
         """.trimIndent())
 
         startConfigurationFilesGenerator()
+        startGradleConfigurationGenerator()
     }
 
     private fun isCodeEnabled(): String {
@@ -98,12 +103,21 @@ object VortexAndroidStarter : StarterImpl {
         GradleLibrariesFileGenerator().execute()
         GradlePropsFileGenerator().execute()
         GradleRootFileGenerator().execute()
-        SettingsGradleFileGenerator().execute()
+        SettingsGradleFileGenerator(androidApplicationDetails.name).execute()
         GradleAppInfoFileGenerator(androidApplicationDetails.packageName).execute()
     }
 
     override fun startGradleConfigurationGenerator() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        VortexFileGenerator.generateFiles(arrayListOf(
+                "app",
+                "data",
+                "domain",
+                "gradle"
+        ))
+
+        AppModuleFileGenerator().execute()
+        DataModuleFileGenerator().execute()
+        DomainModuleFileGenerator().execute()
     }
 
     override fun startExampleCodeGenerator() {
