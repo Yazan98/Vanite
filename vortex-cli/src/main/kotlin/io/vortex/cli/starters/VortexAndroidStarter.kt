@@ -22,21 +22,24 @@ object VortexAndroidStarter : StarterImpl {
         """.trimIndent())
         println()
         print("What is The Project Name (Default is Vortex App) ? ")
-        when (val appName = questionInput.next().trim()) {
+        val appName = questionInput.nextLine()
+        when (appName) {
             "" -> this.androidApplicationDetails.name = "Vortex App"
             else -> this.androidApplicationDetails.name = appName
         }
 
         println()
         print("What is The Package Name (Default is io.vortex.app) ? ")
-        when (val packageName = questionInput.next().trim()) {
+        val packageName = questionInput.nextLine()
+        when (packageName) {
             "" -> this.androidApplicationDetails.name = "io.vortex.app"
             else -> this.androidApplicationDetails.packageName = packageName
         }
 
         println()
         print("Do you Need The Multi Modular Application (Default is Enabled)  A.N [y,n] ? ")
-        when (questionInput.next().trim()) {
+        val multiModular = questionInput.nextLine()
+        when (multiModular) {
             "" -> this.androidApplicationDetails.isMultiModularApp = true
             "y" -> this.androidApplicationDetails.isMultiModularApp = true
             "n" -> this.androidApplicationDetails.isMultiModularApp = false
@@ -44,18 +47,11 @@ object VortexAndroidStarter : StarterImpl {
 
         println()
         print("Do you want To Publish The Application On Google Play (Default is Yes) A.N [y,n] ? ")
-        when (questionInput.next().trim()) {
+        val googlePlayConfig = questionInput.nextLine()
+        when (googlePlayConfig) {
             "" -> this.androidApplicationDetails.isGooglePlayPublishEnabled = true
             "y" -> this.androidApplicationDetails.isGooglePlayPublishEnabled = true
             "n" -> this.androidApplicationDetails.isGooglePlayPublishEnabled = false
-        }
-
-        println()
-        print("Do you want To Generate Sample Code (Default is Yes) A.N [y,n] ? ")
-        when (questionInput.next().trim()) {
-            "" -> this.androidApplicationDetails.isCodeSampleEnabled = true
-            "y" -> this.androidApplicationDetails.isCodeSampleEnabled = true
-            "n" -> this.androidApplicationDetails.isCodeSampleEnabled = false
         }
 
         println()
