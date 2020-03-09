@@ -10,9 +10,7 @@ import io.reactivex.schedulers.Schedulers
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexNetworkListener
 import io.vortex.android.VortexRxReducer
-import io.vortex.android.errors.VortexException
 import io.vortex.android.rx.VortexRxRepository
-import io.vortex.android.state.VortexErrorState
 import io.vortex.android.state.VortexLoadingState
 import io.vortex.android.state.VortexState
 import kotlinx.coroutines.Dispatchers
@@ -47,7 +45,8 @@ import kotlinx.coroutines.withContext
  *
  * Each Method At ViewModel executed On Background Thread And The View Handler Should Apply The Result On Main Thread
  */
-abstract class VortexViewModel<State : VortexState, Action : VortexAction> : ViewModel(), VortexRxReducer<State, Action> {
+abstract class VortexViewModel<State : VortexState, Action : VortexAction> : ViewModel(),
+    VortexRxReducer<State, Action> {
 
     /**
      * This State Here is to notify the view that you should start show loading to the user
@@ -196,17 +195,14 @@ abstract class VortexViewModel<State : VortexState, Action : VortexAction> : Vie
         }
     }
 
-    suspend fun destroyListeners() {
-        withContext(Dispatchers.IO) {
-            repo.clearRepository()
-        }
+    private fun destroyListeners() {
+        repo.clearRepository()
+        networkLister = null
     }
 
     override fun onCleared() {
+        destroyListeners()
         super.onCleared()
-        GlobalScope.launch {
-            destroyViewModel()
-        }
     }
 
 }

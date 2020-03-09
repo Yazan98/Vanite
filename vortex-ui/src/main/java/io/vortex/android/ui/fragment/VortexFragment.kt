@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.CallSuper
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexRxStore
 import io.vortex.android.reducer.VortexViewModel
@@ -28,13 +29,13 @@ abstract class VortexFragment<State : VortexState, Action : VortexAction, Reduce
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         getController().getStateHandler().observe(viewLifecycleOwner, Observer {
-            GlobalScope.launch {
+            lifecycleScope.launch {
                 onStateChanged(it)
             }
         })
 
         getController().getLoadingStateHandler().observe(viewLifecycleOwner, Observer {
-            GlobalScope.launch {
+            lifecycleScope.launch {
                 getLoadingState(it.getLoadingState())
             }
         })

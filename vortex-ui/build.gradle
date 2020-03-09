@@ -1,6 +1,7 @@
 dependencies {
     implementation project(':vortex-local')
     implementation 'com.google.android.material:material:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha01"
 }
 
 

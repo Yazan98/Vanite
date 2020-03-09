@@ -59,7 +59,7 @@ object VortexPrefs {
     }
 
     fun getLocalKey(key: String, defVal: Any): Any? {
-        when (defVal) {
+        return when (defVal) {
             is String -> VortexPrefsConfig.prefs.getString(key, defVal) as Any
             is Long -> VortexPrefsConfig.prefs.getLong(key, defVal)
             is Float -> VortexPrefsConfig.prefs.getFloat(key, defVal)
