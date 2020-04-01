@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/vortex-data" />
             <option value="$PROJECT_DIR$/vortex-firebase" />
             <option value="$PROJECT_DIR$/vortex-local" />
+            <option value="$PROJECT_DIR$/vortex-log" />
             <option value="$PROJECT_DIR$/vortex-permissions" />
             <option value="$PROJECT_DIR$/vortex-prefs" />
             <option value="$PROJECT_DIR$/vortex-ui" />
@@ -21,6 +22,7 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
