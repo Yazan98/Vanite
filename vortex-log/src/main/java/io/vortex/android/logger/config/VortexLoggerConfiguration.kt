@@ -7,10 +7,8 @@ import kotlinx.coroutines.withContext
 object VortexLoggerConfiguration {
 
     private lateinit var loggerConfiguration: VortexBaseOptionsInitializer
-    suspend fun init(options : VortexBaseOptionsInitializer) {
-        withContext(Dispatchers.IO) {
-            this@VortexLoggerConfiguration.loggerConfiguration = options
-        }
+    fun init(options : VortexBaseOptionsInitializer) {
+        loggerConfiguration = options
     }
 
     @Throws(VortexLoggerInitException::class)
