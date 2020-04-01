@@ -33,16 +33,16 @@ allprojects {
 
 ext {
     LibraryGroup = "io.vortex"
-    LibraryVersion = "1.0.14"
+    LibraryVersion = "2.0.0"
 
     PackagingType = "arr"
     LibraryName = "Vortex"
-    GithubUrl = "https://github.com/Vortex-io/Vortex"
-    GitUrl = "https://github.com/Vortex-io/Vortex.git"
+    GithubUrl = "https://github.com/Yazan98/Vortex"
+    GitUrl = "https://github.com/Yazan98/Vortex.git"
     licenseName = "Apache-2.0"
     licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0"
     distribution = 'repo'
-    GithubIssuesUrl = "https://github.com/Vortex-io/Vortex/issues"
+    GithubIssuesUrl = "https://github.com/Yazan98/Vortex/issues"
     DeveloperID = "yt98"
     DeveloperName = "Yazan Tarifi"
     DeveloperEmail = ""
