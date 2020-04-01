@@ -1,4 +1,4 @@
-package io.vortex.android.ui
+package io.vortex.android.ui.impl
 
 import android.content.Context
 

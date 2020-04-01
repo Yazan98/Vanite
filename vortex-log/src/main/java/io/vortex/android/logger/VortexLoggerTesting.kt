@@ -5,9 +5,6 @@ import io.vortex.android.logger.config.VortexLoggerOptions
 import io.vortex.android.logger.keys.VortexLoggerLevel
 import io.vortex.android.logger.keys.VortexLoggerMode
 import io.vortex.android.logger.keys.VortexLoggingStatus
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class VortexLoggerTesting {
 
@@ -22,7 +19,7 @@ class VortexLoggerTesting {
                 postMode = VortexLoggerMode.EQUAL
             )
         )
-        
+
         /**
          * Print pattern
          * ---------------------------------------- 100 Dash

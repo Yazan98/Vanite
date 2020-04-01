@@ -16,11 +16,15 @@ class VortexRxRepository {
     }
 
     fun addRequest(request: Disposable) {
-        this.repo.add(request)
+        this.repo += request
     }
 
     fun clearRepository() {
         this.repo.clear()
     }
 
+}
+
+private operator fun CompositeDisposable.plusAssign(request: Disposable) {
+    add(request)
 }

@@ -8,9 +8,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.snackbar.Snackbar
+import io.vortex.android.ui.impl.MessageDelegationImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

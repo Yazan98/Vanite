@@ -58,13 +58,13 @@ class VortexNotificationController {
         }
     }
 
-    suspend fun disableNotificationChannel(context: Context) {
+    suspend fun disableNotificationChannel(context: Context, id: String) {
         withContext(Dispatchers.IO) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val notificationManager =
                     context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
                 val notificationChannel =
-                    notificationManager?.getNotificationChannel("your_channel_id")
+                    notificationManager?.getNotificationChannel(id)
                 val importance = notificationChannel?.importance
                 if (importance != null) {
                     if (importance < NotificationManager.IMPORTANCE_HIGH && importance > 0) {
