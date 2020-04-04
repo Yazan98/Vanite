@@ -88,4 +88,23 @@ class VortexThrededFragmentManager : VortexThrededFragmentManagerImpl {
         }
     }
 
+    override suspend fun replaceWithCustomAnimation(
+        context: FragmentActivity?,
+        fragment: Fragment,
+        container: Int,
+        start: Int,
+        end: Int
+    ) {
+        withContext(Dispatchers.Main) {
+            context?.let {
+                it.supportFragmentManager.also {
+                    it.beginTransaction()
+                        .setCustomAnimations(start, end)
+                        .add(container, fragment)
+                        .commitAllowingStateLoss()
+                }
+            }
+        }
+    }
+
 }
