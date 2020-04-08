@@ -83,6 +83,27 @@ dependencies {
 }
 ```
 
+# Vortex Gradle Plugin
+
+```
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.io.vortex.gradle.plugin.dependencies:vortex-dependencies-plugin:1.0.0"
+  }
+}
+```
+
+3. Each Module Should Implement The Plugin 
+
+```
+apply plugin: "io.vortex.gradle.plugin.dependencies"
+```
+
 # License
 
 Copyright (C) 2019 Vortex is An Open Source Library (Licensed under the Apache License, Version 2.0)

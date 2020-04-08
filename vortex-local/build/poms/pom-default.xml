@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.vortex</groupId>
+  <artifactId>vortex-local-ktx</artifactId>
+  <version>2.0.0</version>
+  <packaging>aar</packaging>
+  <name>Vortex</name>
+  <description>Vortex Core is the Base Code Layer</description>
+  <url>https://github.com/Yazan98/Vortex</url>
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>yt98</id>
+      <name>Yazan Tarifi</name>
+      <email></email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>https://github.com/Yazan98/Vortex.git</connection>
+    <url>https://github.com/Yazan98/Vortex</url>
+  </scm>
+</project>
