@@ -69,4 +69,21 @@ open class VortexFragmentManager : VortexFragmentManagerImpl {
         }
     }
 
+    override fun replaceWithCustomAnimation(
+        context: FragmentActivity?,
+        fragment: Fragment,
+        container: Int,
+        start: Int,
+        end: Int
+    ) {
+        context?.let {
+            it.supportFragmentManager.also {
+                it.beginTransaction()
+                    .setCustomAnimations(start, end)
+                    .add(container, fragment)
+                    .commitAllowingStateLoss()
+            }
+        }
+    }
+
 }

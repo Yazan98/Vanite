@@ -1,5 +1,6 @@
 package io.vortex.android.ui.impl
 
+import androidx.annotation.AnimRes
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -18,6 +19,8 @@ interface VortexFragmentManagerImpl {
 
     fun replaceWithFadeAnimation(context: FragmentActivity?, fragment: Fragment,  @IdRes container: Int)
 
+    fun replaceWithCustomAnimation(context: FragmentActivity?, fragment: Fragment,  @IdRes container: Int, @AnimRes start: Int, @AnimRes end: Int)
+
 }
 
 interface VortexThrededFragmentManagerImpl {
@@ -33,5 +36,7 @@ interface VortexThrededFragmentManagerImpl {
     suspend fun replaceStateLessCommit(context: FragmentActivity?, fragment: Fragment,  @IdRes container: Int)
 
     suspend fun replaceWithFadeAnimation(context: FragmentActivity?, fragment: Fragment,  @IdRes container: Int)
+
+    suspend fun replaceWithCustomAnimation(context: FragmentActivity?, fragment: Fragment,  @IdRes container: Int, @AnimRes start: Int, @AnimRes end: Int)
 
 }
