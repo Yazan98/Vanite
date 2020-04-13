@@ -32,7 +32,7 @@ object VortexLog {
     @PublishedApi internal var defaultLevel: VortexLoggerLevel = VortexLoggerConfiguration.getLoggingConfiguration().getDefaultLevel()
     @PublishedApi internal var repeatTime: Int = 50
 
-    inline fun print(message: String, body: () -> Unit) {
+    inline fun print(message: String, body: () -> Unit = {}) {
         if (VortexLoggerConfiguration.getLoggingConfiguration().getLoggingStatus() == VortexLoggingStatus.ENABLED) {
             body()
             this printPreMode defaultPreMode
@@ -42,7 +42,7 @@ object VortexLog {
         }
     }
 
-    inline fun printLevel(message: String, body: () -> Unit) {
+    inline fun printLevel(message: String, body: () -> Unit = {}) {
         if (VortexLoggerConfiguration.getLoggingConfiguration().getLoggingStatus() == VortexLoggingStatus.ENABLED) {
             body()
             this printPreMode defaultPreMode

@@ -21,31 +21,4 @@ abstract class VortexRepository<Api> : VortexRepositoryImpl<Api, Retrofit> {
         return serviceProvider.create(service)
     }
 
-    override suspend fun getBasicAuthConfiguration(details: VortexAuth): String {
-        return Credentials.basic(details.username, details.password)
-    }
-
-    override fun getServiceProvider(type: VortexServiceProviderType): Retrofit {
-        return when (type) {
-            VortexServiceProviderType.BASIC -> VortexRetrofitProvider.getBasicRetrofit(
-                getBaseUrl()
-            )
-            VortexServiceProviderType.BASIC_REACTIVE -> VortexRetrofitProvider.getReactiveRetrofit(
-                getBaseUrl()
-            )
-            VortexServiceProviderType.REACTIVE_FULL_LOGGER -> VortexRetrofitProvider.getLoggerReactiveRetrofit(
-                getBaseUrl()
-            )
-            VortexServiceProviderType.REACTIVE_FULL -> VortexRetrofitProvider.getReactiveFullRetrofit(
-                getBaseUrl(),
-                getRequestDetails()
-            )
-
-            VortexServiceProviderType.VORTEX_SETTINGS -> VortexRetrofitProvider.getVortexSettingsClient(
-                getBaseUrl(),
-                getRequestDetails()
-            )
-        }
-    }
-
 }

@@ -20,10 +20,4 @@ interface VortexRepositoryImpl<Api , Provider> {
 
     fun createService(service: Class<Api>): Api
 
-    suspend fun getBasicAuthConfiguration(details: VortexAuth): String
-
-    fun getServiceProvider(type: VortexServiceProviderType): Provider
-
-    fun getRequestDetails(): VortexRequestDetailsProvider
-
 }
