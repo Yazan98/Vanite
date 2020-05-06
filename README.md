@@ -19,7 +19,7 @@ The First One For Vortex Dependcies With Multi Modular Application To Apply The 
 # Multi Modular Application
 Vortex has Main 3 Modules you should include in your app to install Vortex
 
-> Not Vortex Don't Support Single Module Application Gradle Plugins Don't Working With Single Module
+> Note: Vortex Don't Support Single Module Application Gradle Plugins Don't Working With Single Module
 
 Each Application Should Implemented With 3 Layers (ui, data, domain)
 1. UI -> User Interface it includes (Activities, Fragments, Notifications, Dialogs, Application Configuration) -- Optional Dagger Application Scope
