@@ -82,8 +82,6 @@ dependencies {
         implementation "io.vortex:vortex-logger-ktx:${VortexVersion}"
 }
 ```
-
-<<<<<<< HEAD
 # Vortex Gradle Plugin
 
 ```
@@ -104,10 +102,8 @@ buildscript {
 ```
 apply plugin: "io.vortex.gradle.plugin.dependencies"
 ```
-=======
 # Vortex Decumenetation
 Coming Soon Vortex still Under Development
->>>>>>> 96fc8d4ea3a003708c41f6ec670e7fb21ae35a63
 
 # License
 
