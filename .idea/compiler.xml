@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="Vortex.vortex" target="1.7" />
-      <module name="Vortex.vortex-data" target="1.7" />
-      <module name="Vortex.vortex-firebase" target="1.7" />
-      <module name="Vortex.vortex-local" target="1.7" />
-      <module name="Vortex.vortex-log" target="1.7" />
-      <module name="Vortex.vortex-permissions" target="1.7" />
-      <module name="Vortex.vortex-prefs" target="1.7" />
-      <module name="Vortex.vortex-ui" target="1.7" />
-      <module name="Vortex.vortex-utils" target="1.7" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>
