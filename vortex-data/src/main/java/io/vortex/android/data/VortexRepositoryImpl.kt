@@ -1,9 +1,6 @@
 package io.vortex.android.data
 
-import io.vortex.android.models.VortexAuth
-import io.vortex.android.models.VortexRequestDetails
 import io.vortex.android.models.VortexRequestDetailsProvider
-import io.vortex.android.models.VortexServiceProviderType
 import io.vortex.android.rx.VortexRequestProvider
 
 /**

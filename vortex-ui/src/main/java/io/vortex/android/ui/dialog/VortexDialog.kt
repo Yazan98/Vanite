@@ -8,7 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import io.vortex.android.VortexAction
-import io.vortex.android.reducer.VortexViewModel
+import io.vortex.android.base.VortexViewModel
 import io.vortex.android.state.VortexState
 
 abstract class VortexDialog<State: VortexState, Action: VortexAction, Reducer: VortexViewModel<State, Action>>: DialogFragment() {

@@ -61,7 +61,7 @@ object LocationUtils {
      * @param context The [Context].
      */
     fun requestingLocationUpdates(context: Context): Boolean {
-        return PreferenceManager.getDefaultSharedPreferences(context)
+        return context.getSharedPreferences("Temp", Context.MODE_PRIVATE)
             .getBoolean(KEY_REQUESTING_LOCATION_UPDATES, false)
     }
 
@@ -70,7 +70,7 @@ object LocationUtils {
      * @param requestingLocationUpdates The location updates state.
      */
     fun setRequestingLocationUpdates(context: Context, requestingLocationUpdates: Boolean) {
-        PreferenceManager.getDefaultSharedPreferences(context)
+        context.getSharedPreferences("Temp", Context.MODE_PRIVATE)
             .edit()
             .putBoolean(KEY_REQUESTING_LOCATION_UPDATES, requestingLocationUpdates)
             .apply()

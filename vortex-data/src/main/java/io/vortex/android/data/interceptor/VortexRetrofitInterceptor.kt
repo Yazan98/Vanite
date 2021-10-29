@@ -11,7 +11,7 @@ class VortexRetrofitInterceptor : Interceptor {
     companion object {
         const val AUTH = "Authorization"
         const val LANGUAGE = "Accept-Language"
-        const val REQUEST_TAG = "Reflex Request"
+        const val REQUEST_TAG = "Vortex Request"
     }
 
     @Throws(IOException::class)

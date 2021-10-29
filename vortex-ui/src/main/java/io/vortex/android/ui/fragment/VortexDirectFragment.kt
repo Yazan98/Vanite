@@ -3,7 +3,7 @@ package io.vortex.android.ui.fragment
 import androidx.annotation.LayoutRes
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexRxStore
-import io.vortex.android.reducer.VortexViewModel
+import io.vortex.android.base.VortexViewModel
 import io.vortex.android.state.VortexState
 import io.vortex.android.ui.VortexViewImpl
 

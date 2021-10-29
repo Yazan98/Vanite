@@ -1,4 +1,4 @@
-package io.vortex.android.reducer
+package io.vortex.android.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData

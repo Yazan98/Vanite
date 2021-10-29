@@ -6,7 +6,7 @@ import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import io.vortex.android.reducer.VortexIndirectViewModel
+import io.vortex.android.base.VortexIndirectViewModel
 import kotlinx.coroutines.launch
 
 abstract class VortexIndirectStateFragment<State, VM : VortexIndirectViewModel<State>>(@LayoutRes private val layoutId: Int) :

@@ -7,12 +7,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexRxStore
-import io.vortex.android.reducer.VortexViewModel
+import io.vortex.android.base.VortexViewModel
 import io.vortex.android.state.VortexState
 import io.vortex.android.ui.VortexErrorType
 import io.vortex.android.ui.VortexViewImpl
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 

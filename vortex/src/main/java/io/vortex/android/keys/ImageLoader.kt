@@ -7,5 +7,5 @@ package io.vortex.android.keys
  */
 
 enum class ImageLoader {
-    PICASSO , FRESCO
+    PICASSO , FRESCO, GLIDE
 }

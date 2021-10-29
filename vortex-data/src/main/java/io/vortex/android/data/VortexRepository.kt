@@ -1,7 +1,6 @@
 package io.vortex.android.data
 
 import io.vortex.android.models.VortexAuth
-import io.vortex.android.models.VortexServiceProviderType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.Credentials

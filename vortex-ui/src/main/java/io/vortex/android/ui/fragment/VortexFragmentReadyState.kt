@@ -7,7 +7,7 @@ import androidx.annotation.LayoutRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import io.vortex.android.keys.VortexViewModelState
-import io.vortex.android.reducer.VortexViewModelReadyState
+import io.vortex.android.base.VortexViewModelReadyState
 import kotlinx.coroutines.launch
 
 abstract class VortexFragmentReadyState<VM: VortexViewModelReadyState>(@LayoutRes private val layoutRes: Int) : VortexBaseFragment() {

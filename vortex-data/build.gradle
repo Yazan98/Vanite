@@ -4,7 +4,7 @@ dependencies { configuration ->
 
 private void addNetworkLibraries(configuration) {
     configuration.implementation("com.squareup.retrofit2:retrofit:${rootProject.ext.RetrofitV}")
-    configuration.implementation("com.squareup.okhttp3:logging-interceptor:${rootProject.ext.RetrofitV}")
+    configuration.implementation("com.squareup.okhttp3:logging-interceptor:4.9.2")
     configuration.implementation("com.squareup.retrofit2:converter-gson:${rootProject.ext.RetrofitGsonV}")
     configuration.implementation("com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.RetrofitRxJavaV}")
 }

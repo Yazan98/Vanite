@@ -1,7 +1,7 @@
 package io.vortex.android.ui
 
 import io.vortex.android.VortexAction
-import io.vortex.android.reducer.VortexViewModel
+import io.vortex.android.base.VortexViewModel
 import io.vortex.android.state.VortexState
 
 /**

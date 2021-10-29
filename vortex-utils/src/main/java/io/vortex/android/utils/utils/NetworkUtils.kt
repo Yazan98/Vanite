@@ -11,6 +11,7 @@ import android.net.NetworkInfo
  * Time : 1:54 AM
  */
 
+@Deprecated("Network Info Deprecated")
 object NetworkUtils {
 
     private var connectivityManager: ConnectivityManager? = null

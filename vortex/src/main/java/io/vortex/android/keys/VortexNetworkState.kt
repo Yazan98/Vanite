@@ -6,6 +6,7 @@ package io.vortex.android.keys
  * Time : 3:45 AM
  */
 
+@Deprecated("Network State is Not Handled in ViewModels, Should be in Another Layer")
 enum class VortexNetworkState {
     CONNECTED , DISCONNECTED
 }

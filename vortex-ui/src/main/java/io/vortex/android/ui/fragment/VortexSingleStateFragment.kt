@@ -6,7 +6,7 @@ import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import io.vortex.android.reducer.VortexSingleStateViewModel
+import io.vortex.android.base.VortexSingleStateViewModel
 import io.vortex.android.state.VortexState
 import kotlinx.coroutines.launch
 

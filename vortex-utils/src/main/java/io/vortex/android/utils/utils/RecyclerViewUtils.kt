@@ -15,19 +15,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 object RecyclerViewUtils {
 
-    fun highCacheRecyclerView(recyclerView: RecyclerView, count: Int, isItemsSameSize: Boolean) {
-        recyclerView.setHasFixedSize(isItemsSameSize)
-        recyclerView.setItemViewCacheSize(count)
-        recyclerView.isDrawingCacheEnabled = true
-        recyclerView.drawingCacheQuality = View.DRAWING_CACHE_QUALITY_HIGH
-    }
-
+    @Deprecated("Not Used in RecyclerViews Anymore", ReplaceWith("Unit"))
+    fun highCacheRecyclerView(recyclerView: RecyclerView, count: Int, isItemsSameSize: Boolean) = Unit
     fun withLinerLayout(recyclerView: RecyclerView?, context: Context?) {
-        recyclerView!!.layoutManager = LinearLayoutManager(context)
+        recyclerView?.layoutManager = LinearLayoutManager(context)
     }
 
-    fun withGridLayout(recyclerView: RecyclerView, context: Context, rowItems: Int) {
-        recyclerView.layoutManager = GridLayoutManager(context, rowItems)
+    fun withGridLayout(recyclerView: RecyclerView?, context: Context, rowItems: Int) {
+        recyclerView?.layoutManager = GridLayoutManager(context, rowItems)
     }
 
 }

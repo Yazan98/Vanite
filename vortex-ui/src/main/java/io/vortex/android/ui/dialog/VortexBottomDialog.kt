@@ -11,7 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.vortex.android.VortexAction
-import io.vortex.android.reducer.VortexViewModel
+import io.vortex.android.base.VortexViewModel
 import io.vortex.android.state.VortexState
 import io.vortex.android.ui.R
 

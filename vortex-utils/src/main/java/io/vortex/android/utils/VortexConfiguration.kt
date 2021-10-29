@@ -4,19 +4,11 @@ import android.app.Application
 import android.os.Handler
 import android.os.StrictMode
 import androidx.appcompat.app.AppCompatDelegate
-import com.crashlytics.android.Crashlytics
-import com.crashlytics.android.answers.Answers
-import com.crashlytics.android.core.CrashlyticsCore
 import com.facebook.drawee.backends.pipeline.Fresco
-import com.google.firebase.FirebaseApp
-import com.google.firebase.analytics.FirebaseAnalytics
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
-import io.fabric.sdk.android.Fabric
 import io.vortex.android.keys.ImageLoader
 import io.vortex.android.keys.LoggerType
-import io.vortex.android.details.FirebaseAppException
-import io.vortex.android.details.VortexFirebaseDetailsException
 import io.vortex.android.errors.VortexFirebaseConfigurationException
 import io.vortex.android.models.VortexPrefsDetails
 import io.vortex.android.permissions.VortexPermissionsConfiguration
@@ -26,7 +18,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import leakcanary.LeakSentry
 import timber.log.Timber
-import java.io.File
 
 /**
  * Created By : Yazan Tarifi
@@ -96,25 +87,9 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
+    @Deprecated("Not Used Anymore, Declare Firebase from Your App Class", ReplaceWith("ManualDeclaration"))
     @Throws(VortexFirebaseConfigurationException::class)
     override suspend fun registerFirebaseConfiguration(moduleName: String): VortexConfiguration {
-        withContext(Dispatchers.IO) {
-            val firebaseConfigurationFile = File("$moduleName/google-services.json")
-            if (firebaseConfigurationFile.exists()) {
-                FirebaseApp.initializeApp(vortexApplication)
-                FirebaseAnalytics.getInstance(vortexApplication)
-            } else {
-                throw VortexFirebaseConfigurationException(
-                    VortexFirebaseDetailsException<FirebaseAppException>(
-                        "Firebase (Google Play Services Not Exist",
-                        FirebaseAppException(
-                            "$moduleName/google-services.json is Not Exist At Project Files",
-                            "This Exception Happend When The Google Play Services File Not Attached At Vortex App"
-                        )
-                    )
-                )
-            }
-        }
         return this
     }
 
@@ -154,19 +129,8 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
+    @Deprecated("Moved to Firebase Crashlytics", ReplaceWith("FirebaseCrashlytics"))
     override suspend fun registerFabric(): VortexConfiguration {
-        withContext(Dispatchers.IO) {
-            Fabric.with(
-                vortexApplication, Crashlytics.Builder()
-                    .core(
-                        CrashlyticsCore.Builder()
-                            .disabled(applicationStatus)
-                            .build()
-                    )
-                    .answers(Answers())
-                    .build()
-            )
-        }
         return this
     }
 
