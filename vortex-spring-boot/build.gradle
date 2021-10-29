@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
         maven { url "https://maven.google.com" }
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
-        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://details.gradle.org/m2/" }
     }
 
     dependencies {
@@ -36,7 +36,7 @@ repositories {
     mavenCentral()
     maven { url "https://maven.google.com" }
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
-    maven { url "https://plugins.gradle.org/m2/" }
+    maven { url "https://details.gradle.org/m2/" }
 }
 
 ext['slf4j.version'] = '1.7.20'

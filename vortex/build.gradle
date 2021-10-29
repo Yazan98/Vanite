@@ -1,10 +1,22 @@
-dependencies {
+apply plugin: "${rootProject.ext.KotlinKaptPlugin}"
 
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
+/**
+ * Core Module Dependencies Required
+ */
+dependencies { configuration ->
+    addRxJavaLibraries(configuration)
+    applyLifecycleLibraries(configuration)
+}
 
-    implementation group: 'androidx.lifecycle', name: 'lifecycle-viewmodel', version: '2.2.0-rc03'
-    implementation group: 'androidx.lifecycle', name: 'lifecycle-extensions', version: '2.2.0-rc03'
-    implementation group: 'androidx.lifecycle', name: 'lifecycle-livedata', version: '2.2.0-rc03'
-    
+private void applyLifecycleLibraries(configuration) {
+    configuration.implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-viewmodel-compose:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:${rootProject.ext.LifecycleV}")
+    configuration.kapt("androidx.lifecycle:lifecycle-compiler:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-common-java8:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-service:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-process:${rootProject.ext.LifecycleV}")
+    configuration.implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:${rootProject.ext.LifecycleV}")
 }

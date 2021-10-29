@@ -1,0 +1,28 @@
+ext {
+
+    // Plugins
+    LibraryPlugin = "com.android.library"
+    KotlinAndroidPlugin = "kotlin-android"
+    KotlinAndroidExtPlugin = "kotlin-android-extensions"
+    KotlinKaptPlugin = "kotlin-kapt"
+
+    // Versions
+    RxJavaV = "2.2.12"
+    RxAndroidV = "2.1.1"
+    CoroutinesCoreV = "1.4.3"
+    CoroutinesAndroidV = "1.4.3"
+    AppCompatV = "1.3.1"
+    AndroidCoreV = "1.6.0"
+    JUnitV = "4.13.2"
+    TestJunitV = "1.1.3"
+    EspressoV = "3.4.0"
+    LifecycleV = "2.4.0-rc01"
+    RetrofitV = "4.2.0"
+    RetrofitRxJavaV = "2.6.1"
+    RetrofitGsonV = "2.9.0"
+
+    ApplicationCompileV = 31
+    MinSdkV = 21
+    LibraryVersion = "2.0.1"
+    LibraryVersionCode = 3
+}
