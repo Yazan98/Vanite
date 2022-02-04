@@ -2,6 +2,8 @@
 
 Android Infrastructure
 
+[![Maven Central](https://img.shields.io/maven-central/v/com.yazantarifi/vortex.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.yazantarifi%22%20AND%20a:%22vortex%22)
+
 ![](https://img.shields.io/badge/Project%20Status-Under%20Development-blue)
 ![](https://img.shields.io/badge/Version-2.0.0-brightgreen)
 ![](https://img.shields.io/badge/License-Apache%202.0-yellow)
@@ -59,10 +61,10 @@ Packages Information : [Bintray](https://bintray.com/yt98/Vortex)
 1. The Build.gradle Root File
 
 ```
-repositories {
-   maven {
-     url  "https://dl.bintray.com/yt98/Vortex"
-   }
+allprojects {
+    repositories {
+        mavenCentral()
+    }
 }
 ```
 
@@ -70,16 +72,15 @@ repositories {
 
 ```
 dependencies {
-        def VortexVersion = "2.0.0"
-        implementation "io.vortex:vortex-ui-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-permissions-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-core-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-local-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-data-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-utils-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-prefs-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-firebase-ktx:${VortexVersion}"
-        implementation "io.vortex:vortex-logger-ktx:${VortexVersion}"
+   implementation 'com.yazantarifi:vortex:2.2.0'
+   implementation 'com.yazantarifi:vortex-data:2.2.0'
+   implementation 'com.yazantarifi:vortex-utils:2.2.0'
+   implementation 'com.yazantarifi:vortex-ui-binding:2.2.0'
+   implementation 'com.yazantarifi:vortex-ui:2.2.0'
+   implementation 'com.yazantarifi:vortex-prefs:2.2.0'
+   implementation 'com.yazantarifi:vortex-permissions:2.2.0'
+   implementation 'com.yazantarifi:vortex-log:2.2.0'
+   implementation 'com.yazantarifi:vortex-firebase:2.2.0'
 }
 ```
 # Vortex Gradle Plugin
