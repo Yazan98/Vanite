@@ -11,8 +11,8 @@ import java.lang.Exception
 
 interface VortexAuthListener {
 
-    suspend fun onAuthSuccess(user: FirebaseUser?)
+    fun onAuthSuccess(user: FirebaseUser?)
 
-    suspend fun onAuthError(exception: Exception)
+    fun onAuthError(exception: Exception)
 
 }

@@ -1,10 +1,6 @@
 package io.vortex.android.base
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import io.reactivex.disposables.Disposable
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexMultiViewModelImpl
@@ -13,9 +9,9 @@ import io.vortex.android.rx.VortexRxRepository
 import io.vortex.android.state.VortexLoadingState
 import io.vortex.android.state.VortexState
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 abstract class VortexMultiViewModel<State: VortexState, Action: VortexAction> : ViewModel(), VortexMultiViewModelImpl<State, Action>,
     VortexViewModelType {
@@ -71,8 +67,12 @@ abstract class VortexMultiViewModel<State: VortexState, Action: VortexAction> : 
     }
 
     override fun onCleared() {
-        GlobalScope.launch {
-            destroyViewModel()
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                destroyViewModel()
+            }
+        } catch (ex: Exception) {
+            // Ignore Exception if Throws
         }
         super.onCleared()
     }

@@ -3,8 +3,6 @@ package io.vortex.android.data.executer
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.ref.WeakReference
 
@@ -33,26 +31,20 @@ class VortexObservableRequestExecutor<Result, Listener : VortexRequestListener.V
                     it?.let { result ->
                         listener?.let {
                             it.get()?.let {
-                                GlobalScope.launch {
-                                    it.onSuccess(result)
-                                }
+                                it.onSuccess(result)
                             }
                         }
                     }
                 }, {
                     listener?.let {
                         it.get()?.let {
-                            GlobalScope.launch {
-                                it.onError(it as Exception)
-                            }
+                            it.onError(it as Exception)
                         }
                     }
                 }, {
                     listener?.let {
                         it.get()?.let {
-                            GlobalScope.launch {
-                                it.onComplete()
-                            }
+                            it.onComplete()
                         }
                     }
                 }

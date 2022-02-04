@@ -15,8 +15,6 @@ import io.vortex.android.rx.VortexRxRepository
 import io.vortex.android.state.VortexLoadingState
 import io.vortex.android.state.VortexState
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
@@ -156,11 +154,9 @@ abstract class VortexViewModel<State : VortexState, Action : VortexAction> : Vie
         repo.addRequest(
             isInternetConnected(context)
                 .subscribeOn(Schedulers.io()).subscribe({
-                    GlobalScope.launch {
-                        when (it) {
-                            true -> networkLister?.onNetworkConnected()
-                            false -> networkLister?.onNetworkDisconnected()
-                        }
+                    when (it) {
+                        true -> networkLister?.onNetworkConnected()
+                        false -> networkLister?.onNetworkDisconnected()
                     }
                 }, {
 

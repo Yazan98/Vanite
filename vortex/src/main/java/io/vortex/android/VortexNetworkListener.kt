@@ -8,8 +8,8 @@ package io.vortex.android
 
 interface VortexNetworkListener {
 
-    suspend fun onNetworkConnected()
+    fun onNetworkConnected()
 
-    suspend fun onNetworkDisconnected()
+    fun onNetworkDisconnected()
 
 }

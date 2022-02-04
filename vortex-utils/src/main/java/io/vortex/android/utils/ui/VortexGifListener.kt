@@ -8,6 +8,6 @@ package io.vortex.android.utils.ui
 
 interface VortexGifListener {
 
-    suspend fun onAnimationFinished()
+    fun onAnimationFinished()
 
 }
