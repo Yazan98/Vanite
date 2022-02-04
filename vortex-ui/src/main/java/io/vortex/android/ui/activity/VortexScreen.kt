@@ -1,6 +1,7 @@
 package io.vortex.android.ui.activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -76,6 +77,29 @@ abstract class VortexScreen : AppCompatActivity() {
             val launchIntent = context.packageManager.getLaunchIntentForPackage(packageName)
             context.startActivity(launchIntent)
         }
+    }
+
+    override fun onBackPressed() {
+        if (isBackStackScreenCheckEnabled()) {
+            val numberOfFragments = supportFragmentManager.backStackEntryCount
+            if (numberOfFragments < 1) {
+                setResult(Activity.RESULT_CANCELED)
+                finish()
+            } else {
+                super.onBackPressed()
+            }
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    /**
+     * If You need to Disable the Check on onBackPressed override this method
+     * and change the return to false, the activity will back to normal mode and will not check
+     * the Fragments Count
+     */
+    protected fun isBackStackScreenCheckEnabled(): Boolean {
+        return true
     }
 
     inline fun <reified T : Any> newIntent(context: Context): Intent = Intent(context, T::class.java)
