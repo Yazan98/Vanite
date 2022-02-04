@@ -3,6 +3,7 @@ package io.vortex.android.utils.ui
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.DisplayMetrics
+import android.view.View
 import android.widget.ImageView
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
 import com.bumptech.glide.Glide
@@ -11,10 +12,6 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.facebook.drawee.backends.pipeline.Fresco
-import com.facebook.drawee.interfaces.DraweeController
-import com.facebook.drawee.view.SimpleDraweeView
-import com.facebook.imagepipeline.request.ImageRequestBuilder
 import io.vortex.android.models.ui.VortexAnimationSettings
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -82,20 +79,12 @@ object VortexGifController {
         }
     }
 
+    @Deprecated("Fresco Removed From Application", ReplaceWith("Replaced With : VortexGifController.startAnimationWithGlide"))
     suspend fun startAnimationWithFresco(
         settings: VortexAnimationSettings,
-        image: SimpleDraweeView,
+        image: View,
         isAutoPlay: Boolean
-    ) {
-        withContext(Dispatchers.Main) {
-            val imageRequest = ImageRequestBuilder.newBuilderWithResourceId(settings.image).build()
-            val controller: DraweeController = Fresco.newDraweeControllerBuilder()
-                .setUri(imageRequest.sourceUri)
-                .setAutoPlayAnimations(isAutoPlay)
-                .build()
-            image.controller = controller
-        }
-    }
+    ) = Unit
 
     fun attachListener(listener: VortexGifListener) {
         this.listener = listener

@@ -4,10 +4,6 @@ import android.content.Context
 import androidx.annotation.CallSuper
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
-import com.facebook.drawee.backends.pipeline.Fresco
-import com.facebook.imagepipeline.core.ImagePipelineConfig
-import com.facebook.imagepipeline.core.ImageTranscoderType
-import com.facebook.imagepipeline.core.MemoryChunkType
 import io.vortex.android.models.ui.VortexNotificationDetails
 import io.vortex.android.utils.random.TimberReleaseTree
 import io.vortex.android.utils.random.VortexDeviceInfo
@@ -46,18 +42,8 @@ open class VortexApplication : MultiDexApplication() {
      * Setup Fresco Configuration
      * This Configuration Should Initialize Fresco On Background Thread With Buffer Memory
      */
-    protected suspend fun setupFresco() {
-        withContext(Dispatchers.IO) {
-            Fresco.initialize(
-                applicationContext,
-                ImagePipelineConfig.newBuilder(applicationContext)
-                    .setMemoryChunkType(MemoryChunkType.BUFFER_MEMORY)
-                    .setImageTranscoderType(ImageTranscoderType.JAVA_TRANSCODER)
-                    .experiment().setNativeCodeDisabled(true)
-                    .build()
-            )
-        }
-    }
+    @Deprecated("Fresco Removed From Application", ReplaceWith("Glide Loading in  VortexImageLoader"))
+    protected suspend fun setupFresco() = Unit
 
     /**
      * If (applicationState) is True Timber Should Print in Logcat if False

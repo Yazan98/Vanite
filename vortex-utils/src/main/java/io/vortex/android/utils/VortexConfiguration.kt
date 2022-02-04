@@ -4,9 +4,6 @@ import android.app.Application
 import android.os.Handler
 import android.os.StrictMode
 import androidx.appcompat.app.AppCompatDelegate
-import com.facebook.drawee.backends.pipeline.Fresco
-import com.squareup.picasso.OkHttp3Downloader
-import com.squareup.picasso.Picasso
 import io.vortex.android.keys.ImageLoader
 import io.vortex.android.keys.LoggerType
 import io.vortex.android.errors.VortexFirebaseConfigurationException
@@ -55,19 +52,10 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
+    @Deprecated("Not Used Anymore, if You Want to Add Image Library Confiuration Should be From App Side Not Library Side",
+        ReplaceWith("Self Implementation in App Class Inside The Application")
+    )
     override suspend fun registerImageLoader(imageLoader: ImageLoader): VortexConfiguration {
-        withContext(Dispatchers.IO) {
-            when (imageLoader) {
-                ImageLoader.FRESCO -> Fresco.initialize(vortexApplication)
-                ImageLoader.PICASSO -> {
-                    Picasso.setSingletonInstance(
-                        Picasso.Builder(vortexApplication)
-                            .downloader(OkHttp3Downloader(vortexApplication))
-                            .build()
-                    )
-                }
-            }
-        }
         return this
     }
 
