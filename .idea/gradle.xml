@@ -7,13 +7,13 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/vortex" />
             <option value="$PROJECT_DIR$/vortex-data" />
             <option value="$PROJECT_DIR$/vortex-firebase" />
-            <option value="$PROJECT_DIR$/vortex-local" />
             <option value="$PROJECT_DIR$/vortex-log" />
             <option value="$PROJECT_DIR$/vortex-permissions" />
             <option value="$PROJECT_DIR$/vortex-prefs" />
@@ -21,7 +21,6 @@
             <option value="$PROJECT_DIR$/vortex-utils" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
