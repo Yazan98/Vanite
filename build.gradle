@@ -10,7 +10,8 @@ buildscript {
             "NavigationPluginV"  : "2.2.0-rc04",
             "VortexPluginV"      : "1.0.0",
             "RealmPluginV"       : "10.8.0",
-            "HiltPluginVersion"  : "2.28-alpha"
+            "HiltPluginVersion"  : "2.28-alpha",
+            "NexusPublishPluginVersoin": "1.1.0"
     ]
 
     repositories {
@@ -29,7 +30,12 @@ buildscript {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${rootProject.ext.PluginsVersions.NavigationPluginV}"
         classpath "io.realm:realm-gradle-plugin:${rootProject.ext.PluginsVersions.RealmPluginV}"
         classpath "com.google.dagger:hilt-android-gradle-plugin:${rootProject.ext.PluginsVersions.HiltPluginVersion}"
+        classpath "io.github.gradle-nexus:publish-plugin:${rootProject.ext.PluginsVersions.NexusPublishPluginVersoin}"
     }
+}
+
+plugins {
+    id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
 }
 
 allprojects {
@@ -43,6 +49,28 @@ allprojects {
 }
 
 apply from: "details.gradle"
+apply plugin: "io.github.gradle-nexus.publish-plugin"
+apply from: "${rootDir}/scripts/publish-root.gradle"
+
+ext {
+    PUBLISH_GROUP_ID = 'com.yazantarifi'
+    PUBLISH_VERSION = '2.2.0'
+    PUBLISH_DESCRIPTION = 'Shake Reporting To Report Android Crashes, Application Requests'
+    PUBLISH_URL = 'https://github.com/Yazan98/Vortex'
+    PUBLISH_LICENSE_NAME = 'MIT'
+    PUBLISH_LICENSE_URL = 'https://github.com/Yazan98/Vortex/blob/main/LICENSE'
+    PUBLISH_DEVELOPER_ID = 'yt98'
+    PUBLISH_DEVELOPER_NAME = 'Yazan Tarifi'
+    PUBLISH_DEVELOPER_EMAIL = 'yazantarifi1@hotmail.com'
+    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/Yazan98/Vortex.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/Yazan98/Vortex.git'
+    PUBLISH_SCM_URL = 'https://github.com/Yazan98/Vortex/tree/master'
+}
+
+subprojects {
+    group = PUBLISH_GROUP_ID
+    version = PUBLISH_VERSION
+}
 
 subprojects {
 

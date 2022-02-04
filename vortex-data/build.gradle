@@ -1,3 +1,7 @@
+ext {
+    PUBLISH_ARTIFACT_ID = 'vortex-data'
+}
+
 dependencies { configuration ->
     addNetworkLibraries(configuration)
 }

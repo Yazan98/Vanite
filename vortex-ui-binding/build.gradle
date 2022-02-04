@@ -1,3 +1,7 @@
+ext {
+    PUBLISH_ARTIFACT_ID = 'vortex-ui-binding'
+}
+
 android {
     buildFeatures {
         viewBinding true
