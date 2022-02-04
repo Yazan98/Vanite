@@ -16,8 +16,6 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.*
 
@@ -83,16 +81,12 @@ object VortexMapBuilder {
             autocompleteFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
                 override fun onPlaceSelected(p0: Place) {
                     p0.latLng?.let {
-                        GlobalScope.launch {
-                            listener.onPlacePicked(it)
-                        }
+                        listener.onPlacePicked(it)
                     }
                 }
 
                 override fun onError(p0: Status) {
-                    GlobalScope.launch {
-                        listener.onError(p0)
-                    }
+                    listener.onError(p0)
                 }
 
             })
@@ -100,8 +94,8 @@ object VortexMapBuilder {
     }
 
     interface AutoPlaceConfiguration {
-        suspend fun onPlacePicked(latLng: LatLng)
-        suspend fun onError(p0: Status)
+        fun onPlacePicked(latLng: LatLng)
+        fun onError(p0: Status)
     }
 
 }

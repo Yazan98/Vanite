@@ -10,14 +10,14 @@ interface VortexRequestListener {
 
     interface VortexFlowableRequestListener<Result> : VortexObservableRequestListener<Result>
     interface VortexObservableRequestListener<Result> : VortexRequestListener {
-        suspend fun onSuccess(data: Result)
-        suspend fun onError(error: Throwable)
-        suspend fun onComplete()
+        fun onSuccess(data: Result)
+        fun onError(error: Throwable)
+        fun onComplete()
     }
 
     interface VortexSingleRequestListener<Result> : VortexRequestListener {
-        suspend fun onSuccess(data: Result)
-        suspend fun onError(error: Throwable)
+        fun onSuccess(data: Result)
+        fun onError(error: Throwable)
     }
 
 

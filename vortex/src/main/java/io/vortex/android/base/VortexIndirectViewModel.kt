@@ -6,6 +6,10 @@ import io.vortex.android.VortexViewModelType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * VortexViewModel Class (One of Supported ViewModels)
+ * Used to ViewModels That only Needs to Manage State Without Actions
+ */
 abstract class VortexIndirectViewModel<State> : VortexPureViewModel(), VortexIndirectViewModelImpl<State>,
     VortexViewModelType {
 
@@ -13,16 +17,26 @@ abstract class VortexIndirectViewModel<State> : VortexPureViewModel(), VortexInd
         MutableLiveData<State>()
     }
 
+    /**
+     * Override The Current State With Your New State By Using This Method
+     * To Accept New State
+     */
     override suspend fun acceptNewState(newState: State) {
         withContext(Dispatchers.IO) {
             state.postValue(newState)
         }
     }
 
+    /**
+     * Get Current State To Subscribe it With Current ViewLifecycleOwner
+     */
     override fun getStateHandler(): MutableLiveData<State> {
         return state
     }
 
+    /**
+     * Get Current Value of Current Saved State in this ViewModel
+     */
     override fun getCurrentState(): State? {
         return getStateHandler().value
     }

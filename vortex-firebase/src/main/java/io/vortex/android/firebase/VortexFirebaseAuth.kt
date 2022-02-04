@@ -11,8 +11,6 @@ import io.vortex.android.firebase.impl.FirebaseAuthImpl
 import io.vortex.android.firebase.listener.VortexAuthListener
 import io.vortex.android.firebase.listener.VortexGoogleAuthLIstener
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
@@ -40,15 +38,11 @@ class VortexFirebaseAuth(
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
                         it.result?.let {
-                            GlobalScope.launch {
-                                listener?.onAuthSuccess(it.user)
-                            }
+                            listener?.onAuthSuccess(it.user)
                         }
                     } else {
-                        GlobalScope.launch {
-                            it.exception?.let {
-                                listener?.onAuthError(it)
-                            }
+                        it.exception?.let {
+                            listener?.onAuthError(it)
                         }
                     }
                 }
@@ -79,9 +73,7 @@ class VortexFirebaseAuth(
                     val account = task.getResult(ApiException::class.java)
                     googleListener?.onAuthSuccess(account)
                 } catch (e: ApiException) {
-                    GlobalScope.launch {
-                        googleListener?.onAuthError(e)
-                    }
+                    googleListener?.onAuthError(e)
                 }
             }
         }
@@ -91,16 +83,12 @@ class VortexFirebaseAuth(
         withContext(Dispatchers.IO) {
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    GlobalScope.launch {
                         it.result?.let {
                             listener?.onAuthSuccess(it.user)
                         }
-                    }
                 } else {
-                    GlobalScope.launch {
-                        it.exception?.let {
-                            listener?.onAuthError(it)
-                        }
+                    it.exception?.let {
+                        listener?.onAuthError(it)
                     }
                 }
             }

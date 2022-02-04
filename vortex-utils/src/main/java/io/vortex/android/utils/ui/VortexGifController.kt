@@ -14,8 +14,6 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import io.vortex.android.models.ui.VortexAnimationSettings
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
@@ -64,10 +62,8 @@ object VortexGifController {
                             resource?.registerAnimationCallback(object :
                                 Animatable2Compat.AnimationCallback() {
                                 override fun onAnimationEnd(drawable: Drawable?) {
-                                    GlobalScope.launch {
-                                        listener?.let {
-                                            it.onAnimationFinished()
-                                        }
+                                    listener?.let {
+                                        it.onAnimationFinished()
                                     }
                                 }
                             })
