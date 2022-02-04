@@ -14,7 +14,6 @@ The Application Components
 2. Fragments
 3. Navigation Components
 4. Material Design
-5. Realm Database
 6. Multi Threading With Kotlin Courotines
 7. Mvvm \(ViewModels\)
 8. State Handlers

@@ -1,0 +1,16 @@
+io.vortex.android.logger.VortexLog$WhenMappings
+io.vortex.android.logger.VortexLog$print$1
+io.vortex.android.logger.VortexLog$printLevel$1
+io.vortex.android.logger.VortexLog
+io.vortex.android.logger.VortexLoggerInitException
+io.vortex.android.logger.VortexLoggerTesting
+io.vortex.android.logger.config.VortexBaseOptionsInitializer
+io.vortex.android.logger.config.VortexLoggerConfiguration
+io.vortex.android.logger.config.VortexLoggerDefaultOptions$Companion
+io.vortex.android.logger.config.VortexLoggerDefaultOptions
+io.vortex.android.logger.config.VortexLoggerOptions$Companion
+io.vortex.android.logger.config.VortexLoggerOptions
+io.vortex.android.logger.keys.VortexLoggerLevel
+io.vortex.android.logger.keys.VortexLoggerMode
+io.vortex.android.logger.keys.VortexLoggingStatus
+io.vortex.android.state.BuildConfig

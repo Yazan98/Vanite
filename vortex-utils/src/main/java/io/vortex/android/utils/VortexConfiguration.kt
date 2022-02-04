@@ -1,19 +1,16 @@
 package io.vortex.android.utils
 
 import android.app.Application
-import android.os.Handler
 import android.os.StrictMode
 import androidx.appcompat.app.AppCompatDelegate
+import io.vortex.android.errors.VortexFirebaseConfigurationException
 import io.vortex.android.keys.ImageLoader
 import io.vortex.android.keys.LoggerType
-import io.vortex.android.errors.VortexFirebaseConfigurationException
 import io.vortex.android.models.VortexPrefsDetails
 import io.vortex.android.permissions.VortexPermissionsConfiguration
 import io.vortex.android.prefs.VortexPrefsConfig
-import io.vortex.android.utils.random.TimberReleaseTree
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import leakcanary.LeakSentry
 import timber.log.Timber
 
 /**
@@ -39,8 +36,6 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
                 LoggerType.TIMBER -> {
                     if (applicationStatus) {
                         Timber.plant(Timber.DebugTree())
-                    } else {
-                        Timber.plant(TimberReleaseTree())
                     }
                 }
 
@@ -52,19 +47,11 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
-    @Deprecated("Not Used Anymore, if You Want to Add Image Library Confiuration Should be From App Side Not Library Side",
+    @Deprecated(
+        "Not Used Anymore, if You Want to Add Image Library Confiuration Should be From App Side Not Library Side",
         ReplaceWith("Self Implementation in App Class Inside The Application")
     )
     override suspend fun registerImageLoader(imageLoader: ImageLoader): VortexConfiguration {
-        return this
-    }
-
-    override suspend fun registerLeakCanaryConfiguration(): VortexConfiguration {
-        withContext(Dispatchers.IO) {
-            if (applicationStatus) {
-                LeakSentry.config = LeakSentry.config.copy(watchFragmentViews = true)
-            }
-        }
         return this
     }
 
@@ -75,29 +62,30 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
-    @Deprecated("Not Used Anymore, Declare Firebase from Your App Class", ReplaceWith("ManualDeclaration"))
+    @Deprecated(
+        "Not Used Anymore, Declare Firebase from Your App Class",
+        ReplaceWith("ManualDeclaration")
+    )
     @Throws(VortexFirebaseConfigurationException::class)
     override suspend fun registerFirebaseConfiguration(moduleName: String): VortexConfiguration {
         return this
     }
 
     override suspend fun registerStrictMode(): VortexConfiguration {
-        withContext(Dispatchers.Main) {
-            Handler().postAtFrontOfQueue {
-                if (applicationStatus) {
-                    StrictMode.setThreadPolicy(
-                        StrictMode.ThreadPolicy.Builder()
-                            .detectAll()
-                            .build()
-                    )
-                    StrictMode.setVmPolicy(
-                        StrictMode.VmPolicy.Builder()
-                            .detectLeakedSqlLiteObjects()
-                            .penaltyLog()
-                            .penaltyDeath()
-                            .build()
-                    )
-                }
+        withContext(Dispatchers.IO) {
+            if (applicationStatus) {
+                StrictMode.setThreadPolicy(
+                    StrictMode.ThreadPolicy.Builder()
+                        .detectAll()
+                        .build()
+                )
+                StrictMode.setVmPolicy(
+                    StrictMode.VmPolicy.Builder()
+                        .detectLeakedSqlLiteObjects()
+                        .penaltyLog()
+                        .penaltyDeath()
+                        .build()
+                )
             }
         }
         return this
@@ -127,7 +115,10 @@ object VortexConfiguration : VortexConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
-    override fun registerVortexPrefsConfiguration(details: VortexPrefsDetails , application: Application): VortexConfiguration {
+    override fun registerVortexPrefsConfiguration(
+        details: VortexPrefsDetails,
+        application: Application
+    ): VortexConfiguration {
         VortexPrefsConfig.init(
             application.applicationContext,
             application.packageName

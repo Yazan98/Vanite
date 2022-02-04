@@ -5,7 +5,6 @@ import androidx.annotation.CallSuper
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import io.vortex.android.models.ui.VortexNotificationDetails
-import io.vortex.android.utils.random.TimberReleaseTree
 import io.vortex.android.utils.random.VortexDeviceInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -53,8 +52,6 @@ open class VortexApplication : MultiDexApplication() {
         withContext(Dispatchers.IO) {
             if (applicationStatus) {
                 Timber.plant(Timber.DebugTree())
-            } else {
-                Timber.plant(TimberReleaseTree())
             }
         }
     }

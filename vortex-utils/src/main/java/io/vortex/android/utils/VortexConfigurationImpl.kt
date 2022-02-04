@@ -18,8 +18,6 @@ interface VortexConfigurationImpl<L, I> {
 
     suspend fun registerImageLoader(imageLoader: I): VortexConfiguration
 
-    suspend fun registerLeakCanaryConfiguration(): VortexConfiguration
-
     suspend fun registerApplicationState(state: Boolean): VortexConfiguration
 
     @Throws(VortexFirebaseConfigurationException::class)

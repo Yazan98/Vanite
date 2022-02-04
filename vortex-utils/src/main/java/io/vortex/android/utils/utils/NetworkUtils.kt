@@ -25,9 +25,9 @@ object NetworkUtils {
         return nwInfo != null && nwInfo.isConnectedOrConnecting
     }
 
-    private fun getNetworkInfo(context: Context): NetworkInfo {
+    private fun getNetworkInfo(context: Context): NetworkInfo? {
         cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
-        return cm!!.activeNetworkInfo
+        return cm?.activeNetworkInfo
     }
 
 }

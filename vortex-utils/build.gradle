@@ -1,4 +1,5 @@
 apply plugin: "${rootProject.ext.KotlinKaptPlugin}"
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex-utils'
@@ -12,7 +13,6 @@ dependencies {
 
     implementation "com.android.support:multidex:1.0.3"
     implementation "com.jakewharton.timber:timber:4.7.1"
-    implementation "com.squareup.leakcanary:leakcanary-android:2.0-alpha-2"
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'

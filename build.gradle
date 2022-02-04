@@ -9,7 +9,6 @@ buildscript {
             "FirebasePluginV"    : "4.3.1",
             "NavigationPluginV"  : "2.2.0-rc04",
             "VortexPluginV"      : "1.0.0",
-            "RealmPluginV"       : "10.8.0",
             "HiltPluginVersion"  : "2.28-alpha",
             "NexusPublishPluginVersoin": "1.1.0"
     ]
@@ -28,7 +27,6 @@ buildscript {
         classpath "com.akaita.android:easylauncher:${rootProject.ext.PluginsVersions.EasyLauncherPluginV}"
         classpath "com.google.gms:google-services:${rootProject.ext.PluginsVersions.FirebasePluginV}"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${rootProject.ext.PluginsVersions.NavigationPluginV}"
-        classpath "io.realm:realm-gradle-plugin:${rootProject.ext.PluginsVersions.RealmPluginV}"
         classpath "com.google.dagger:hilt-android-gradle-plugin:${rootProject.ext.PluginsVersions.HiltPluginVersion}"
         classpath "io.github.gradle-nexus:publish-plugin:${rootProject.ext.PluginsVersions.NexusPublishPluginVersoin}"
     }

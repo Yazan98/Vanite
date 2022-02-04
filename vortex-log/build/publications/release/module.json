@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.yazantarifi",
+    "module": "vortex-log",
+    "version": "2.2.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.0.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "vortex-log-2.2.0.aar",
+          "url": "vortex-log-2.2.0.aar",
+          "size": 12656,
+          "sha512": "ccc43a6d9702f651d42ec361c226d181b0e120074765eae3e979dec78cb848e189c2402190c775c16cc3b252c04a62aa4678b7983679071d34e348af793c0981",
+          "sha256": "691333eb6a9a1a8f12599777245d3a77edeba84a12223bfd17a3366425fee56e",
+          "sha1": "95f42675e317b982d861606581a94ec18b6d2f97",
+          "md5": "2f60fcfa2f41bcd6bac8ab45612f227c"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-android-extensions-runtime",
+          "version": {
+            "requires": "1.6.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk7",
+          "version": {
+            "requires": "1.5.20"
+          }
+        },
+        {
+          "group": "io.reactivex.rxjava2",
+          "module": "rxjava",
+          "version": {
+            "requires": "2.2.12"
+          }
+        },
+        {
+          "group": "io.reactivex.rxjava2",
+          "module": "rxandroid",
+          "version": {
+            "requires": "2.1.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.4.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.4.3"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.3.1"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "com.yazantarifi",
+          "module": "vortex",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "vortex-log-2.2.0.aar",
+          "url": "vortex-log-2.2.0.aar",
+          "size": 12656,
+          "sha512": "ccc43a6d9702f651d42ec361c226d181b0e120074765eae3e979dec78cb848e189c2402190c775c16cc3b252c04a62aa4678b7983679071d34e348af793c0981",
+          "sha256": "691333eb6a9a1a8f12599777245d3a77edeba84a12223bfd17a3366425fee56e",
+          "sha1": "95f42675e317b982d861606581a94ec18b6d2f97",
+          "md5": "2f60fcfa2f41bcd6bac8ab45612f227c"
+        }
+      ]
+    }
+  ]
+}
