@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/vortex-permissions" />
             <option value="$PROJECT_DIR$/vortex-prefs" />
             <option value="$PROJECT_DIR$/vortex-ui" />
+            <option value="$PROJECT_DIR$/vortex-ui-binding" />
             <option value="$PROJECT_DIR$/vortex-utils" />
           </set>
         </option>

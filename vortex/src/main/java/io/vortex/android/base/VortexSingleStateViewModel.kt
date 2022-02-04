@@ -5,13 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.Disposable
 import io.vortex.android.VortexSingleStateViewModelImpl
+import io.vortex.android.VortexViewModelType
 import io.vortex.android.rx.VortexRxRepository
 import io.vortex.android.state.VortexLoadingState
 import io.vortex.android.state.VortexState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-abstract class VortexSingleStateViewModel<State : VortexState> : ViewModel(), VortexSingleStateViewModelImpl<State> {
+abstract class VortexSingleStateViewModel<State : VortexState> : ViewModel(), VortexSingleStateViewModelImpl<State>,
+    VortexViewModelType {
 
     private val state: MediatorLiveData<State> by lazy {
         MediatorLiveData<State>()

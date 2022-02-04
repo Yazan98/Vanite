@@ -23,7 +23,7 @@ buildscript {
 
     dependencies {
         classpath "com.android.tools.build:gradle:${rootProject.ext.PluginsVersions.GradlePluginV}"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${rootProject.ext.PluginsVersions.KotlinPluginV}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
         classpath "com.akaita.android:easylauncher:${rootProject.ext.PluginsVersions.EasyLauncherPluginV}"
         classpath "com.google.gms:google-services:${rootProject.ext.PluginsVersions.FirebasePluginV}"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${rootProject.ext.PluginsVersions.NavigationPluginV}"

@@ -57,7 +57,9 @@ abstract class VortexBottomDialog<State : VortexState, Action : VortexAction, Re
         dialog.setOnShowListener {
             val d = it as BottomSheetDialog
             val bottomSheet = d.findViewById<View>(R.id.design_bottom_sheet)
-            BottomSheetBehavior.from(bottomSheet).setState(BottomSheetBehavior.STATE_EXPANDED)
+            bottomSheet?.let {
+                BottomSheetBehavior.from(it).setState(BottomSheetBehavior.STATE_EXPANDED)
+            }
         }
         return dialog
     }

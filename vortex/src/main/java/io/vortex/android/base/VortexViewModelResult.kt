@@ -1,6 +1,7 @@
 package io.vortex.android.base
 
 import io.vortex.android.VortexAction
+import io.vortex.android.VortexViewModelType
 import io.vortex.android.rx.VortexRequestProvider
 import io.vortex.android.state.VortexState
 
@@ -10,6 +11,9 @@ import io.vortex.android.state.VortexState
  * Time : 2:15 PM
  */
 
-abstract class VortexViewModelResult<State : VortexState, Action : VortexAction , Result> : VortexViewModel<State, Action>() {
+abstract class VortexViewModelResult<State : VortexState, Action : VortexAction , Result> : VortexViewModel<State, Action>(),
+    VortexViewModelType {
+
     protected fun getRequestProvider(): VortexRequestProvider<Result> = VortexRequestProvider<Result>()
+
 }

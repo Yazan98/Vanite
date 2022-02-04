@@ -29,7 +29,15 @@ abstract class VortexBaseFragment : Fragment() {
 
     @CallSuper
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(getLayoutRes() , container , false)
+        if (isScreenLayoutBinding()) {
+            return inflater.inflate(getLayoutRes() , container , false)
+        } else {
+            return super.onCreateView(inflater, container, savedInstanceState)
+        }
+    }
+
+    protected open fun isScreenLayoutBinding(): Boolean {
+        return true
     }
 
     @CallSuper

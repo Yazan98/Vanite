@@ -28,7 +28,13 @@ abstract class VortexScreen : AppCompatActivity() {
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayoutRes())
+        if (isScreenLayoutBinding()) {
+            setContentView(getLayoutRes())
+        }
+    }
+
+    protected open fun isScreenLayoutBinding(): Boolean {
+        return true
     }
 
     protected suspend inline fun <reified T : Any> startScreen(

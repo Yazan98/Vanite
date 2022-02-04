@@ -2,9 +2,10 @@ package io.vortex.android.base
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.Disposable
+import io.vortex.android.VortexViewModelType
 import io.vortex.android.rx.VortexRxRepository
 
-abstract class VortexPureViewModel : ViewModel(), VortexPureViewModelImpl {
+abstract class VortexPureViewModel : ViewModel(), VortexPureViewModelImpl, VortexViewModelType {
 
     private val repository: VortexRxRepository by lazy {
         VortexRxRepository()

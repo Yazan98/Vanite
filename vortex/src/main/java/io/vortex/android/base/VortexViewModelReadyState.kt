@@ -4,12 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.Disposable
 import io.vortex.android.VortexModelStateImpl
+import io.vortex.android.VortexViewModelType
 import io.vortex.android.keys.VortexViewModelState
 import io.vortex.android.rx.VortexRxRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-abstract class VortexViewModelReadyState : ViewModel(), VortexModelStateImpl {
+abstract class VortexViewModelReadyState : ViewModel(), VortexModelStateImpl, VortexViewModelType {
 
     /**
      * State Handler Type

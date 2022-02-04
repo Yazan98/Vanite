@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.Disposable
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexMultiViewModelImpl
+import io.vortex.android.VortexViewModelType
 import io.vortex.android.rx.VortexRxRepository
 import io.vortex.android.state.VortexLoadingState
 import io.vortex.android.state.VortexState
@@ -16,7 +17,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-abstract class VortexMultiViewModel<State: VortexState, Action: VortexAction> : ViewModel(), VortexMultiViewModelImpl<State, Action> {
+abstract class VortexMultiViewModel<State: VortexState, Action: VortexAction> : ViewModel(), VortexMultiViewModelImpl<State, Action>,
+    VortexViewModelType {
 
     private val state: MediatorLiveData<State> by lazy {
         MediatorLiveData<State>()

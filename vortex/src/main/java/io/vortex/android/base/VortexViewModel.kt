@@ -10,6 +10,7 @@ import io.reactivex.schedulers.Schedulers
 import io.vortex.android.VortexAction
 import io.vortex.android.VortexNetworkListener
 import io.vortex.android.VortexRxReducer
+import io.vortex.android.VortexViewModelType
 import io.vortex.android.rx.VortexRxRepository
 import io.vortex.android.state.VortexLoadingState
 import io.vortex.android.state.VortexState
@@ -46,7 +47,7 @@ import kotlinx.coroutines.withContext
  * Each Method At ViewModel executed On Background Thread And The View Handler Should Apply The Result On Main Thread
  */
 abstract class VortexViewModel<State : VortexState, Action : VortexAction> : ViewModel(),
-    VortexRxReducer<State, Action> {
+    VortexRxReducer<State, Action>, VortexViewModelType {
 
     /**
      * This State Here is to notify the view that you should start show loading to the user

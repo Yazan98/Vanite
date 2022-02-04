@@ -2,10 +2,12 @@ package io.vortex.android.base
 
 import androidx.lifecycle.MutableLiveData
 import io.vortex.android.VortexIndirectViewModelImpl
+import io.vortex.android.VortexViewModelType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-abstract class VortexIndirectViewModel<State> : VortexPureViewModel(), VortexIndirectViewModelImpl<State> {
+abstract class VortexIndirectViewModel<State> : VortexPureViewModel(), VortexIndirectViewModelImpl<State>,
+    VortexViewModelType {
 
     private val state: MutableLiveData<State> by lazy {
         MutableLiveData<State>()
