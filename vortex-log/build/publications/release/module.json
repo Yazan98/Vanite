@@ -3,7 +3,7 @@
   "component": {
     "group": "com.yazantarifi",
     "module": "vortex-log",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -24,8 +24,8 @@
       },
       "files": [
         {
-          "name": "vortex-log-2.2.0.aar",
-          "url": "vortex-log-2.2.0.aar",
+          "name": "vortex-log-2.2.1.aar",
+          "url": "vortex-log-2.2.1.aar",
           "size": 12656,
           "sha512": "ccc43a6d9702f651d42ec361c226d181b0e120074765eae3e979dec78cb848e189c2402190c775c16cc3b252c04a62aa4678b7983679071d34e348af793c0981",
           "sha256": "691333eb6a9a1a8f12599777245d3a77edeba84a12223bfd17a3366425fee56e",
@@ -103,14 +103,14 @@
           "group": "com.yazantarifi",
           "module": "vortex",
           "version": {
-            "requires": "2.2.0"
+            "requires": "2.2.1"
           }
         }
       ],
       "files": [
         {
-          "name": "vortex-log-2.2.0.aar",
-          "url": "vortex-log-2.2.0.aar",
+          "name": "vortex-log-2.2.1.aar",
+          "url": "vortex-log-2.2.1.aar",
           "size": 12656,
           "sha512": "ccc43a6d9702f651d42ec361c226d181b0e120074765eae3e979dec78cb848e189c2402190c775c16cc3b252c04a62aa4678b7983679071d34e348af793c0981",
           "sha256": "691333eb6a9a1a8f12599777245d3a77edeba84a12223bfd17a3366425fee56e",
