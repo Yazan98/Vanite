@@ -68,15 +68,15 @@ allprojects {
 
 ```
 dependencies {
-   implementation 'com.yazantarifi:vortex:2.2.0'
-   implementation 'com.yazantarifi:vortex-data:2.2.0'
-   implementation 'com.yazantarifi:vortex-utils:2.2.0'
-   implementation 'com.yazantarifi:vortex-ui-binding:2.2.0'
-   implementation 'com.yazantarifi:vortex-ui:2.2.0'
-   implementation 'com.yazantarifi:vortex-prefs:2.2.0'
-   implementation 'com.yazantarifi:vortex-permissions:2.2.0'
-   implementation 'com.yazantarifi:vortex-log:2.2.0'
-   implementation 'com.yazantarifi:vortex-firebase:2.2.0'
+   implementation 'com.yazantarifi:vortex:2.2.1'
+   implementation 'com.yazantarifi:vortex-data:2.2.1'
+   implementation 'com.yazantarifi:vortex-utils:2.2.1'
+   implementation 'com.yazantarifi:vortex-ui-binding:2.2.1'
+   implementation 'com.yazantarifi:vortex-ui:2.2.1'
+   implementation 'com.yazantarifi:vortex-prefs:2.2.1'
+   implementation 'com.yazantarifi:vortex-permissions:2.2.1'
+   implementation 'com.yazantarifi:vortex-log:2.2.1'
+   implementation 'com.yazantarifi:vortex-firebase:2.2.1'
 }
 ```
 # Vortex Gradle Plugin
