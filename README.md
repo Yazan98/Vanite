@@ -89,16 +89,30 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.io.vortex.gradle.plugin.dependencies:vortex-dependencies-plugin:1.0.0"
+    classpath "gradle.plugin.io.vortex.gradle.plugin.dependencies:vortex-dependencies-plugin:1.1.0"
   }
 }
+
+apply plugin: "io.vortex.gradle.plugin.dependencies"
 ```
 
 3. Each Module Should Implement The Plugin 
 
 ```
-apply plugin: "io.vortex.gradle.plugin.dependencies"
+plugins {
+  id "io.vortex.gradle.plugin.dependencies" version "1.1.0"
+}
 ```
+
+4. If ViewBinding Enabled In The Current Module Add The Following Ext
+```
+vortex {
+    features {
+        isViewBindingEnabled = true
+    }
+}
+```
+
 # Vortex Decumenetation
 Coming Soon Vortex still Under Development
 
