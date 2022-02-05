@@ -11,6 +11,14 @@ import io.vortex.android.ui.fragment.VortexBaseFragment
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
+/**
+ * Base Class in UI Level for Binding Views in Fragments
+ * By ViewBinding Inflate and ViewModel
+ *
+ * Use This Type of Fragments Only if You Want to Use ViewBinding
+ * This Class Has all Specific Classes in UI Layer
+ * and Remove The Code For Layout Inflation by Using isScreenLayoutBinding()
+ */
 abstract class VortexViewBindingFragment<ViewBindingType : ViewBinding, ViewModel: VortexViewModelType>(private val inflate: Inflate<ViewBindingType>) : VortexBaseFragment() {
 
     protected var binding: ViewBindingType? = null
@@ -29,6 +37,8 @@ abstract class VortexViewBindingFragment<ViewBindingType : ViewBinding, ViewMode
         setupViewsListeners()
         onScreenStarted(view, savedInstanceState)
     }
+
+    override fun initScreen(view: View) = Unit
 
     protected open fun subscribeListeners() = Unit
 

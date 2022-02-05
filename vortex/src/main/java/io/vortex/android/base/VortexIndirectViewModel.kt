@@ -9,6 +9,8 @@ import kotlinx.coroutines.withContext
 /**
  * VortexViewModel Class (One of Supported ViewModels)
  * Used to ViewModels That only Needs to Manage State Without Actions
+ *
+ * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
  */
 abstract class VortexIndirectViewModel<State> : VortexPureViewModel(), VortexIndirectViewModelImpl<State>,
     VortexViewModelType {

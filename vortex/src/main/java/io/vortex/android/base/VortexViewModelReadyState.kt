@@ -10,6 +10,14 @@ import io.vortex.android.rx.VortexRxRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * This ViewModel Type Used When You want to Build ViewModel Without Passing Specific State to it
+ * this one can handle Any State that Extends VortexViewModelState in the Application
+ * This Will Reduce A lot of Classes if you want to Build ViewModel For Each State
+ * One Can Handle all Stats
+ *
+ * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ */
 abstract class VortexViewModelReadyState : ViewModel(), VortexModelStateImpl, VortexViewModelType {
 
     /**

@@ -9,6 +9,13 @@ import androidx.lifecycle.lifecycleScope
 import io.vortex.android.base.VortexIndirectViewModel
 import kotlinx.coroutines.launch
 
+/**
+ * This Fragment is Only Handling State Without Action Passed to Screen
+ * Also The Layout is Not Required to be in Method
+ * Can Be Passed in Parameters in the Constructor
+ *
+
+ */
 abstract class VortexIndirectStateFragment<State, VM : VortexIndirectViewModel<State>>(@LayoutRes private val layoutId: Int) :
     VortexBaseFragment() {
 

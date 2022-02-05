@@ -21,6 +21,10 @@ import kotlinx.coroutines.withContext
  * Time : 11:51 AM
  */
 
+/**
+ * This Class is The Main Fragment In Vortex and it's Recommended to Only Fragments that is Using
+ * XML Binding and This is a Managed Class in onViewCreated that will Use Action, State, Reducer
+ */
 abstract class VortexFragment<State : VortexState, Action : VortexAction, Reducer : VortexViewModel<State, Action>> :
     VortexBaseFragment(), VortexRxStore.VortexStateListener<State>,
     VortexViewImpl<Action, State, Reducer> {

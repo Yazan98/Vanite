@@ -10,6 +10,11 @@ import io.vortex.android.keys.VortexViewModelState
 import io.vortex.android.base.VortexViewModelReadyState
 import kotlinx.coroutines.launch
 
+/**
+ * This ViewModel Type is Only To Pass ViewModel with ReadyState Generic Type and Layout In Constructor
+ *
+ * Note: Full Implementation in VortexFragment, VortexBaseFragment
+ */
 abstract class VortexFragmentReadyState<VM: VortexViewModelReadyState>(@LayoutRes private val layoutRes: Int) : VortexBaseFragment() {
 
     @CallSuper

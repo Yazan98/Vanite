@@ -56,8 +56,6 @@ Here You Can Tell The ViewModel You Should Handle The Auth Actions And The Child
 
 # Setup
 
-Packages Information : [Bintray](https://bintray.com/yt98/Vortex)
-
 1. The Build.gradle Root File
 
 ```

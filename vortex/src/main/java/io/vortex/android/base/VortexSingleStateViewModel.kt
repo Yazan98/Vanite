@@ -12,6 +12,12 @@ import io.vortex.android.state.VortexState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * This ViewModel Used To Create ViewModel With Only State, Without Actions To ViewModel
+ * Not Recommended To Use But It's Option Available in Vortex
+ *
+ * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ */
 abstract class VortexSingleStateViewModel<State : VortexState> : ViewModel(), VortexSingleStateViewModelImpl<State>,
     VortexViewModelType {
 

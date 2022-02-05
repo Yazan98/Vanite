@@ -13,6 +13,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
+/**
+ * This ViewModel Used When You Want to add Multiple MutableLiveData Inside MediatorLiveData
+ * The Current State Will be MediatorLiveData To Hold More Than One State Per Screen
+ *
+ * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ */
 abstract class VortexMultiViewModel<State: VortexState, Action: VortexAction> : ViewModel(), VortexMultiViewModelImpl<State, Action>,
     VortexViewModelType {
 

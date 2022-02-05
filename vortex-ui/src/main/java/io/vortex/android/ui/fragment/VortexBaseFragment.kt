@@ -21,6 +21,16 @@ import kotlinx.coroutines.withContext
  * Time : 11:47 AM
  */
 
+/**
+ * This Fragment is the Super Fragment in Vortex for All Types Of Fragments
+ * This One is Handling 2 Types of View Injection
+ * 1. Layout XML Injection
+ * 2. ViewBinding Injection
+ *
+ * This Fragment Has Utility Classes That Needed a lot Inside Fragments By Inline Functions
+ * And Provide One Structure of Fragments
+ * This Fragments is Customized By Passed Parameters in Generic Types
+ */
 abstract class VortexBaseFragment : Fragment() {
 
     protected val messageController: VortexMessageDelegation by lazy {
@@ -90,6 +100,14 @@ abstract class VortexBaseFragment : Fragment() {
         withContext(Dispatchers.Main) {
             val launchIntent = context.packageManager.getLaunchIntentForPackage(packageName)
             context.startActivity(launchIntent)
+        }
+    }
+
+    protected fun getCurrentContext(): Context {
+        return try {
+            activity ?: requireActivity()
+        } catch (ex: Exception) {
+            requireContext()
         }
     }
 
