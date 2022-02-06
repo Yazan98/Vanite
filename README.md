@@ -113,7 +113,7 @@ vortex {
 }
 ```
 
-# Vortex Decumenetation
+# Vortex Documentation
 Coming Soon Vortex still Under Development
 
 # License
