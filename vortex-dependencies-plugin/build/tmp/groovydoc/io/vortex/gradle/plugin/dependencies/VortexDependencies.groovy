@@ -2,7 +2,7 @@ package io.vortex.gradle.plugin.dependencies
 
 class VortexDependencies {
 
-    public static final String VORTEX_VERSION = "2.2.1"
+    public static final String VORTEX_VERSION = "2.3.1"
     public static final String VORTEX_UI = "com.yazantarifi:vortex-ui:${VORTEX_VERSION}"
     public static final String VORTEX_PERMISSIONS = "com.yazantarifi:vortex-permissions:${VORTEX_VERSION}"
     public static final String VORTEX_CORE = "com.yazantarifi:vortex:${VORTEX_VERSION}"

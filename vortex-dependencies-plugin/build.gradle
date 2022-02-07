@@ -15,7 +15,7 @@ plugins {
 }
 
 group = "io.vortex.gradle.plugin.dependencies"
-version = "1.1.0"
+version = "2.3.1"
 
 repositories {
     // Use jcenter for resolving dependencies.
