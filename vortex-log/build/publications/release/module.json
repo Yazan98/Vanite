@@ -3,7 +3,7 @@
   "component": {
     "group": "com.yazantarifi",
     "module": "vortex-log",
-    "version": "2.2.2",
+    "version": "2.3.1",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -24,13 +24,13 @@
       },
       "files": [
         {
-          "name": "vortex-log-2.2.2.aar",
-          "url": "vortex-log-2.2.2.aar",
-          "size": 12656,
-          "sha512": "ccc43a6d9702f651d42ec361c226d181b0e120074765eae3e979dec78cb848e189c2402190c775c16cc3b252c04a62aa4678b7983679071d34e348af793c0981",
-          "sha256": "691333eb6a9a1a8f12599777245d3a77edeba84a12223bfd17a3366425fee56e",
-          "sha1": "95f42675e317b982d861606581a94ec18b6d2f97",
-          "md5": "2f60fcfa2f41bcd6bac8ab45612f227c"
+          "name": "vortex-log-2.3.1.aar",
+          "url": "vortex-log-2.3.1.aar",
+          "size": 31258,
+          "sha512": "cd7f8e9e79b4fc6690c8507870397e6cb381b51d8e6853a4f8ab247edc5a131f1a6d137756b661bef5b7a6b0a2c5f693b608016acd95438b69da2d2dfdb12b79",
+          "sha256": "5851b673e2c8e3d6e1564ac46fd1f2173b726986605cd97d5010e2eae380ca27",
+          "sha1": "02870b03c9f3810308471dbc3553a1e4bda49cc6",
+          "md5": "ebb37be01bfcc295d9c9259f39262577"
         }
       ]
     },
@@ -103,19 +103,19 @@
           "group": "com.yazantarifi",
           "module": "vortex",
           "version": {
-            "requires": "2.2.2"
+            "requires": "2.3.1"
           }
         }
       ],
       "files": [
         {
-          "name": "vortex-log-2.2.2.aar",
-          "url": "vortex-log-2.2.2.aar",
-          "size": 12656,
-          "sha512": "ccc43a6d9702f651d42ec361c226d181b0e120074765eae3e979dec78cb848e189c2402190c775c16cc3b252c04a62aa4678b7983679071d34e348af793c0981",
-          "sha256": "691333eb6a9a1a8f12599777245d3a77edeba84a12223bfd17a3366425fee56e",
-          "sha1": "95f42675e317b982d861606581a94ec18b6d2f97",
-          "md5": "2f60fcfa2f41bcd6bac8ab45612f227c"
+          "name": "vortex-log-2.3.1.aar",
+          "url": "vortex-log-2.3.1.aar",
+          "size": 31258,
+          "sha512": "cd7f8e9e79b4fc6690c8507870397e6cb381b51d8e6853a4f8ab247edc5a131f1a6d137756b661bef5b7a6b0a2c5f693b608016acd95438b69da2d2dfdb12b79",
+          "sha256": "5851b673e2c8e3d6e1564ac46fd1f2173b726986605cd97d5010e2eae380ca27",
+          "sha1": "02870b03c9f3810308471dbc3553a1e4bda49cc6",
+          "md5": "ebb37be01bfcc295d9c9259f39262577"
         }
       ]
     }

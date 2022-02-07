@@ -52,7 +52,7 @@ apply from: "${rootDir}/scripts/publish-root.gradle"
 
 ext {
     PUBLISH_GROUP_ID = 'com.yazantarifi'
-    PUBLISH_VERSION = '2.3.0'
+    PUBLISH_VERSION = '2.3.1'
     PUBLISH_DESCRIPTION = 'Shake Reporting To Report Android Crashes, Application Requests'
     PUBLISH_URL = 'https://github.com/Yazan98/Vortex'
     PUBLISH_LICENSE_NAME = 'MIT'
@@ -68,56 +68,6 @@ ext {
 subprojects {
     group = PUBLISH_GROUP_ID
     version = PUBLISH_VERSION
-}
-
-subprojects {
-
-    apply plugin: "${rootProject.ext.LibraryPlugin}"
-    apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
-    apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
-
-    android {
-        compileSdkVersion rootProject.ext.ApplicationCompileV
-
-        defaultConfig {
-
-            minSdkVersion rootProject.ext.MinSdkV
-            targetSdkVersion rootProject.ext.ApplicationCompileV
-            versionCode rootProject.ext.LibraryVersionCode
-            versionName "${rootProject.ext.LibraryVersion}"
-
-        }
-
-        buildTypes {
-            release {
-                minifyEnabled true
-                debuggable false
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            }
-        }
-
-        lintOptions {
-            abortOnError false
-        }
-
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
-    }
-
-    dependencies { configuration ->
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.PluginsVersions.KotlinPluginV}"
-
-        addRxJavaLibraries(configuration)
-        addCoroutinesLibraries(configuration)
-        addDefaultAppCompatDependencies(configuration)
-
-        if (!project.name.equals("vortex")) {
-            implementation project(":vortex")
-        }
-    }
-
 }
 
 public void addDefaultAppCompatDependencies(configuration) {

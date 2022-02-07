@@ -1,4 +1,35 @@
+apply plugin: "${rootProject.ext.LibraryPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
 apply plugin: "${rootProject.ext.KotlinKaptPlugin}"
+
+android {
+    compileSdkVersion rootProject.ext.ApplicationCompileV
+
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.MinSdkV
+        targetSdkVersion rootProject.ext.ApplicationCompileV
+        versionCode rootProject.ext.LibraryVersionCode
+        versionName "${rootProject.ext.LibraryVersion}"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
 
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex-utils'
@@ -6,7 +37,7 @@ ext {
 
 apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
-dependencies {
+dependencies { configuration ->
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
@@ -22,7 +53,17 @@ dependencies {
     implementation 'com.google.android.libraries.places:places:2.5.0'
     implementation "com.google.android.gms:play-services-location:18.0.0"
 
-    api project(":vortex-permissions")
-    api project(":vortex-firebase")
-    api project(":vortex-prefs")
+    implementation project(":vortex-permissions")
+    implementation project(":vortex-firebase")
+    implementation project(":vortex-prefs")
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.PluginsVersions.KotlinPluginV}"
+
+    addRxJavaLibraries(configuration)
+    addCoroutinesLibraries(configuration)
+    addDefaultAppCompatDependencies(configuration)
+
+    if (!project.name.equals("vortex")) {
+        implementation project(":vortex")
+    }
 }

@@ -1,10 +1,42 @@
+apply plugin: "${rootProject.ext.LibraryPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
+
+android {
+    compileSdkVersion rootProject.ext.ApplicationCompileV
+
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.MinSdkV
+        targetSdkVersion rootProject.ext.ApplicationCompileV
+        versionCode rootProject.ext.LibraryVersionCode
+        versionName "${rootProject.ext.LibraryVersion}"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex-firebase'
 }
 
 apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
-dependencies {
+dependencies { configuration ->
     implementation 'com.google.firebase:firebase-firestore:24.0.1'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
@@ -14,4 +46,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
     implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.PluginsVersions.KotlinPluginV}"
+
+    addRxJavaLibraries(configuration)
+    addCoroutinesLibraries(configuration)
+    addDefaultAppCompatDependencies(configuration)
+
+    if (!project.name.equals("vortex")) {
+        implementation project(":vortex")
+    }
 }

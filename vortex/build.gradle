@@ -1,4 +1,35 @@
+apply plugin: "${rootProject.ext.LibraryPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
 apply plugin: "${rootProject.ext.KotlinKaptPlugin}"
+
+android {
+    compileSdkVersion rootProject.ext.ApplicationCompileV
+
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.MinSdkV
+        targetSdkVersion rootProject.ext.ApplicationCompileV
+        versionCode rootProject.ext.LibraryVersionCode
+        versionName "${rootProject.ext.LibraryVersion}"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
 
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex'
