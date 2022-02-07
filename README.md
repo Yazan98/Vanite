@@ -99,6 +99,13 @@ buildscript {
 ```
 apply plugin: "io.vortex.gradle.plugin.dependencies"
 ```
+
+# Publishing
+```
+gradlew publishReleasePublicationToSonatypeRepository
+gradlew closeAndReleaseSonatypeStagingRepository
+```
+
 # Vortex Decumenetation
 Coming Soon Vortex still Under Development
 

@@ -1,9 +1,10 @@
 apply plugin: "${rootProject.ext.KotlinKaptPlugin}"
-apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex-utils'
 }
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'

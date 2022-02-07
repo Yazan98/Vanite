@@ -1,8 +1,8 @@
-apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
-
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex-firebase'
 }
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 dependencies {
     implementation 'com.google.firebase:firebase-firestore:24.0.1'

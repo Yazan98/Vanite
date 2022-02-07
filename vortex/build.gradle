@@ -1,9 +1,10 @@
 apply plugin: "${rootProject.ext.KotlinKaptPlugin}"
-apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex'
 }
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 /**
  * Core Module Dependencies Required

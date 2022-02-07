@@ -1,8 +1,8 @@
-apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
-
 ext {
     PUBLISH_ARTIFACT_ID = 'vortex-ui'
 }
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 dependencies {
     implementation 'com.google.android.material:material:1.5.0'

@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b1ad1b7-9cf7-4e41-a01b-2eb9d5459d99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/io/vortex/gradle/plugin/dependencies/VortexExtentionPlugin.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/io/vortex/gradle/plugin/dependencies/VortexDependencies.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/io/vortex/gradle/plugin/dependencies/VortexDependencies.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/io/vortex/gradle/plugin/dependencies/VortexDependenciesPlugin.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/io/vortex/gradle/plugin/dependencies/VortexDependenciesPlugin.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/io/vortex/gradle/plugin/dependencies/VortexPluginImpl.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/io/vortex/gradle/plugin/dependencies/VortexPluginImpl.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/gradle-plugins/io.vortex.gradle.plugin.dependencies.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/gradle-plugins/io.vortex.gradle.plugin.dependencies.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/temp14190985949014953072" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +20,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="24hGHxpsXSGpX7KNXTpbStPKWE3" />
   <component name="ProjectLevelVcsManager">
@@ -82,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1644075322334</updated>
-      <workItem from="1644075324011" duration="1357000" />
+      <workItem from="1644075324011" duration="3264000" />
     </task>
     <servers />
   </component>
