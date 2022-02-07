@@ -68,15 +68,15 @@ allprojects {
 
 ```
 dependencies {
-   implementation 'com.yazantarifi:vortex:2.2.1'
-   implementation 'com.yazantarifi:vortex-data:2.2.1'
-   implementation 'com.yazantarifi:vortex-utils:2.2.1'
-   implementation 'com.yazantarifi:vortex-ui-binding:2.2.1'
-   implementation 'com.yazantarifi:vortex-ui:2.2.1'
-   implementation 'com.yazantarifi:vortex-prefs:2.2.1'
-   implementation 'com.yazantarifi:vortex-permissions:2.2.1'
-   implementation 'com.yazantarifi:vortex-log:2.2.1'
-   implementation 'com.yazantarifi:vortex-firebase:2.2.1'
+   implementation 'com.yazantarifi:vortex:2.3.1'
+   implementation 'com.yazantarifi:vortex-data:2.3.1'
+   implementation 'com.yazantarifi:vortex-utils:2.3.1'
+   implementation 'com.yazantarifi:vortex-ui-binding:2.3.1'
+   implementation 'com.yazantarifi:vortex-ui:2.3.1'
+   implementation 'com.yazantarifi:vortex-prefs:2.3.1'
+   implementation 'com.yazantarifi:vortex-permissions:2.3.1'
+   implementation 'com.yazantarifi:vortex-log:2.3.1'
+   implementation 'com.yazantarifi:vortex-firebase:2.3.1'
 }
 ```
 # Vortex Gradle Plugin
@@ -89,7 +89,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.io.vortex.gradle.plugin.dependencies:vortex-dependencies-plugin:1.1.0"
+    classpath "gradle.plugin.io.vortex.gradle.plugin.dependencies:vortex-dependencies-plugin:2.3.1"
   }
 }
 ```
@@ -100,11 +100,6 @@ buildscript {
 apply plugin: "io.vortex.gradle.plugin.dependencies"
 ```
 
-# Publishing
-```
-gradlew publishReleasePublicationToSonatypeRepository
-gradlew closeAndReleaseSonatypeStagingRepository
-```
 
 # Vortex Documentation
 Coming Soon Vortex still Under Development
