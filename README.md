@@ -89,12 +89,12 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.io.vortex.gradle.plugin.dependencies:vortex-dependencies-plugin:1.0.0"
+    classpath "gradle.plugin.io.vortex.gradle.plugin.dependencies:vortex-dependencies-plugin:1.1.0"
   }
 }
 ```
 
-3. Each Module Should Implement The Plugin 
+3. Each Module Should Implement The Plugin
 
 ```
 apply plugin: "io.vortex.gradle.plugin.dependencies"
@@ -106,7 +106,7 @@ gradlew publishReleasePublicationToSonatypeRepository
 gradlew closeAndReleaseSonatypeStagingRepository
 ```
 
-# Vortex Decumenetation
+# Vortex Documentation
 Coming Soon Vortex still Under Development
 
 # License
