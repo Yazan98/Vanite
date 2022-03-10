@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml:1:1-2:44
+INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml:1:1-2:44
+INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml:1:1-2:44
+	package
+		ADDED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml:2:5-41
+		INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+		INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+		ADDED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+		INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+		ADDED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml
+		INJECTED from D:\Vortex\vortex-firebase\src\main\AndroidManifest.xml

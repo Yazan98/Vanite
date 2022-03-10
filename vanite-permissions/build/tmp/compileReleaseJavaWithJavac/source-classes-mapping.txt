@@ -1,0 +1,2 @@
+io/vortex/android/permissions/BuildConfig.java
+ io.vortex.android.permissions.BuildConfig

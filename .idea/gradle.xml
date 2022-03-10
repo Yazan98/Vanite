@@ -12,15 +12,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/vortex" />
-            <option value="$PROJECT_DIR$/vortex-data" />
-            <option value="$PROJECT_DIR$/vortex-firebase" />
-            <option value="$PROJECT_DIR$/vortex-log" />
-            <option value="$PROJECT_DIR$/vortex-permissions" />
-            <option value="$PROJECT_DIR$/vortex-prefs" />
-            <option value="$PROJECT_DIR$/vortex-ui" />
-            <option value="$PROJECT_DIR$/vortex-ui-binding" />
-            <option value="$PROJECT_DIR$/vortex-utils" />
+            <option value="$PROJECT_DIR$/vanite" />
+            <option value="$PROJECT_DIR$/vanite-data" />
+            <option value="$PROJECT_DIR$/vanite-firebase" />
+            <option value="$PROJECT_DIR$/vanite-log" />
+            <option value="$PROJECT_DIR$/vanite-permissions" />
+            <option value="$PROJECT_DIR$/vanite-prefs" />
+            <option value="$PROJECT_DIR$/vanite-ui" />
+            <option value="$PROJECT_DIR$/vanite-ui-binding" />
+            <option value="$PROJECT_DIR$/vanite-utils" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

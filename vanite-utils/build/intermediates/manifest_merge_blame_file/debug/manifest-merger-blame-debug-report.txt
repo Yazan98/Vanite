@@ -1,0 +1,24 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.vortex.android.utils" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="21"
+6-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="31" />
+7-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml
+8
+9    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+9-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:4:5-79
+9-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:4:22-76
+10    <uses-permission android:name="android.permission.INTERNET" />
+10-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:5:5-67
+10-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:5:22-64
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:5:5-67
+11-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.WAKE_LOCK" />
+12-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:7:5-68
+12-->D:\Vortex\vortex-utils\src\main\AndroidManifest.xml:7:22-65
+13
+14</manifest>

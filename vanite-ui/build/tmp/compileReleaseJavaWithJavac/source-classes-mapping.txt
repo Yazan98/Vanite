@@ -1,0 +1,2 @@
+io/vortex/android/ui/BuildConfig.java
+ io.vortex.android.ui.BuildConfig
