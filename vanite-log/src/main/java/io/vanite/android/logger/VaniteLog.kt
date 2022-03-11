@@ -1,10 +1,10 @@
 package io.vanite.android.logger
 
 import android.util.Log
-import io.vanite.android.logger.config.VortexLoggerConfiguration
-import io.vanite.android.logger.keys.VortexLoggerLevel
-import io.vanite.android.logger.keys.VortexLoggerMode
-import io.vanite.android.logger.keys.VortexLoggingStatus
+import io.vanite.android.logger.config.VaniteLoggerConfiguration
+import io.vanite.android.logger.keys.VaniteLoggerLevel
+import io.vanite.android.logger.keys.VaniteLoggerMode
+import io.vanite.android.logger.keys.VaniteLoggingStatus
 
 /**
  * This is The Main Class For Vortex Logger To Log The Android Messages
@@ -24,16 +24,16 @@ import io.vanite.android.logger.keys.VortexLoggingStatus
     }
 
  */
-object VortexLog {
+object VaniteLog {
 
-    @PublishedApi internal var defaultPreMode: VortexLoggerMode = VortexLoggerConfiguration.getLoggingConfiguration().getDefaultPreMode()
-    @PublishedApi internal var defaultPostMode: VortexLoggerMode = VortexLoggerConfiguration.getLoggingConfiguration().getDefaultPostMode()
-    @PublishedApi internal var parentTag: String =  VortexLoggerConfiguration.getLoggingConfiguration().getGlobalTag()
-    @PublishedApi internal var defaultLevel: VortexLoggerLevel = VortexLoggerConfiguration.getLoggingConfiguration().getDefaultLevel()
+    @PublishedApi internal var defaultPreMode: VaniteLoggerMode = VaniteLoggerConfiguration.getLoggingConfiguration().getDefaultPreMode()
+    @PublishedApi internal var defaultPostMode: VaniteLoggerMode = VaniteLoggerConfiguration.getLoggingConfiguration().getDefaultPostMode()
+    @PublishedApi internal var parentTag: String =  VaniteLoggerConfiguration.getLoggingConfiguration().getGlobalTag()
+    @PublishedApi internal var defaultLevel: VaniteLoggerLevel = VaniteLoggerConfiguration.getLoggingConfiguration().getDefaultLevel()
     @PublishedApi internal var repeatTime: Int = 50
 
     inline fun print(message: String, body: () -> Unit = {}) {
-        if (VortexLoggerConfiguration.getLoggingConfiguration().getLoggingStatus() == VortexLoggingStatus.ENABLED) {
+        if (VaniteLoggerConfiguration.getLoggingConfiguration().getLoggingStatus() == VaniteLoggingStatus.ENABLED) {
             body()
             this printPreMode defaultPreMode
             Log.d(parentTag, message)
@@ -43,7 +43,7 @@ object VortexLog {
     }
 
     inline fun printLevel(message: String, body: () -> Unit = {}) {
-        if (VortexLoggerConfiguration.getLoggingConfiguration().getLoggingStatus() == VortexLoggingStatus.ENABLED) {
+        if (VaniteLoggerConfiguration.getLoggingConfiguration().getLoggingStatus() == VaniteLoggingStatus.ENABLED) {
             body()
             this printPreMode defaultPreMode
             printLevelWithMessage(message, defaultLevel)
@@ -52,11 +52,11 @@ object VortexLog {
         }
     }
 
-    infix fun preMode(mode: VortexLoggerMode) {
+    infix fun preMode(mode: VaniteLoggerMode) {
         this.defaultPreMode = mode
     }
 
-    infix fun postMode(mode: VortexLoggerMode) {
+    infix fun postMode(mode: VaniteLoggerMode) {
         this.defaultPostMode = mode
     }
 
@@ -64,11 +64,11 @@ object VortexLog {
         this.parentTag = tag
     }
 
-    infix fun attachLevel(level: VortexLoggerLevel) {
+    infix fun attachLevel(level: VaniteLoggerLevel) {
         this.defaultLevel = level
     }
 
-    infix fun prePost(mode: VortexLoggerMode) {
+    infix fun prePost(mode: VaniteLoggerMode) {
         this.defaultPreMode = mode
         this.defaultPostMode = mode
     }
@@ -77,50 +77,50 @@ object VortexLog {
         repeatTime = count
     }
 
-    @PublishedApi internal fun printLevelWithMessage(message: String, mode: VortexLoggerLevel) {
+    @PublishedApi internal fun printLevelWithMessage(message: String, mode: VaniteLoggerLevel) {
         when (mode) {
-            VortexLoggerLevel.DEBUG -> Log.d(parentTag, message)
-            VortexLoggerLevel.ERROR -> Log.e(parentTag, message)
-            VortexLoggerLevel.WARNING -> Log.w(parentTag, message)
+            VaniteLoggerLevel.DEBUG -> Log.d(parentTag, message)
+            VaniteLoggerLevel.ERROR -> Log.e(parentTag, message)
+            VaniteLoggerLevel.WARNING -> Log.w(parentTag, message)
         }
     }
 
-    @PublishedApi internal infix fun printPreMode(mode: VortexLoggerMode) {
+    @PublishedApi internal infix fun printPreMode(mode: VaniteLoggerMode) {
         when (mode) {
-            VortexLoggerMode.DASH -> {
+            VaniteLoggerMode.DASH -> {
                 for (i in 0..repeatTime) { print("-") }
                 println()
             }
-            VortexLoggerMode.EQUAL -> {
+            VaniteLoggerMode.EQUAL -> {
                 for (i in 0..repeatTime) { print("=") }
                 println()
             }
-            VortexLoggerMode.SLASH -> {
+            VaniteLoggerMode.SLASH -> {
                 for (i in 0..repeatTime) { print("/") }
                 println()
             }
-            VortexLoggerMode.STAR -> {
+            VaniteLoggerMode.STAR -> {
                 for (i in 0..repeatTime) { print("*") }
                 println()
             }
         }
     }
 
-    @PublishedApi internal infix fun printPostMode(mode: VortexLoggerMode) {
+    @PublishedApi internal infix fun printPostMode(mode: VaniteLoggerMode) {
         when (mode) {
-            VortexLoggerMode.DASH -> {
+            VaniteLoggerMode.DASH -> {
                 for (i in 0..repeatTime) { print("-") }
                 println()
             }
-            VortexLoggerMode.EQUAL -> {
+            VaniteLoggerMode.EQUAL -> {
                 for (i in 0..repeatTime) { print("=") }
                 println()
             }
-            VortexLoggerMode.SLASH -> {
+            VaniteLoggerMode.SLASH -> {
                 for (i in 0..repeatTime) { print("/") }
                 println()
             }
-            VortexLoggerMode.STAR -> {
+            VaniteLoggerMode.STAR -> {
                 for (i in 0..repeatTime) { print("*") }
                 println()
             }
@@ -129,9 +129,9 @@ object VortexLog {
 
     @PublishedApi internal infix fun resetOptionsAfterLog(resetMode: Boolean) {
         if (resetMode) {
-            defaultPreMode = VortexLoggerConfiguration.getLoggingConfiguration().getDefaultPreMode()
-            defaultPostMode = VortexLoggerConfiguration.getLoggingConfiguration().getDefaultPostMode()
-            parentTag =  VortexLoggerConfiguration.getLoggingConfiguration().getGlobalTag()
+            defaultPreMode = VaniteLoggerConfiguration.getLoggingConfiguration().getDefaultPreMode()
+            defaultPostMode = VaniteLoggerConfiguration.getLoggingConfiguration().getDefaultPostMode()
+            parentTag =  VaniteLoggerConfiguration.getLoggingConfiguration().getGlobalTag()
             repeatTime = 50
         }
     }

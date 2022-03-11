@@ -1,5 +1,5 @@
 package io.vanite.android.logger.keys
 
-enum class VortexLoggingStatus {
+enum class VaniteLoggingStatus {
     ENABLED, DISABLED
 }

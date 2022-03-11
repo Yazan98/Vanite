@@ -2,7 +2,7 @@ package io.vanite.android.logger
 
 import java.lang.RuntimeException
 
-class VortexLoggerInitException : RuntimeException() {
+class VaniteLoggerInitException : RuntimeException() {
     override val message: String?
         get() = """
             Vortex Logging Error Intialization

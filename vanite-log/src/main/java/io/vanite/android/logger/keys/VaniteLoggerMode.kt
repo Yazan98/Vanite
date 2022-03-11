@@ -1,6 +1,6 @@
 package io.vanite.android.logger.keys
 
-enum class VortexLoggerMode(value: String) {
+enum class VaniteLoggerMode(value: String) {
     DASH("-"),
     SLASH("/"),
     STAR("*"),
