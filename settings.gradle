@@ -1,4 +1,4 @@
-rootProject.name='Vortex'
+rootProject.name='Vanite'
 include ':vanite-ui'
 include ':vanite-data'
 include ':vanite-utils'

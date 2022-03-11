@@ -31,7 +31,7 @@ android {
 }
 
 ext {
-    PUBLISH_ARTIFACT_ID = 'vortex-permissions'
+    PUBLISH_ARTIFACT_ID = 'vanite-permissions'
 }
 
 apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"

@@ -31,7 +31,7 @@ android {
 }
 
 ext {
-    PUBLISH_ARTIFACT_ID = 'vortex-ui-binding'
+    PUBLISH_ARTIFACT_ID = 'vanite-ui-binding'
 }
 
 apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"

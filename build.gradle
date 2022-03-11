@@ -8,7 +8,7 @@ buildscript {
             "EasyLauncherPluginV": "1.3.1",
             "FirebasePluginV"    : "4.3.1",
             "NavigationPluginV"  : "2.2.0-rc04",
-            "VortexPluginV"      : "1.0.0",
+            "VanitePluginV"      : "1.0.0",
             "HiltPluginVersion"  : "2.28-alpha",
             "NexusPublishPluginVersoin": "1.1.0"
     ]
@@ -53,16 +53,16 @@ apply from: "${rootDir}/scripts/publish-root.gradle"
 ext {
     PUBLISH_GROUP_ID = 'com.yazantarifi'
     PUBLISH_VERSION = '2.3.1'
-    PUBLISH_DESCRIPTION = 'Shake Reporting To Report Android Crashes, Application Requests'
-    PUBLISH_URL = 'https://github.com/Yazan98/Vortex'
+    PUBLISH_DESCRIPTION = 'Application Structure, Base Code, Configuration, Utility Classes to Build Android Applications'
+    PUBLISH_URL = 'https://github.com/Yazan98/Vanite'
     PUBLISH_LICENSE_NAME = 'MIT'
-    PUBLISH_LICENSE_URL = 'https://github.com/Yazan98/Vortex/blob/main/LICENSE'
+    PUBLISH_LICENSE_URL = 'https://github.com/Yazan98/Vanite/blob/main/LICENSE'
     PUBLISH_DEVELOPER_ID = 'yt98'
     PUBLISH_DEVELOPER_NAME = 'Yazan Tarifi'
     PUBLISH_DEVELOPER_EMAIL = 'yazantarifi1@hotmail.com'
-    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/Yazan98/Vortex.git'
-    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/Yazan98/Vortex.git'
-    PUBLISH_SCM_URL = 'https://github.com/Yazan98/Vortex/tree/master'
+    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/Yazan98/Vanite.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/Yazan98/Vanite.git'
+    PUBLISH_SCM_URL = 'https://github.com/Yazan98/Vanite/tree/master'
 }
 
 subprojects {

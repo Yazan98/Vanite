@@ -32,7 +32,7 @@ android {
 }
 
 ext {
-    PUBLISH_ARTIFACT_ID = 'vortex'
+    PUBLISH_ARTIFACT_ID = 'vanite'
 }
 
 apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
