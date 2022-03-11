@@ -68,38 +68,17 @@ allprojects {
 
 ```
 dependencies {
-   implementation 'com.yazantarifi:Vanite:2.3.1'
-   implementation 'com.yazantarifi:Vanite-data:2.3.1'
-   implementation 'com.yazantarifi:Vanite-utils:2.3.1'
-   implementation 'com.yazantarifi:Vanite-ui-binding:2.3.1'
-   implementation 'com.yazantarifi:Vanite-ui:2.3.1'
-   implementation 'com.yazantarifi:Vanite-prefs:2.3.1'
-   implementation 'com.yazantarifi:Vanite-permissions:2.3.1'
-   implementation 'com.yazantarifi:Vanite-log:2.3.1'
-   implementation 'com.yazantarifi:Vanite-firebase:2.3.1'
+   implementation 'com.yazantarifi:Vanite:1.0.0'
+   implementation 'com.yazantarifi:Vanite-data:1.0.0'
+   implementation 'com.yazantarifi:Vanite-utils:1.0.0'
+   implementation 'com.yazantarifi:Vanite-ui-binding:1.0.0'
+   implementation 'com.yazantarifi:Vanite-ui:1.0.0'
+   implementation 'com.yazantarifi:Vanite-prefs:1.0.0'
+   implementation 'com.yazantarifi:Vanite-permissions:1.0.0'
+   implementation 'com.yazantarifi:Vanite-log:1.0.0'
+   implementation 'com.yazantarifi:Vanite-firebase:1.0.0'
 }
 ```
-# Vanite Gradle Plugin
-
-```
-buildscript {
-  repositories {
-    maven {
-      url "https://plugins.gradle.org/m2/"
-    }
-  }
-  dependencies {
-    classpath "gradle.plugin.io.Vanite.gradle.plugin.dependencies:Vanite-dependencies-plugin:2.3.1"
-  }
-}
-```
-
-3. Each Module Should Implement The Plugin
-
-```
-apply plugin: "io.Vanite.gradle.plugin.dependencies"
-```
-
 
 # Vanite Documentation
 Coming Soon Vanite still Under Development
