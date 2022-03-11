@@ -8,6 +8,6 @@ package io.vanite.android.models.data
 
 data class VaniteRequestController(
     var loggingMode: VaniteInterceptorMode,
-    var loggingTag: String? = "Vortex Request Logger ",
+    var loggingTag: String? = "Vanite Request Logger ",
     var isLoggingEnabled: Boolean = true
 )

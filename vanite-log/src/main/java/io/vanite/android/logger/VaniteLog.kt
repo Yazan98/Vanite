@@ -7,20 +7,20 @@ import io.vanite.android.logger.keys.VaniteLoggerMode
 import io.vanite.android.logger.keys.VaniteLoggingStatus
 
 /**
- * This is The Main Class For Vortex Logger To Log The Android Messages
+ * This is The Main Class For Vanite Logger To Log The Android Messages
  * Short Example :
  *
- * VortexLog.print("Your Message Here") {
-        VortexLog prePost VortexLoggerMode.DASH
-        VortexLog currentTag "Crate Account Request"
-        VortexLog repeat 100
+ * VaniteLog.print("Your Message Here") {
+        VaniteLog prePost VaniteLoggerMode.DASH
+        VaniteLog currentTag "Crate Account Request"
+        VaniteLog repeat 100
    }
 
  Another Example About Custom Logging Levels For Debug, Error , Warning
-    VortexLog.printLevel("The Error Message") {
-        VortexLog attachLevel VortexLoggerLevel.ERROR
-        VortexLog prePost VortexLoggerMode.EQUAL
-        VortexLog repeat 50
+VaniteLog.printLevel("The Error Message") {
+        VaniteLog attachLevel VaniteLoggerLevel.ERROR
+        VaniteLog prePost VaniteLoggerMode.EQUAL
+        VaniteLog repeat 50
     }
 
  */

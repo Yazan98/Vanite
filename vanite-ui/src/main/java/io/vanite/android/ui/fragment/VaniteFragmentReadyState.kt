@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 /**
  * This ViewModel Type is Only To Pass ViewModel with ReadyState Generic Type and Layout In Constructor
  *
- * Note: Full Implementation in VortexFragment, VortexBaseFragment
+ * Note: Full Implementation in VaniteFragment, VaniteBaseFragment
  */
 abstract class VaniteFragmentReadyState<VM: VaniteViewModelReadyState>(@LayoutRes private val layoutRes: Int) : VaniteBaseFragment() {
 

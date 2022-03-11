@@ -78,7 +78,7 @@ object VaniteRetrofitProvider {
         return httpClient.build()
     }
 
-    private fun getVortexClient(requestDetails: VaniteRequestDetailsProvider): OkHttpClient {
+    private fun getVaniteClient(requestDetails: VaniteRequestDetailsProvider): OkHttpClient {
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor(VaniteInterceptor(requestDetails , VaniteRequestController(
             isLoggingEnabled = requestDetails.isLoggingEnabled,
@@ -88,12 +88,12 @@ object VaniteRetrofitProvider {
         return httpClient.build()
     }
 
-    fun getVortexSettingsClient(baseUrl: String , requestDetails: VaniteRequestDetailsProvider): Retrofit {
+    fun getVaniteSettingsClient(baseUrl: String, requestDetails: VaniteRequestDetailsProvider): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
-            .client(getVortexClient(requestDetails))
+            .client(getVaniteClient(requestDetails))
             .build()
     }
 }

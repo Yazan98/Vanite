@@ -9,18 +9,18 @@ import io.vanite.android.models.VaniteExceptionDetails
  */
 
 /**
- * This Exception is the base exception for all errors at vortex library to log the exception details at logcat
+ * This Exception is the base exception for all errors at Vanite library to log the exception details at logcat
  */
 open class VaniteException(details: VaniteExceptionDetails<*>) : RuntimeException(details.getExceptionMessage()) {
     init {
         println(
             """
             ${repeatDash()}
-            Vortex Exception Started ...
+            Vanite Exception Started ...
             Exception Message : ${details.getExceptionMessage()}
             Exception Body : ${details.getExceptionBody().toString()}
             Exception Stacktrace : ${this.printStackTrace()}
-            Vortex Exception End ...
+            Vanite Exception End ...
             ${repeatDash()}
         """.trimIndent()
         )

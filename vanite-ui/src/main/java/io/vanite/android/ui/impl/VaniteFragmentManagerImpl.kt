@@ -5,7 +5,7 @@ import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 
-interface VortexFragmentManagerImpl {
+interface VaniteFragmentManagerImpl {
 
     fun addFragment(context: FragmentActivity?, fragment: Fragment,  @IdRes container: Int)
 
@@ -23,7 +23,7 @@ interface VortexFragmentManagerImpl {
 
 }
 
-interface VortexThrededFragmentManagerImpl {
+interface VaniteThrededFragmentManagerImpl {
 
    suspend fun addFragment(context: FragmentActivity?, fragment: Fragment,  @IdRes container: Int)
 

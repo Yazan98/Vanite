@@ -14,9 +14,9 @@ import kotlinx.coroutines.withContext
 
 /**
  * This ViewModel Used To Create ViewModel With Only State, Without Actions To ViewModel
- * Not Recommended To Use But It's Option Available in Vortex
+ * Not Recommended To Use But It's Option Available in Vanite
  *
- * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ * Note: Full Implementation of An Vanite ViewModel With State, Action, RxJava is Available at @see VaniteViewModel
  */
 abstract class VaniteSingleStateViewModel<State : VaniteState> : ViewModel(), VaniteSingleStateViewModelImpl<State>,
     VaniteViewModelType {

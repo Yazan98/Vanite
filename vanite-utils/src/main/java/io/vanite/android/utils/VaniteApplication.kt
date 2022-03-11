@@ -41,7 +41,7 @@ open class VaniteApplication : MultiDexApplication() {
      * Setup Fresco Configuration
      * This Configuration Should Initialize Fresco On Background Thread With Buffer Memory
      */
-    @Deprecated("Fresco Removed From Application", ReplaceWith("Glide Loading in  VortexImageLoader"))
+    @Deprecated("Fresco Removed From Application", ReplaceWith("Glide Loading in  VaniteImageLoader"))
     protected suspend fun setupFresco() = Unit
 
     /**

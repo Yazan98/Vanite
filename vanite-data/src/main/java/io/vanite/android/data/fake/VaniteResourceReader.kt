@@ -11,7 +11,7 @@ import java.io.*
 
 class VaniteResourceReader {
 
-    private val LOGTAG = "Vortex Res Reader"
+    private val LOGTAG = "Vanite Res Reader"
 
     suspend fun readJsonFromResource(resources: Resources, id: Int): String {
         return withContext(Dispatchers.IO) {

@@ -2,9 +2,9 @@ package io.vanite.android.ui.fragment.manager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import io.vanite.android.ui.impl.VortexFragmentManagerImpl
+import io.vanite.android.ui.impl.VaniteFragmentManagerImpl
 
-open class VaniteFragmentManager : VortexFragmentManagerImpl {
+open class VaniteFragmentManager : VaniteFragmentManagerImpl {
 
     override fun addFragment(context: FragmentActivity?, fragment: Fragment, container: Int) {
         context?.let {

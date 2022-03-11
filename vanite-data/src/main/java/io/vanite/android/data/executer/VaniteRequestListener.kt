@@ -8,14 +8,14 @@ package io.vanite.android.data.executer
 
 interface VaniteRequestListener {
 
-    interface VortexFlowableRequestListener<Result> : VortexObservableRequestListener<Result>
-    interface VortexObservableRequestListener<Result> : VaniteRequestListener {
+    interface VaniteFlowableRequestListener<Result> : VaniteObservableRequestListener<Result>
+    interface VaniteObservableRequestListener<Result> : VaniteRequestListener {
         fun onSuccess(data: Result)
         fun onError(error: Throwable)
         fun onComplete()
     }
 
-    interface VortexSingleRequestListener<Result> : VaniteRequestListener {
+    interface VaniteSingleRequestListener<Result> : VaniteRequestListener {
         fun onSuccess(data: Result)
         fun onError(error: Throwable)
     }

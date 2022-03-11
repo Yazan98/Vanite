@@ -11,7 +11,7 @@ class VaniteRetrofitInterceptor : Interceptor {
     companion object {
         const val AUTH = "Authorization"
         const val LANGUAGE = "Accept-Language"
-        const val REQUEST_TAG = "Vortex Request"
+        const val REQUEST_TAG = "Vanite Request"
     }
 
     @Throws(IOException::class)

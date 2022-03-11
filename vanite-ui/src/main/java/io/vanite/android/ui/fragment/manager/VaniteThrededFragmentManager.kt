@@ -2,12 +2,12 @@ package io.vanite.android.ui.fragment.manager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import io.vanite.android.ui.impl.VortexThrededFragmentManagerImpl
+import io.vanite.android.ui.impl.VaniteThrededFragmentManagerImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 
-class VaniteThrededFragmentManager : VortexThrededFragmentManagerImpl {
+class VaniteThrededFragmentManager : VaniteThrededFragmentManagerImpl {
 
     override suspend fun addFragment(
         context: FragmentActivity?,

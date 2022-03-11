@@ -17,7 +17,7 @@ import java.lang.Exception
  * This ViewModel Used When You Want to add Multiple MutableLiveData Inside MediatorLiveData
  * The Current State Will be MediatorLiveData To Hold More Than One State Per Screen
  *
- * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ * Note: Full Implementation of An Vanite ViewModel With State, Action, RxJava is Available at @see VaniteViewModel
  */
 abstract class VaniteMultiViewModel<State: VaniteState, Action: VaniteAction> : ViewModel(), VaniteMultiViewModelImpl<State, Action>,
     VaniteViewModelType {

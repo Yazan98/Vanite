@@ -39,7 +39,7 @@ class VaniteSingleLiveData<T> : MutableLiveData<T>() {
     }
 
     companion object {
-        private val TAG = "VortexSingleLiveData"
+        private val TAG = "VaniteSingleLiveData"
     }
 
 }

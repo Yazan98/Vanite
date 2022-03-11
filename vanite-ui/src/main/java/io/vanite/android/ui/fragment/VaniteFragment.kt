@@ -22,11 +22,11 @@ import kotlinx.coroutines.withContext
  */
 
 /**
- * This Class is The Main Fragment In Vortex and it's Recommended to Only Fragments that is Using
+ * This Class is The Main Fragment In Vanite and it's Recommended to Only Fragments that is Using
  * XML Binding and This is a Managed Class in onViewCreated that will Use Action, State, Reducer
  */
 abstract class VaniteFragment<State : VaniteState, Action : VaniteAction, Reducer : VaniteViewModel<State, Action>> :
-    VaniteBaseFragment(), VaniteRxStore.VortexStateListener<State>,
+    VaniteBaseFragment(), VaniteRxStore.VaniteStateListener<State>,
     VaniteViewImpl<Action, State, Reducer> {
 
     @CallSuper

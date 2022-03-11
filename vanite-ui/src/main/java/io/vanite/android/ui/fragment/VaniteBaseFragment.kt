@@ -22,7 +22,7 @@ import kotlinx.coroutines.withContext
  */
 
 /**
- * This Fragment is the Super Fragment in Vortex for All Types Of Fragments
+ * This Fragment is the Super Fragment in Vanite for All Types Of Fragments
  * This One is Handling 2 Types of View Injection
  * 1. Layout XML Injection
  * 2. ViewBinding Injection

@@ -9,8 +9,8 @@ import io.vanite.android.rx.VaniteRxRepository
  * This ViewModel Type Used To Handle Api's Without Any State Saved or The State Will be Managed
  * By The Sub Class
  *
- * This ViewModel Only Managed VortexRxRepository With RxJava Requests
- * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ * This ViewModel Only Managed VaniteRxRepository With RxJava Requests
+ * Note: Full Implementation of An Vanite ViewModel With State, Action, RxJava is Available at @see VaniteViewModel
  */
 abstract class VanitePureViewModel : ViewModel(), VanitePureViewModelImpl, VaniteViewModelType {
 

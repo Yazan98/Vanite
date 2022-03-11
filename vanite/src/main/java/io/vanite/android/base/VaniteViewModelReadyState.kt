@@ -12,11 +12,11 @@ import kotlinx.coroutines.withContext
 
 /**
  * This ViewModel Type Used When You want to Build ViewModel Without Passing Specific State to it
- * this one can handle Any State that Extends VortexViewModelState in the Application
+ * this one can handle Any State that Extends VaniteViewModelState in the Application
  * This Will Reduce A lot of Classes if you want to Build ViewModel For Each State
  * One Can Handle all Stats
  *
- * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ * Note: Full Implementation of An Vanite ViewModel With State, Action, RxJava is Available at @see VaniteViewModel
  */
 abstract class VaniteViewModelReadyState : ViewModel(), VaniteModelStateImpl, VaniteViewModelType {
 
@@ -26,7 +26,7 @@ abstract class VaniteViewModelReadyState : ViewModel(), VaniteModelStateImpl, Va
      * Use This Type Of ViewModel State When You Just Want THis Kind Of State Implementation
      * Without that Hard Logic When You Reflect The Data From ViewModel To View
      *
-     * Vortex Default State Handler you must declare each State With Response Type, Items
+     * Vanite Default State Handler you must declare each State With Response Type, Items
      * And You can Send The Result via State to View
      * that's th problem you always creating new Class For Each State Handling
      * but we can just use this kind of State Handler with Common logic at each Screen

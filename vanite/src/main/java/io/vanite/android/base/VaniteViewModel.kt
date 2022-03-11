@@ -24,7 +24,7 @@ import kotlinx.coroutines.withContext
  */
 
 /**
- * VortexViewModel is the initial point at application logic
+ * VaniteViewModel is the initial point at application logic
  * this class should always notify the View about his state because (The View) at application don't know abything
  * about application just apply the incoming state from ViewModel To View
  *

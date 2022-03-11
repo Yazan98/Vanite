@@ -11,14 +11,14 @@ import android.content.Context
 
 object VanitePermissionsConfiguration {
 
-    private lateinit var vortexApplication: Application
+    private lateinit var vaniteApplication: Application
 
     fun attachApplication(app: Application) {
-        vortexApplication = app
+        vaniteApplication = app
     }
 
     fun getContext(): Context {
-        return vortexApplication.applicationContext
+        return vaniteApplication.applicationContext
     }
 
 }

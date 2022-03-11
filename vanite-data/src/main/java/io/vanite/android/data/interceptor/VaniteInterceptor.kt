@@ -111,7 +111,7 @@ class VaniteInterceptor(
 
     private fun printHeader() {
         if (requestController.isLoggingEnabled) {
-            println("======================================= Vortex Logger Started =======================================")
+            println("======================================= Vanite Logger Started =======================================")
         }
     }
 

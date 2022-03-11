@@ -1,2 +1,0 @@
-io/vortex/android/firebase/BuildConfig.java
- io.vortex.android.firebase.BuildConfig

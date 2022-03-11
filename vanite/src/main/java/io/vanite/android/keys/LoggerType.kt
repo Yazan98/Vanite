@@ -7,5 +7,5 @@ package io.vanite.android.keys
  */
 
 enum class LoggerType {
-    TIMBER , VORTEX_LOGGER
+    TIMBER , VANITE_LOGGER
 }

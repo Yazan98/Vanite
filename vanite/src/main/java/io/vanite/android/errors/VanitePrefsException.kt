@@ -10,12 +10,12 @@ import io.vanite.android.models.VaniteExceptionDetails
 
 class VanitePrefsException : VaniteException(object : VaniteExceptionDetails<PrefsException> {
     override fun getExceptionMessage(): String {
-        return "Maybe You Forget To Config The Prefs At VortexApplication"
+        return "Maybe You Forget To Config The Prefs At VaniteApplication"
     }
 
     override fun getExceptionBody(): PrefsException {
         return PrefsException(
-            "Maybe You Forget To Config The Prefs At VortexApplication"
+            "Maybe You Forget To Config The Prefs At VaniteApplication"
         )
     }
 

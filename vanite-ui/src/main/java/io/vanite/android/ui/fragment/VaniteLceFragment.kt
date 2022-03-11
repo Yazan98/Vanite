@@ -8,7 +8,7 @@ import io.vanite.android.ui.VaniteLoadingStateView
 
 
 abstract class VaniteLceFragment<State : VaniteState, Action : VaniteAction, Reducer : VaniteViewModel<State, Action>>
-    : VaniteFragment<State, Action, Reducer>(), VaniteRxStore.VortexStateListener<State>, VaniteLoadingStateView<Action, State, Reducer> {
+    : VaniteFragment<State, Action, Reducer>(), VaniteRxStore.VaniteStateListener<State>, VaniteLoadingStateView<Action, State, Reducer> {
 
     // Code at the Super Class
 

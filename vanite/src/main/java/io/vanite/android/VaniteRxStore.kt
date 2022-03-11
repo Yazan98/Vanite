@@ -20,9 +20,9 @@ interface VaniteRxStore<State : VaniteState , O> {
 
     suspend fun getStateObserver(): O
 
-    suspend fun attachStateListener(listener: VortexStateListener<State>)
+    suspend fun attachStateListener(listener: VaniteStateListener<State>)
 
-    interface VortexStateListener<State : VaniteState> {
+    interface VaniteStateListener<State : VaniteState> {
         suspend fun onStateChanged(newState: State)
     }
 

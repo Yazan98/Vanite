@@ -15,7 +15,7 @@ import java.util.*
  * Time : 1:39 AM
  */
 
-object VortexLanguageToggle {
+object VaniteLanguageToggle {
 
     lateinit var prefs: SharedPreferences
 
@@ -28,13 +28,13 @@ object VortexLanguageToggle {
     suspend fun saveSelectedLanguage(language: String) {
         withContext(Dispatchers.IO) {
             if (::prefs.isInitialized) {
-                prefs.edit().putString("AttoSelectedLanguage", language).apply()
+                prefs.edit().putString("VaniteSelectedLanguage", language).apply()
             } else {
                 VanitePrefsNotInitializedException(VanitePrefsDetailsException<VanitePrefsDetails>(
-                    "Vortex Prefs Not Initialized",
+                    "Vanite Prefs Not Initialized",
                     VanitePrefsDetails(
-                        "io.vortex.android.utils.language.VortexLanguageToggle",
-                        "This Error Happend When You Forget To Call VortexLanguageToggle.init(context)"
+                        "io.vanite.android.utils.language.VaniteLanguageToggle",
+                        "This Error Happend When You Forget To Call VaniteLanguageToggle.init(context)"
                     )
                 ))
             }
@@ -43,7 +43,7 @@ object VortexLanguageToggle {
 
     suspend fun getSelectedLanguage(): String? {
         return withContext(Dispatchers.IO) {
-            prefs.getString("AttoSelectedLanguage", null)
+            prefs.getString("VaniteSelectedLanguage", null)
         }
     }
 
@@ -64,8 +64,8 @@ object VortexLanguageToggle {
 
 suspend fun languagePreCondition(context: Context?) {
     withContext(Dispatchers.IO) {
-        VortexLanguageToggle.getSelectedLanguage()?.let {
-            VortexLanguageToggle.changeApplicationLanguage(it, context)
+        VaniteLanguageToggle.getSelectedLanguage()?.let {
+            VaniteLanguageToggle.changeApplicationLanguage(it, context)
         }
     }
 

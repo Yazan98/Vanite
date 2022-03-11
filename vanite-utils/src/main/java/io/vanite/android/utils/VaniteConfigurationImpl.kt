@@ -33,10 +33,10 @@ interface VaniteConfigurationImpl<L, I> {
 
     suspend fun checkPlatformRequiredConfiguration(): VaniteConfiguration
 
-    fun registerVortexPrefsConfiguration(details: VanitePrefsDetails, application: Application): VaniteConfiguration
+    fun registerVanitePrefsConfiguration(details: VanitePrefsDetails, application: Application): VaniteConfiguration
 
     suspend fun registerUserStoryConfiguration(): VaniteConfiguration
 
-    suspend fun registerVortexPermissionsSettings(): VaniteConfiguration
+    suspend fun registerVanitePermissionsSettings(): VaniteConfiguration
 
 }

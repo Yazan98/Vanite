@@ -12,7 +12,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import io.vanite.android.models.ui.VortexAnimationSettings
+import io.vanite.android.models.ui.VaniteAnimationSettings
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -28,7 +28,7 @@ object VaniteGifController {
     private var listener: VaniteGifListener? = null
 
     suspend fun startAnimationWithGlide(
-        settings: VortexAnimationSettings,
+        settings: VaniteAnimationSettings,
         context: Context,
         image: ImageView?
     ) {
@@ -75,9 +75,9 @@ object VaniteGifController {
         }
     }
 
-    @Deprecated("Fresco Removed From Application", ReplaceWith("Replaced With : VortexGifController.startAnimationWithGlide"))
+    @Deprecated("Fresco Removed From Application", ReplaceWith("Replaced With : VaniteGifController.startAnimationWithGlide"))
     suspend fun startAnimationWithFresco(
-        settings: VortexAnimationSettings,
+        settings: VaniteAnimationSettings,
         image: View,
         isAutoPlay: Boolean
     ) = Unit

@@ -1,2 +1,0 @@
-io/vortex/android/prefs/BuildConfig.java
- io.vortex.android.prefs.BuildConfig

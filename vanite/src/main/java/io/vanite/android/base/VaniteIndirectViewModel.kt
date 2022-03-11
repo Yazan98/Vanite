@@ -7,10 +7,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 /**
- * VortexViewModel Class (One of Supported ViewModels)
+ * VaniteViewModel Class (One of Supported ViewModels)
  * Used to ViewModels That only Needs to Manage State Without Actions
  *
- * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ * Note: Full Implementation of An Vanite ViewModel With State, Action, RxJava is Available at @see VaniteViewModel
  */
 abstract class VaniteIndirectViewModel<State> : VanitePureViewModel(), VaniteIndirectViewModelImpl<State>,
     VaniteViewModelType {

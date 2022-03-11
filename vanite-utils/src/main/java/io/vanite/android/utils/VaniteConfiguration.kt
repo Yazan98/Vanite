@@ -22,11 +22,11 @@ import timber.log.Timber
 object VaniteConfiguration : VaniteConfigurationImpl<LoggerType, ImageLoader> {
 
     private var applicationStatus: Boolean = false
-    private lateinit var vortexApplication: Application
+    private lateinit var vaniteApplication: Application
     private var isPlatformCheckRequired: Boolean = false
 
     override fun registerApplicationClass(app: Application): VaniteConfiguration {
-        vortexApplication = app
+        vaniteApplication = app
         return this
     }
 
@@ -39,7 +39,7 @@ object VaniteConfiguration : VaniteConfigurationImpl<LoggerType, ImageLoader> {
                     }
                 }
 
-                LoggerType.VORTEX_LOGGER -> {
+                LoggerType.VANITE_LOGGER -> {
                     // implement this when create logger library (at the future xD )
                 }
             }
@@ -115,7 +115,7 @@ object VaniteConfiguration : VaniteConfigurationImpl<LoggerType, ImageLoader> {
         return this
     }
 
-    override fun registerVortexPrefsConfiguration(
+    override fun registerVanitePrefsConfiguration(
         details: VanitePrefsDetails,
         application: Application
     ): VaniteConfiguration {
@@ -130,9 +130,9 @@ object VaniteConfiguration : VaniteConfigurationImpl<LoggerType, ImageLoader> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override suspend fun registerVortexPermissionsSettings(): VaniteConfiguration {
+    override suspend fun registerVanitePermissionsSettings(): VaniteConfiguration {
         withContext(Dispatchers.IO) {
-            VanitePermissionsConfiguration.attachApplication(vortexApplication)
+            VanitePermissionsConfiguration.attachApplication(vaniteApplication)
         }
         return this
     }

@@ -12,7 +12,7 @@ import java.lang.ref.WeakReference
  * Time : 2:19 PM
  */
 
-class VaniteSingleRequestExecutor<Result, Listener : VaniteRequestListener.VortexSingleRequestListener<Result>> :
+class VaniteSingleRequestExecutor<Result, Listener : VaniteRequestListener.VaniteSingleRequestListener<Result>> :
     VaniteSubscriberHandler<Result, Listener , Single<Result>> {
 
     private val repo: CompositeDisposable by lazy { CompositeDisposable() }

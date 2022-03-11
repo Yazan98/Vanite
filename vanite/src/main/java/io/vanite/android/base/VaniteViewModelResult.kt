@@ -13,9 +13,9 @@ import io.vanite.android.state.VaniteState
 
 /**
  * This ViewModel Type Used To Build ViewModel With Specific Api Response and Access
- * VortexRequestProvider Directly Without Create it from Sub Class
+ * VaniteRequestProvider Directly Without Create it from Sub Class
  *
- * Note: Full Implementation of An Vortex ViewModel With State, Action, RxJava is Available at @see VortexViewModel
+ * Note: Full Implementation of An Vanite ViewModel With State, Action, RxJava is Available at @see VaniteViewModel
  */
 abstract class VaniteViewModelResult<State : VaniteState, Action : VaniteAction , Result> : VaniteViewModel<State, Action>(),
     VaniteViewModelType {
