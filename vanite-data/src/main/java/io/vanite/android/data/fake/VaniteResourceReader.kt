@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 import java.io.*
 
 
-class VortexResourceReader {
+class VaniteResourceReader {
 
     private val LOGTAG = "Vortex Res Reader"
 

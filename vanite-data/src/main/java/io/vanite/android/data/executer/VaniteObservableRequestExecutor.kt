@@ -12,15 +12,15 @@ import java.lang.ref.WeakReference
  * Time : 2:19 PM
  */
 
-class VortexObservableRequestExecutor<Result, Listener : VortexRequestListener.VortexObservableRequestListener<Result>> :
-    VortexSubscriberHandler<Result, Listener, Observable<Result>> {
+class VaniteObservableRequestExecutor<Result, Listener : VaniteRequestListener.VortexObservableRequestListener<Result>> :
+    VaniteSubscriberHandler<Result, Listener, Observable<Result>> {
 
     private val repo: CompositeDisposable by lazy { CompositeDisposable() }
     private var listener: WeakReference<Listener>? = null
 
     override suspend fun addListener(listener: Listener) {
         withContext(Dispatchers.IO) {
-            this@VortexObservableRequestExecutor.listener = WeakReference(listener)
+            this@VaniteObservableRequestExecutor.listener = WeakReference(listener)
         }
     }
 

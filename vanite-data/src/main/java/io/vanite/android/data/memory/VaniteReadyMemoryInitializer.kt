@@ -3,7 +3,7 @@ package io.vanite.android.data.memory
 import android.content.Context
 import android.content.SharedPreferences
 
-object VortexReadyMemoryInitializer {
+object VaniteReadyMemoryInitializer {
 
     lateinit var prefs: SharedPreferences
 

@@ -8,10 +8,10 @@ import io.reactivex.Single
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-abstract class VortexFakeRepository<Api> {
+abstract class VaniteFakeRepository<Api> {
 
-    protected val resourceReader: VortexResourceReader by lazy {
-        VortexResourceReader()
+    protected val resourceReader: VaniteResourceReader by lazy {
+        VaniteResourceReader()
     }
 
     protected suspend fun getObservableFromJson(res: Resources, @RawRes jsonId: Int):Observable<String> {

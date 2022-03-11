@@ -1,8 +1,8 @@
 package io.vanite.android.data.memory
 
-abstract class VortexMemoryRepository : MemoryRepositoryImpl<Any> {
+abstract class VaniteMemoryRepository : MemoryRepositoryImpl<Any> {
 
-    private var listener: VortexMemoryListener<Any>? = null
+    private var listener: VaniteMemoryListener<Any>? = null
     private val keys: HashMap<String, Any> by lazy {
         HashMap<String, Any>()
     }
@@ -19,7 +19,7 @@ abstract class VortexMemoryRepository : MemoryRepositoryImpl<Any> {
         this.listener?.acceptMemoryKeys(keys)
     }
 
-    override fun withListener(listener: VortexMemoryListener<Any>) {
+    override fun withListener(listener: VaniteMemoryListener<Any>) {
         this.listener = listener
     }
 

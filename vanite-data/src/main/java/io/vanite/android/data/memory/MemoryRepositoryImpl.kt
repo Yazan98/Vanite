@@ -6,7 +6,7 @@ interface MemoryRepositoryImpl<Type> {
 
     fun addAll(items: HashMap<String, Type>)
 
-    fun withListener(listener: VortexMemoryListener<Type>)
+    fun withListener(listener: VaniteMemoryListener<Type>)
 
     fun destroyListener()
 

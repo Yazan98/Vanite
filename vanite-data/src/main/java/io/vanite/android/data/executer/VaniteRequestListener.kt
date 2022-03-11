@@ -6,16 +6,16 @@ package io.vanite.android.data.executer
  * Time : 2:20 PM
  */
 
-interface VortexRequestListener {
+interface VaniteRequestListener {
 
     interface VortexFlowableRequestListener<Result> : VortexObservableRequestListener<Result>
-    interface VortexObservableRequestListener<Result> : VortexRequestListener {
+    interface VortexObservableRequestListener<Result> : VaniteRequestListener {
         fun onSuccess(data: Result)
         fun onError(error: Throwable)
         fun onComplete()
     }
 
-    interface VortexSingleRequestListener<Result> : VortexRequestListener {
+    interface VortexSingleRequestListener<Result> : VaniteRequestListener {
         fun onSuccess(data: Result)
         fun onError(error: Throwable)
     }

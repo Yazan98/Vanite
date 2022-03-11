@@ -6,7 +6,7 @@ package io.vanite.android.data.executer
  * Time : 11:28 PM
  */
 
-interface VortexSubscriberHandler<Result, Subscriber : VortexRequestListener , Request> {
+interface VaniteSubscriberHandler<Result, Subscriber : VaniteRequestListener , Request> {
 
     suspend fun addListener(listener: Subscriber)
 

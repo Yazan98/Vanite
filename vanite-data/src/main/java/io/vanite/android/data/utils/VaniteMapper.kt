@@ -1,6 +1,6 @@
 package io.vanite.android.data.utils
 
-interface VortexMapper<From, To> {
+interface VaniteMapper<From, To> {
 
     fun from(to: To): From
 

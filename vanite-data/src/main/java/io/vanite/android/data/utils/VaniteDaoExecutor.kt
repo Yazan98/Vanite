@@ -1,6 +1,6 @@
 package io.vanite.android.data.utils
 
-interface VortexDaoExecutor<T,ID> {
+interface VaniteDaoExecutor<T,ID> {
 
     suspend fun insert(entity: T)
 

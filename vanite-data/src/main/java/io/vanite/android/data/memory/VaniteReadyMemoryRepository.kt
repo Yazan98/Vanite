@@ -2,10 +2,10 @@ package io.vanite.android.data.memory
 
 import android.content.SharedPreferences
 
-object VortexReadyMemoryRepository : VortexMemoryRepository() {
+object VaniteReadyMemoryRepository : VaniteMemoryRepository() {
 
     private val prefsEditor: SharedPreferences.Editor by lazy {
-        VortexReadyMemoryInitializer.prefs.edit()
+        VaniteReadyMemoryInitializer.prefs.edit()
     }
 
     override fun getByKey(key: String, defVal: String): Any? {
@@ -31,11 +31,11 @@ object VortexReadyMemoryRepository : VortexMemoryRepository() {
 
     private fun getLocalKey(key: String, defVal: Any): Any? {
         return when (defVal) {
-            is String -> VortexReadyMemoryInitializer.prefs.getString(key, defVal) as Any
-            is Long -> VortexReadyMemoryInitializer.prefs.getLong(key, defVal)
-            is Float -> VortexReadyMemoryInitializer.prefs.getFloat(key, defVal)
-            is Boolean -> VortexReadyMemoryInitializer.prefs.getBoolean(key, defVal)
-            is Int -> VortexReadyMemoryInitializer.prefs.getInt(key, defVal)
+            is String -> VaniteReadyMemoryInitializer.prefs.getString(key, defVal) as Any
+            is Long -> VaniteReadyMemoryInitializer.prefs.getLong(key, defVal)
+            is Float -> VaniteReadyMemoryInitializer.prefs.getFloat(key, defVal)
+            is Boolean -> VaniteReadyMemoryInitializer.prefs.getBoolean(key, defVal)
+            is Int -> VaniteReadyMemoryInitializer.prefs.getInt(key, defVal)
             else -> {
             }
         }

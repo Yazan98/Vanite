@@ -1,6 +1,6 @@
 package io.vanite.android.data
 
-import io.vanite.android.data.interceptor.VortexInterceptor
+import io.vanite.android.data.interceptor.VaniteInterceptor
 import io.vanite.android.models.VaniteRequestDetails
 import io.vanite.android.models.VaniteRequestDetailsProvider
 import io.vanite.android.models.data.VaniteRequestController
@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * Time : 9:44 PM
  */
 
-object VortexRetrofitProvider {
+object VaniteRetrofitProvider {
 
     fun getBasicRetrofit(baseUrl: String): Retrofit {
         return Retrofit.Builder()
@@ -80,7 +80,7 @@ object VortexRetrofitProvider {
 
     private fun getVortexClient(requestDetails: VaniteRequestDetailsProvider): OkHttpClient {
         val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor(VortexInterceptor(requestDetails , VaniteRequestController(
+        httpClient.addInterceptor(VaniteInterceptor(requestDetails , VaniteRequestController(
             isLoggingEnabled = requestDetails.isLoggingEnabled,
             loggingMode = requestDetails.loggingMode,
             loggingTag = requestDetails.loggingTag

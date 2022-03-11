@@ -6,7 +6,7 @@ package io.vanite.android.data
  * Time : 9:44 PM
  */
 
-interface VortexRepositoryImpl<Api , Provider> {
+interface VaniteRepositoryImpl<Api , Provider> {
 
     suspend fun getService(): Api
 

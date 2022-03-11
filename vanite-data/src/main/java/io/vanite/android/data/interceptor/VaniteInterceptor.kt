@@ -15,7 +15,7 @@ import okhttp3.Response
  * Time : 12:12 AM
  */
 
-class VortexInterceptor(
+class VaniteInterceptor(
     private val requestDetails: VaniteRequestDetailsProvider,
     private val requestController: VaniteRequestController
 ) : Interceptor {

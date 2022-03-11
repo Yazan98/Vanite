@@ -6,7 +6,7 @@ import okhttp3.Response
 import okhttp3.ResponseBody
 import java.io.IOException
 
-class VortexRetrofitInterceptor : Interceptor {
+class VaniteRetrofitInterceptor : Interceptor {
 
     companion object {
         const val AUTH = "Authorization"

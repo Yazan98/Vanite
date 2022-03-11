@@ -8,7 +8,7 @@ import retrofit2.Retrofit
  * Time : 9:44 PM
  */
 
-abstract class VortexRepository<Api> : VortexRepositoryImpl<Api, Retrofit> {
+abstract class VaniteRepository<Api> : VaniteRepositoryImpl<Api, Retrofit> {
 
     open lateinit var serviceProvider: Retrofit
 
