@@ -3,7 +3,7 @@
 Android Infrastructure
 
 ![](https://img.shields.io/badge/Project%20Status-Under%20Development-blue)
-[![Maven Central](https://img.shields.io/maven-central/v/com.yazantarifi/Vanite.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.yazantarifi%22%20AND%20a:%22Vanite%22)
+[![Maven Central](https://img.shields.io/maven-central/v/com.yazantarifi/vanite.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.yazantarifi%22%20AND%20a:%22vanite%22)
 ![](https://img.shields.io/badge/License-Apache%202.0-yellow)
 ![](https://img.shields.io/badge/Language-Kotlin-orange)
 ![](https://img.shields.io/badge/Android%20Status-AndroidX-green)
