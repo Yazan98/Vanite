@@ -8,13 +8,13 @@ import androidx.annotation.CallSuper
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
-import io.vortex.android.VortexAction
-import io.vortex.android.VortexRxStore
-import io.vortex.android.base.VortexViewModel
-import io.vortex.android.state.VortexState
-import io.vortex.android.ui.VortexErrorType
-import io.vortex.android.ui.VortexViewImpl
-import io.vortex.android.ui.fragment.VortexBaseFragment
+import io.vanite.android.VaniteAction
+import io.vanite.android.VaniteRxStore
+import io.vanite.android.base.VaniteViewModel
+import io.vanite.android.state.VaniteState
+import io.vanite.android.ui.VortexErrorType
+import io.vanite.android.ui.VortexViewImpl
+import io.vanite.android.ui.fragment.VortexBaseFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -31,7 +31,7 @@ import kotlinx.coroutines.withContext
  * The New Thing Here is This Fragment Has State, Action, Reducer
  * To Manage Specific Actions
  */
-abstract class VortexViewBindingStateFragment<ViewBindingType : ViewBinding, State : VortexState, Action : VortexAction, Reducer : VortexViewModel<State, Action>>(private val inflate: Inflate<ViewBindingType>) : VortexBaseFragment(), VortexRxStore.VortexStateListener<State>,
+abstract class VortexViewBindingStateFragment<ViewBindingType : ViewBinding, State : VaniteState, Action : VaniteAction, Reducer : VaniteViewModel<State, Action>>(private val inflate: Inflate<ViewBindingType>) : VortexBaseFragment(), VaniteRxStore.VortexStateListener<State>,
     VortexViewImpl<Action, State, Reducer> {
 
     protected var binding: ViewBindingType? = null

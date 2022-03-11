@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.viewbinding.ViewBinding
-import io.vortex.android.ui.fragment.VortexBaseFragment
+import io.vanite.android.ui.fragment.VortexBaseFragment
 
 abstract class VortexViewBindingSingleFragment<ViewBindingType : ViewBinding>(private val inflate: Inflate<ViewBindingType>) : VortexBaseFragment() {
 

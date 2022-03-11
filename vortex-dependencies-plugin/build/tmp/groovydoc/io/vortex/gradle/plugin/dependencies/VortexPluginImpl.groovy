@@ -1,4 +1,4 @@
-package io.vortex.gradle.plugin.dependencies
+package io.vanite.gradle.plugin.dependencies
 
 import org.gradle.api.Project
 

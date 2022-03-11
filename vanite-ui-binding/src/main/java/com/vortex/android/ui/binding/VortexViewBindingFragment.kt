@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.viewbinding.ViewBinding
-import io.vortex.android.VortexViewModelType
-import io.vortex.android.ui.fragment.VortexBaseFragment
+import io.vanite.android.VaniteViewModelType
+import io.vanite.android.ui.fragment.VortexBaseFragment
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
@@ -19,7 +19,7 @@ typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
  * This Class Has all Specific Classes in UI Layer
  * and Remove The Code For Layout Inflation by Using isScreenLayoutBinding()
  */
-abstract class VortexViewBindingFragment<ViewBindingType : ViewBinding, ViewModel: VortexViewModelType>(private val inflate: Inflate<ViewBindingType>) : VortexBaseFragment() {
+abstract class VortexViewBindingFragment<ViewBindingType : ViewBinding, ViewModel: VaniteViewModelType>(private val inflate: Inflate<ViewBindingType>) : VortexBaseFragment() {
 
     protected var binding: ViewBindingType? = null
     abstract val viewModel: ViewModel

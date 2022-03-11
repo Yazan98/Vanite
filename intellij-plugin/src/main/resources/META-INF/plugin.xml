@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>io.vortex.intellij.plugin.intellij-generator</id>
+    <id>io.vanite.intellij.plugin.intellij-generator</id>
     <name>Vortex ICG</name>
     <vendor email="yazantarifi1@hotmail.com" url="http://www.yazan98.io/projects/vortex">Vortex</vendor>
 
@@ -18,16 +18,16 @@
     <actions>
         <group id="Vortex.About" text="Vortex" description="Generate android applications">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.FragmentGenerator" text="Generate Fragment"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.ScreenGenerator" text="Generate Screen"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.DialogGenerator" text="Generate Dialog"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.ReducerGenerator" text="Generate Reducer"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.CrudGenerator" text="Generate Crud Repository"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.SharedPrefsGenerator" text="Generate SharedPrefs"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.LocalDatabaseGenerator" text="Generate Local Database"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.GradleGenerator" text="Generate Gradle Configuration"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.TripGenerator" text="Application Flow"/>
-            <action class="io.vortex.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.AboutGenerator" text="About"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.FragmentGenerator" text="Generate Fragment"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.ScreenGenerator" text="Generate Screen"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.DialogGenerator" text="Generate Dialog"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.ReducerGenerator" text="Generate Reducer"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.CrudGenerator" text="Generate Crud Repository"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.SharedPrefsGenerator" text="Generate SharedPrefs"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.LocalDatabaseGenerator" text="Generate Local Database"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.GradleGenerator" text="Generate Gradle Configuration"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.TripGenerator" text="Application Flow"/>
+            <action class="io.vanite.intellij.plugin.actions.AboutPluginAction" id="Vortex.About.Action.AboutGenerator" text="About"/>
         </group>
     </actions>
 </idea-plugin>

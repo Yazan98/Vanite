@@ -3,7 +3,7 @@ package com.vortex.android.ui.binding
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
-import io.vortex.android.ui.activity.VortexScreen
+import io.vanite.android.ui.activity.VortexScreen
 
 abstract class VortexViewBindingScreen<B : ViewBinding>(val bindingFactory: (LayoutInflater) -> B) : VortexScreen() {
 
