@@ -19,7 +19,7 @@ import kotlinx.coroutines.withContext
  * Time : 11:07 PM
  */
 
-abstract class VortexFirebaseMessaging : FirebaseMessagingService(), FirebaseNotificationImpl<VortexNotification> {
+abstract class VaniteFirebaseMessaging : FirebaseMessagingService(), FirebaseNotificationImpl<VaniteNotification> {
 
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
@@ -27,7 +27,7 @@ abstract class VortexFirebaseMessaging : FirebaseMessagingService(), FirebaseNot
     }
 
     @SuppressLint("WrongConstant")
-    override suspend fun showNotification(notification: VortexNotification) {
+    override suspend fun showNotification(notification: VaniteNotification) {
         withContext(Dispatchers.Main) {
             val mBuilder = NotificationCompat.Builder(applicationContext, notification.channelId)
                 .setSmallIcon(notification.smallIcon)
@@ -75,6 +75,6 @@ abstract class VortexFirebaseMessaging : FirebaseMessagingService(), FirebaseNot
     }
 
     protected abstract fun onNewMessage(manager: RemoteMessage)
-    protected abstract fun getNotificationInfo(): VortexNotification
+    protected abstract fun getNotificationInfo(): VaniteNotification
 
 }

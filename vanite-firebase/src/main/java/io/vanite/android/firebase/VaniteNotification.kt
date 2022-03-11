@@ -8,7 +8,7 @@ import androidx.annotation.LayoutRes
  * Time : 11:13 PM
  */
 
-data class VortexNotification(
+data class VaniteNotification(
     var title: String = "",
     var body: String = "",
     @LayoutRes var smallIcon: Int,

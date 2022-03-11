@@ -1,7 +1,7 @@
 package io.vanite.android.firebase
 
 import com.google.firebase.firestore.FirebaseFirestore
-import io.vanite.android.firebase.impl.VortexFirestoreImpl
+import io.vanite.android.firebase.impl.VaniteFirestoreImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.resume
@@ -15,7 +15,7 @@ import kotlin.coroutines.suspendCoroutine
  * Time : 10:56 PM
  */
 
-class VortexFirestore(private val firestore: FirebaseFirestore) : VortexFirestoreImpl {
+class VaniteFirestore(private val firestore: FirebaseFirestore) : VaniteFirestoreImpl {
 
     override suspend fun createDocument(collection: String, model: Any) {
         withContext(Dispatchers.IO) {

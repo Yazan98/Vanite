@@ -9,7 +9,7 @@ import java.lang.Exception
  * Time : 10:32 PM
  */
 
-interface VortexAuthListener {
+interface VaniteAuthListener {
 
     fun onAuthSuccess(user: FirebaseUser?)
 

@@ -8,8 +8,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import io.vanite.android.firebase.impl.FirebaseAuthImpl
-import io.vanite.android.firebase.listener.VortexAuthListener
-import io.vanite.android.firebase.listener.VortexGoogleAuthLIstener
+import io.vanite.android.firebase.listener.VaniteAuthListener
+import io.vanite.android.firebase.listener.VaniteGoogleAuthLIstener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -19,9 +19,9 @@ import kotlinx.coroutines.withContext
  * Time : 10:29 PM
  */
 
-class VortexFirebaseAuth(
+class VaniteFirebaseAuth(
     private val auth: FirebaseAuth,
-    private var listener: VortexAuthListener?
+    private var listener: VaniteAuthListener?
 ) : FirebaseAuthImpl {
 
     companion object {
@@ -64,7 +64,7 @@ class VortexFirebaseAuth(
     override suspend fun registerGoogleSignInHandler(
         requestCode: Int,
         data: Intent?,
-        googleListener: VortexGoogleAuthLIstener?
+        googleListener: VaniteGoogleAuthLIstener?
     ) {
         withContext(Dispatchers.IO) {
             if (requestCode == RC_SIGN_IN) {

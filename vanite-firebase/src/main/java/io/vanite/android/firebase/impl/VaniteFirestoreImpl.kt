@@ -6,7 +6,7 @@ package io.vanite.android.firebase.impl
  * Time : 10:56 PM
  */
 
-interface VortexFirestoreImpl {
+interface VaniteFirestoreImpl {
 
     suspend fun createDocument(collection: String , model: Any)
 

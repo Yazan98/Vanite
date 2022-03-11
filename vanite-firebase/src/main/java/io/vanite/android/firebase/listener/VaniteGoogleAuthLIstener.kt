@@ -9,7 +9,7 @@ import java.lang.Exception
  * Time : 10:53 PM
  */
 
-interface VortexGoogleAuthLIstener {
+interface VaniteGoogleAuthLIstener {
 
     suspend fun onAuthSuccess(user: GoogleSignInAccount?)
 

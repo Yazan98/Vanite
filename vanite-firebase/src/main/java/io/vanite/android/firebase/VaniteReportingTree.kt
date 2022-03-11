@@ -10,7 +10,7 @@ import timber.log.Timber
  * Time : 11:09 PM
  */
 
-abstract class VortexReportingTree : Timber.Tree() {
+abstract class VaniteReportingTree : Timber.Tree() {
 
     override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
         if (priority == Log.VERBOSE || priority == Log.DEBUG) {

@@ -2,7 +2,7 @@ package io.vanite.android.firebase.impl
 
 import android.content.Context
 import android.content.Intent
-import io.vanite.android.firebase.listener.VortexGoogleAuthLIstener
+import io.vanite.android.firebase.listener.VaniteGoogleAuthLIstener
 
 /**
  * Created By : Yazan Tarifi
@@ -18,7 +18,7 @@ interface FirebaseAuthImpl {
 
     suspend fun registerWithEmailAndPassword(email: String, password: String)
 
-    suspend fun registerGoogleSignInHandler(requestCode: Int, data: Intent?, googleListener: VortexGoogleAuthLIstener?)
+    suspend fun registerGoogleSignInHandler(requestCode: Int, data: Intent?, googleListener: VaniteGoogleAuthLIstener?)
 
     suspend fun signOut()
 
