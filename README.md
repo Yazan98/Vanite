@@ -1,6 +1,7 @@
 # Vanite
 
-Android Infrastructure
+![New Project](https://user-images.githubusercontent.com/29167110/158914920-32310149-7f76-4802-9745-6c5ecf05f335.png)
+
 
 ![](https://img.shields.io/badge/Project%20Status-Under%20Development-blue)
 [![Maven Central](https://img.shields.io/maven-central/v/com.yazantarifi/vanite.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.yazantarifi%22%20AND%20a:%22vanite%22)
@@ -8,51 +9,33 @@ Android Infrastructure
 ![](https://img.shields.io/badge/Language-Kotlin-orange)
 ![](https://img.shields.io/badge/Android%20Status-AndroidX-green)
 
+
 # What is Vanite
 
-Vanite is an Android Infrastructure To Build Android Applications With Latest Technologies and Ready State Handling with User Interface Implementation For The Android Common Cases
-This Library is Not Just Base Code it's also help you to get the target as soon as possible with ready techniques, base code for everything and this library built on modularity architecture
-actually you can depends on Vanite To Build Any Kind Of Android Apps , but the problem here this library depends on other android apis to implement some operations
-like google maps and 3th libraries to make sure your application has the right dependencies to start using Vanite Library you should apply 2 Gradle Plugins
-The First One For Vanite Dependcies With Multi Modular Application To Apply The Right Dependency to Right Module, the Second one should provide the application the right dependencies to each module
+Vanite is an Open Source Library That Focus on Providing The Base Code of Android Applications with Utility Classes For Common Use Cases
+Under Multi Modular Architecture From Managing the State to Utils Classes to Providing Base Code in Base ViewModels, Fragments, Activities
 
-# Multi Modular Application
-Vanite has Main 3 Modules you should include in your app to install Vanite
+### Multi Modular Application
+The Library Focus on Main Modules
+1. UI
+2. Data
+3. Domain
 
-> Note: Vanite Don't Support Single Module Application Gradle Plugins Don't Working With Single Module
+The UI Layer Contact with Domain to handle the logic from ViewModels, Use Cases, etc and This Layer Contact with Data Layer to get the Data from Repositories, this Layers could be provided by Modules or Packages because vanite is Built based on Modules and you can add the Required Dependency to one Module as you want
 
-Each Application Should Implemented With 3 Layers (ui, data, domain)
-1. UI -> User Interface it includes (Activities, Fragments, Notifications, Dialogs, Application Configuration) -- Optional Dagger Application Scope
 
-2. DATA -> The Data Layer Should Implement RxJava With Retrofit To Handle Api Requests with Local Database Configuration and Shared Prefs Keys
+### Application Flow Components
+1. Actions
+2. State
+3. ViewModel
+4. User Interface
 
-3. DOMAIN -> This Layer Should include The ViewModels With Application Business Logic Because Each ViewModel has The Hole Logic For Each Section and this is the important part in the application for this all ViewModels in the Same Layer
+The UI Contact With ViewModel By execute Method Only and Send to ViewModel Actions, Each Action Should Execute specific Code or move to Use Case
+Then ViewModel Respond to View With New State For This ViewModel
 
-# Vanite Logic Handling
-1. State : Vanite is Working Depends on Android Architecture Component it means The Base Layer in Vanite is ViewModel and The Application State Management Depends On LiveData Handling
-There are a lot of ways you can deliver the Direct State to View With Ready State or Custom State
+Also to Provide Utility Classes As much as Possible for Common Use Cases
 
-#### Vanite State Types
-1.1 : State, Action Handling : This Way Requires Two Parameters The First One is Action and The Second One The Base State For This ViewModel
-You can Use This Way To Create ViewModel That Can Handle The SuccessState, ErrorState, LoadingState, EmptyState and This Way Inspired From Redux State Handling
-And The Action Will explain later
-
-1.2 : PureViewModel : This ViewModel Don't Requires Any Parameters and Just Handle The RxJava Disposables With ViewModel Lifecycle
-
-1.3 : SingleStateViewModel : This ViewModel don't Require Actions Just State and You Can pass any type of actions life Int (Keys), Objects also This ViewModel handle The Loading State 
-
-1.4 : ReadyStateViewModel : This ViewModel has The Ready State For Common Operations in any ViewModel like (EMPTY, LOADING, ERROR, SUCCESS)
-
-1.5 : IndirectViewModel : This ViewModel like SingleStateViewModel but it just handle The State Without Loading Handling
-
-#### Vanite Actions
-
-Vanite ViewModels and Views Requires The Actions Because any View Can Just send Actions To Any Type of ViewModel using execute Method
-in this case You can Declare The Base Action And Handle The Childes 
-
-Here You Can Tell The ViewModel You Should Handle The Auth Actions And The Childes Of This Action is Login, Register Actions Just and Don't Handle Anything Else
-
-# Setup
+### Setup
 
 1. The Build.gradle Root File
 
