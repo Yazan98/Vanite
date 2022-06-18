@@ -24,6 +24,8 @@ interface VaniteRxStore<State : VaniteState , O> {
 
     interface VaniteStateListener<State : VaniteState> {
         suspend fun onStateChanged(newState: State)
+
+        suspend fun onEffectChanged(newEffect: Any)
     }
 
 }

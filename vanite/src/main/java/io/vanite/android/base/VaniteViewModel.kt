@@ -58,6 +58,15 @@ abstract class VaniteViewModel<State : VaniteState, Action : VaniteAction> : Vie
     }
 
     /**
+     * EffectHandler is a Listener Used To Return a Effect From ViewModel to UI
+     * After Submitting a Logic and Want to Send an Effect to the UI but in case of this Effect is not a State
+     * Use This Listener
+     */
+    private val effectState: VaniteSingleLiveData<Any> by lazy {
+        VaniteSingleLiveData()
+    }
+
+    /**
      * At each screen there are an important content and you should save the state to handle it
      *
      * when view is destroyed and reCreate the new content and for this case
@@ -86,6 +95,15 @@ abstract class VaniteViewModel<State : VaniteState, Action : VaniteAction> : Vie
      */
     private val repo: VaniteRxRepository by lazy {
         VaniteRxRepository()
+    }
+
+    /**
+     * This Method Should Handle a Effects On the UI but this Effects is Not A State
+     */
+    override suspend fun acceptEffectHandlerState(newEffect: Any) {
+        withContext(Dispatchers.IO) {
+            effectState.postValue(newEffect)
+        }
     }
 
     /**
@@ -166,6 +184,10 @@ abstract class VaniteViewModel<State : VaniteState, Action : VaniteAction> : Vie
 
     fun getStateHandler(): MutableLiveData<State> {
         return stateObserver
+    }
+
+    fun getEffectStateHandler(): VaniteSingleLiveData<Any> {
+        return effectState
     }
 
     fun getLoadingStateHandler(): MutableLiveData<VaniteLoadingState> {

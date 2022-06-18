@@ -63,6 +63,12 @@ abstract class VaniteViewBindingStateFragment<ViewBindingType : ViewBinding, Sta
             }
         })
 
+        getController().getEffectStateHandler().observe(viewLifecycleOwner) {
+            lifecycleScope.launch {
+                onEffectChanged(it)
+            }
+        }
+
         getController().getLoadingStateHandler().observe(viewLifecycleOwner, Observer {
             lifecycleScope.launch {
                 getLoadingState(it.getLoadingState())

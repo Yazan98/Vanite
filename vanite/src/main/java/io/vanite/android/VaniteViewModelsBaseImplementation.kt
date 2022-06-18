@@ -20,6 +20,8 @@ interface VaniteRxReducer<State : VaniteState, Action : VaniteAction> {
 
     suspend fun acceptLoadingState(newState: Boolean)
 
+    suspend fun acceptEffectHandlerState(newEffect: Any)
+
     suspend fun addRxRequest(request: Disposable)
 
     suspend fun getInitialState(): State

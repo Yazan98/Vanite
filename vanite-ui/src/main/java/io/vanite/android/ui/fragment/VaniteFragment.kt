@@ -31,17 +31,23 @@ abstract class VaniteFragment<State : VaniteState, Action : VaniteAction, Reduce
 
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        getController().getStateHandler().observe(viewLifecycleOwner, Observer {
+        getController().getStateHandler().observe(viewLifecycleOwner) {
             lifecycleScope.launch {
                 onStateChanged(it)
             }
-        })
+        }
 
-        getController().getLoadingStateHandler().observe(viewLifecycleOwner, Observer {
+        getController().getEffectStateHandler().observe(viewLifecycleOwner) {
+            lifecycleScope.launch {
+                onEffectChanged(it)
+            }
+        }
+
+        getController().getLoadingStateHandler().observe(viewLifecycleOwner) {
             lifecycleScope.launch {
                 getLoadingState(it.getLoadingState())
             }
-        })
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 
