@@ -1,10 +1,13 @@
 package io.vanite.android.base
 
+import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModel
 import io.vanite.android.models.VaniteResult
+import io.vanite.android.useCases.VaniteUseCase
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach
+
 
 @ObsoleteCoroutinesApi
 abstract class VaniteCoroutineViewModel : ViewModel(), CoroutineScope {
@@ -37,8 +40,8 @@ abstract class VaniteCoroutineViewModel : ViewModel(), CoroutineScope {
             receiveChannel[key] = value
         }
 
-        launch {
-            for ((key, value) in receiveChannel) {
+        for ((key, value) in receiveChannel) {
+            launch {
                 value.consumeEach {
                     onListenerTriggered(key, it)
                 }
