@@ -21,3 +21,14 @@
 /vanite-ui/build
 /vanite-utils/build
 /vanite-logic/build
+
+# Remove Secrete Keys
+/vanite/SecretRingKey.kbx
+/vanite-data/SecretRingKey.kbx
+/vanite-firebase/SecretRingKey.kbx
+/vanite-log/SecretRingKey.kbx
+/vanite-permissions/SecretRingKey.kbx
+/vanite-prefs/SecretRingKey.kbx
+/vanite-ui/SecretRingKey.kbx
+/vanite-ui-binding/SecretRingKey.kbx
+/vanite-utils/SecretRingKey.kbx
