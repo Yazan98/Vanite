@@ -9,6 +9,10 @@ import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach
 
 
+/**
+ * This Type of ViewModels Used with Jetpack Compose and UseCases
+ * This is Implemented like this because it's ready to be configured with Hilt Constructor Injection
+ */
 @ObsoleteCoroutinesApi
 abstract class VaniteCoroutineViewModel : ViewModel(), CoroutineScope {
 
@@ -35,7 +39,7 @@ abstract class VaniteCoroutineViewModel : ViewModel(), CoroutineScope {
      * Initialize the ViewModel Streaming Listeners for Each UseCase
      * Now We Run Consumers to Collect the Data From Each Channel and Return it to Sub ViewModel
      */
-    init {
+    fun initViewModel() {
         for ((key, value) in getListeners()) {
             receiveChannel[key] = value
         }
