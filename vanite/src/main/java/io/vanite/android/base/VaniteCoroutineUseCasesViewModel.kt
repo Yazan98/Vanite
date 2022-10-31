@@ -2,6 +2,7 @@ package io.vanite.android.base
 
 import androidx.annotation.CallSuper
 import io.vanite.android.useCases.VaniteUseCase
+import io.vanite.android.useCases.VaniteUseCaseType
 import kotlinx.coroutines.ObsoleteCoroutinesApi
 
 @ObsoleteCoroutinesApi
@@ -21,6 +22,6 @@ abstract class VaniteCoroutineUseCasesViewModel : VaniteCoroutineViewModel() {
     /**
      * Save The Current UseCases Inside the ViewModel to Clear Them Automaticlly When ViewModel Destroyed
      */
-    abstract fun getSupportedUseCases(): ArrayList<VaniteUseCase<Any>>
+    abstract fun getSupportedUseCases(): ArrayList<VaniteUseCaseType>
 
 }
