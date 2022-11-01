@@ -51,16 +51,24 @@ allprojects {
 
 ```
 dependencies {
-   implementation 'com.yazantarifi:Vanite:1.0.2'
-   implementation 'com.yazantarifi:Vanite-data:1.0.2'
-   implementation 'com.yazantarifi:Vanite-utils:1.0.2'
-   implementation 'com.yazantarifi:Vanite-ui-binding:1.0.2'
-   implementation 'com.yazantarifi:Vanite-ui:1.0.2'
-   implementation 'com.yazantarifi:Vanite-prefs:1.0.2'
-   implementation 'com.yazantarifi:Vanite-permissions:1.0.2'
-   implementation 'com.yazantarifi:Vanite-log:1.0.2'
-   implementation 'com.yazantarifi:Vanite-firebase:1.0.2'
+   implementation 'com.yazantarifi:Vanite:1.0.4'
+   implementation 'com.yazantarifi:Vanite-data:1.0.4'
+   implementation 'com.yazantarifi:Vanite-utils:1.0.4'
+   implementation 'com.yazantarifi:Vanite-ui-binding:1.0.4'
+   implementation 'com.yazantarifi:Vanite-ui:1.0.4'
+   implementation 'com.yazantarifi:Vanite-prefs:1.0.4'
+   implementation 'com.yazantarifi:Vanite-permissions:1.0.4'
+   implementation 'com.yazantarifi:Vanite-log:1.0.4'
+   implementation 'com.yazantarifi:Vanite-firebase:1.0.4'
 }
+```
+
+# Push Update
+
+> This Command Will Generate Build File and Jars for All Modules
+
+```
+    gradle publishReleasePublicationToSonatypeRepository
 ```
 
 # Vanite Documentation
