@@ -3,12 +3,12 @@ apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
 apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
 
 android {
-    compileSdkVersion rootProject.ext.ApplicationCompileV
+    compileSdk rootProject.ext.ApplicationCompileV
 
     defaultConfig {
         namespace 'io.vanite.android.ui'
-        minSdkVersion rootProject.ext.MinSdkV
-        targetSdkVersion rootProject.ext.ApplicationCompileV
+        minSdk rootProject.ext.MinSdkV
+        targetSdk rootProject.ext.ApplicationCompileV
         versionCode rootProject.ext.LibraryVersionCode
         versionName "${rootProject.ext.LibraryVersion}"
 

@@ -13,6 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/vanite" />
+            <option value="$PROJECT_DIR$/vanite-compose" />
             <option value="$PROJECT_DIR$/vanite-data" />
             <option value="$PROJECT_DIR$/vanite-firebase" />
             <option value="$PROJECT_DIR$/vanite-log" />
