@@ -55,6 +55,7 @@ private void jetpackComposeConfiguration(configuration) {
     configuration.implementation "androidx.navigation:navigation-compose:2.4.2"
     configuration.implementation 'com.google.accompanist:accompanist-pager:0.24.8-beta'
     configuration.implementation 'com.google.accompanist:accompanist-pager-indicators:0.24.8-beta'
+    configuration.implementation 'io.coil-kt:coil-compose:2.0.0'
     configuration.implementation 'androidx.core:core-animation:1.0.0-beta01'
     configuration. implementation "androidx.compose.material3:material3:1.0.0-alpha11"
     configuration.implementation "androidx.compose.material3:material3-window-size-class:1.0.1"
