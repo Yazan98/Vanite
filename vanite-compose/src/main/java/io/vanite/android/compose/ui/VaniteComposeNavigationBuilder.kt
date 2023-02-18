@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 
-abstract class ComposeNavigationBuilder<Navigation: VaniteRouter> {
+abstract class VaniteComposeNavigationBuilder<Navigation: VaniteRouter> {
 
     fun initGraphConfiguration(
         navHost: NavGraphBuilder,

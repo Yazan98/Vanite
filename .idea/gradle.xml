@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/vanite-log" />
             <option value="$PROJECT_DIR$/vanite-permissions" />
             <option value="$PROJECT_DIR$/vanite-prefs" />
+            <option value="$PROJECT_DIR$/vanite-secured-prefs" />
             <option value="$PROJECT_DIR$/vanite-ui" />
             <option value="$PROJECT_DIR$/vanite-ui-binding" />
             <option value="$PROJECT_DIR$/vanite-utils" />
