@@ -51,17 +51,53 @@ allprojects {
 
 ```
 dependencies {
-   implementation 'com.yazantarifi:Vanite:1.0.4'
-   implementation 'com.yazantarifi:Vanite-data:1.0.4'
-   implementation 'com.yazantarifi:Vanite-utils:1.0.4'
-   implementation 'com.yazantarifi:Vanite-ui-binding:1.0.4'
-   implementation 'com.yazantarifi:Vanite-ui:1.0.4'
-   implementation 'com.yazantarifi:Vanite-prefs:1.0.4'
-   implementation 'com.yazantarifi:Vanite-permissions:1.0.4'
-   implementation 'com.yazantarifi:Vanite-log:1.0.4'
-   implementation 'com.yazantarifi:Vanite-firebase:1.0.4'
+   implementation 'com.yazantarifi:vanite:2.0.0'
+   implementation 'com.yazantarifi:vanite-data:2.0.0'
+   implementation 'com.yazantarifi:vanite-utils:2.0.0'
+   implementation 'com.yazantarifi:vanite-ui-binding:2.0.0'
+   implementation 'com.yazantarifi:vanite-ui:2.0.0'
+   implementation 'com.yazantarifi:vanite-prefs:2.0.0'
+   implementation 'com.yazantarifi:vanite-permissions:2.0.0'
+   implementation 'com.yazantarifi:vanite-log:2.0.0'
+   implementation 'com.yazantarifi:vanite-firebase:2.0.0'
+   implementation 'com.yazantarifi:vanite-secured-prefs:2.0.0'
+   implementation 'com.yazantarifi:vanite-compose:2.0.0'
 }
 ```
+
+# Library Dependencies Description
+
+This Library has 2 Ways to Create the Integration, first We have applications Built based on XML and Other Apps Built with Jetpack Compose
+this Library Support Jetpack Compose Applications Under one Dependency that has the base code for Composables 
+
+Dependency Information for Jetpack Compose Applications
+
+```
+    implementation 'com.yazantarifi:vanite-compose:2.0.0'
+```
+
+Dependency Information for XML Applications
+
+
+```
+   implementation 'com.yazantarifi:vanite:2.0.0'
+   implementation 'com.yazantarifi:vanite-data:2.0.0'
+   implementation 'com.yazantarifi:vanite-utils:2.0.0'
+   implementation 'com.yazantarifi:vanite-ui-binding:2.0.0'
+   implementation 'com.yazantarifi:vanite-ui:2.0.0'
+```
+
+Dependency Information for Utility Classes
+
+```
+   implementation 'com.yazantarifi:vanite-secured-prefs:2.0.0'
+   implementation 'com.yazantarifi:vanite-firebase:2.0.0'
+   implementation 'com.yazantarifi:vanite-log:2.0.0'
+   implementation 'com.yazantarifi:vanite-permissions:2.0.0'
+   implementation 'com.yazantarifi:vanite-utils:2.0.0'
+
+```
+
 
 # Push Update
 
