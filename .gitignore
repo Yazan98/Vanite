@@ -21,6 +21,8 @@
 /vanite-ui/build
 /vanite-utils/build
 /vanite-logic/build
+/vanite-compose/build
+/vanite-secured-prefs/build
 
 # Remove Secrete Keys
 /vanite/SecretRingKey.kbx
@@ -32,3 +34,5 @@
 /vanite-ui/SecretRingKey.kbx
 /vanite-ui-binding/SecretRingKey.kbx
 /vanite-utils/SecretRingKey.kbx
+/vanite-compose/SecretRingKey.kbx
+/vanite-secured-prefs/SecretRingKey.kbx

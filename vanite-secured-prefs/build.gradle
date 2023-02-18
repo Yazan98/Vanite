@@ -40,6 +40,14 @@ android {
     }
 }
 
+
+ext {
+    PUBLISH_ARTIFACT_ID = 'vanite-secured-prefs'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
+
 dependencies { configurations ->
     implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha04'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'

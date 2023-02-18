@@ -40,7 +40,7 @@ apply from: "${rootDir}/scripts/publish-root.gradle"
 
 ext {
     PUBLISH_GROUP_ID = 'com.yazantarifi'
-    PUBLISH_VERSION = '1.0.4'
+    PUBLISH_VERSION = '2.0.0'
     PUBLISH_DESCRIPTION = 'Application Structure, Base Code, Configuration, Utility Classes to Build Android Applications'
     PUBLISH_URL = 'https://github.com/Yazan98/Vanite'
     PUBLISH_LICENSE_NAME = 'MIT'

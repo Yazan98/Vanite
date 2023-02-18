@@ -48,6 +48,14 @@ dependencies { configurations ->
     jetpackComposeConfiguration(configurations)
 }
 
+
+ext {
+    PUBLISH_ARTIFACT_ID = 'vanite-compose'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
+
 private void jetpackComposeConfiguration(configuration) {
     configuration.implementation 'androidx.core:core-ktx:1.7.0'
     configuration.implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
