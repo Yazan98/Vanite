@@ -4,7 +4,7 @@
     "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "io.vanite.android.state",
+  "applicationId": "io.vanite.android.log",
   "variantName": "release",
   "elements": [
     {

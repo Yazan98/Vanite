@@ -26,6 +26,7 @@ sealed class VaniteResult<out T, out R> {
             is Success -> successBlock(successData)
             is Failure -> failureBlock(errorData)
             is State -> stateBlock(this)
+            else -> stateBlock(this as State)
         }
     }
 
@@ -39,6 +40,7 @@ sealed class VaniteResult<out T, out R> {
             is State.Loaded -> onLoadingState(false)
             is Success -> onSuccessResponse(successData)
             is FailureResponse -> onFailedResponse(errorData)
+            else -> {}
         }
     }
 }

@@ -3,12 +3,12 @@ apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
 apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
 
 android {
-    compileSdkVersion rootProject.ext.ApplicationCompileV
+    compileSdk rootProject.ext.ApplicationCompileV
 
     defaultConfig {
-
-        minSdkVersion rootProject.ext.MinSdkV
-        targetSdkVersion rootProject.ext.ApplicationCompileV
+        namespace 'io.vanite.android.permissions'
+        minSdk rootProject.ext.MinSdkV
+        targetSdk rootProject.ext.ApplicationCompileV
         versionCode rootProject.ext.LibraryVersionCode
         versionName "${rootProject.ext.LibraryVersion}"
 
@@ -25,8 +25,13 @@ android {
         abortOnError false
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_10
+        targetCompatibility JavaVersion.VERSION_1_10
+    }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '10'
     }
 }
 

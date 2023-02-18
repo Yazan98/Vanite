@@ -21,8 +21,8 @@ ext {
     RetrofitRxJavaV = "2.6.1"
     RetrofitGsonV = "2.9.0"
 
-    ApplicationCompileV = 31
+    ApplicationCompileV = 33
     MinSdkV = 21
     LibraryVersion = "2.0.1"
-    LibraryVersionCode = 3
+    LibraryVersionCode = 4
 }

@@ -1,3 +1,19 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 rootProject.name='Vanite'
 include ':vanite-ui'
 include ':vanite-data'
@@ -8,3 +24,5 @@ include ':vanite-permissions'
 include ':vanite-prefs'
 include ':vanite-log'
 include ':vanite-ui-binding'
+include ':vanite-compose'
+include ':vanite-secured-prefs'

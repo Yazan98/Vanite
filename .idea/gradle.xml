@@ -13,11 +13,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/vanite" />
+            <option value="$PROJECT_DIR$/vanite-compose" />
             <option value="$PROJECT_DIR$/vanite-data" />
             <option value="$PROJECT_DIR$/vanite-firebase" />
             <option value="$PROJECT_DIR$/vanite-log" />
             <option value="$PROJECT_DIR$/vanite-permissions" />
             <option value="$PROJECT_DIR$/vanite-prefs" />
+            <option value="$PROJECT_DIR$/vanite-secured-prefs" />
             <option value="$PROJECT_DIR$/vanite-ui" />
             <option value="$PROJECT_DIR$/vanite-ui-binding" />
             <option value="$PROJECT_DIR$/vanite-utils" />

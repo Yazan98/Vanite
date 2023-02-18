@@ -1,0 +1,53 @@
+apply plugin: "${rootProject.ext.LibraryPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
+
+android {
+    compileSdk rootProject.ext.ApplicationCompileV
+
+    defaultConfig {
+        namespace 'io.vanite.android.secured.prefs'
+        minSdk rootProject.ext.MinSdkV
+        targetSdk rootProject.ext.ApplicationCompileV
+        versionCode rootProject.ext.LibraryVersionCode
+        versionName "${rootProject.ext.LibraryVersion}"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_10
+        targetCompatibility JavaVersion.VERSION_1_10
+    }
+
+    kotlinOptions {
+        jvmTarget = '10'
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+
+ext {
+    PUBLISH_ARTIFACT_ID = 'vanite-secured-prefs'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
+
+dependencies { configurations ->
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha04'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+}

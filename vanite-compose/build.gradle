@@ -1,0 +1,84 @@
+apply plugin: "${rootProject.ext.LibraryPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidPlugin}"
+apply plugin: "${rootProject.ext.KotlinAndroidExtPlugin}"
+
+android {
+    compileSdk rootProject.ext.ApplicationCompileV
+
+    defaultConfig {
+        namespace 'io.vanite.android.compose'
+        minSdk rootProject.ext.MinSdkV
+        targetSdk rootProject.ext.ApplicationCompileV
+        versionCode rootProject.ext.LibraryVersionCode
+        versionName "${rootProject.ext.LibraryVersion}"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_10
+        targetCompatibility JavaVersion.VERSION_1_10
+    }
+
+    kotlinOptions {
+        jvmTarget = '10'
+    }
+
+    buildFeatures {
+        compose true
+        buildConfig true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.2'
+    }
+}
+
+dependencies { configurations ->
+    implementation platform('androidx.compose:compose-bom:2022.10.00')
+    jetpackComposeConfiguration(configurations)
+}
+
+
+ext {
+    PUBLISH_ARTIFACT_ID = 'vanite-compose'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
+
+private void jetpackComposeConfiguration(configuration) {
+    configuration.implementation 'androidx.core:core-ktx:1.7.0'
+    configuration.implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+    configuration.implementation 'androidx.activity:activity-compose:1.4.0'
+    configuration.implementation "androidx.navigation:navigation-compose:2.4.2"
+    configuration.implementation 'com.google.accompanist:accompanist-pager:0.24.8-beta'
+    configuration.implementation 'com.google.accompanist:accompanist-pager-indicators:0.24.8-beta'
+    configuration.implementation 'io.coil-kt:coil-compose:2.0.0'
+    configuration.implementation 'androidx.core:core-animation:1.0.0-beta01'
+    configuration. implementation "androidx.compose.material3:material3:1.0.0-alpha11"
+    configuration.implementation "androidx.compose.material3:material3-window-size-class:1.0.1"
+    configuration.implementation 'androidx.compose.material3:material3:1.0.0-alpha11'
+    configuration.implementation 'com.google.accompanist:accompanist-systemuicontroller:0.24.13-rc'
+    configuration.implementation 'androidx.activity:activity-compose:1.5.1'
+    configuration.implementation 'androidx.compose.ui:ui'
+    configuration.implementation 'androidx.compose.ui:ui-graphics'
+    configuration.implementation "androidx.compose.material3:material3:1.0.1"
+    configuration.testImplementation 'junit:junit:4.13.2'
+    configuration.implementation 'com.google.android.material:material:1.8.0-alpha01'
+    configuration.androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    configuration.implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+    configuration.androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    configuration.debugImplementation 'androidx.compose.ui:ui-tooling'
+    configuration.debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}
