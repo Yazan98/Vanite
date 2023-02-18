@@ -45,6 +45,7 @@ android {
 }
 
 dependencies { configurations ->
+    implementation platform('androidx.compose:compose-bom:2022.10.00')
     jetpackComposeConfiguration(configurations)
 }
 
@@ -72,7 +73,6 @@ private void jetpackComposeConfiguration(configuration) {
     configuration.implementation 'androidx.activity:activity-compose:1.5.1'
     configuration.implementation 'androidx.compose.ui:ui'
     configuration.implementation 'androidx.compose.ui:ui-graphics'
-    configuration.implementation 'androidx.compose.ui:ui-tooling-preview'
     configuration.implementation "androidx.compose.material3:material3:1.0.1"
     configuration.testImplementation 'junit:junit:4.13.2'
     configuration.implementation 'com.google.android.material:material:1.8.0-alpha01'

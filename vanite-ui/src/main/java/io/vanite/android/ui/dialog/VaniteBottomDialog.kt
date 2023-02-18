@@ -13,7 +13,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.vanite.android.VaniteAction
 import io.vanite.android.base.VaniteViewModel
 import io.vanite.android.state.VaniteState
-import io.vanite.android.ui.R
 
 abstract class VaniteBottomDialog<State : VaniteState, Action : VaniteAction, Reducer : VaniteViewModel<State, Action>> :
     BottomSheetDialogFragment() {
@@ -46,8 +45,9 @@ abstract class VaniteBottomDialog<State : VaniteState, Action : VaniteAction, Re
 
     /**
      * Call this method on @{override fun onCreateDialog(savedInstanceState: Bundle?): Dialog}
+     * id Param: R.id.design_bottom_sheet
      */
-    fun getFullScreenDialog(savedInstanceState: Bundle?): Dialog {
+    fun getFullScreenDialog(savedInstanceState: Bundle?, id: Int): Dialog {
         val dialog: BottomSheetDialog =
             super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         val view = View.inflate(context, getLayoutRes(), null)
@@ -56,7 +56,7 @@ abstract class VaniteBottomDialog<State : VaniteState, Action : VaniteAction, Re
 
         dialog.setOnShowListener {
             val d = it as BottomSheetDialog
-            val bottomSheet = d.findViewById<View>(R.id.design_bottom_sheet)
+            val bottomSheet = d.findViewById<View>(id)
             bottomSheet?.let {
                 BottomSheetBehavior.from(it).setState(BottomSheetBehavior.STATE_EXPANDED)
             }
@@ -66,9 +66,10 @@ abstract class VaniteBottomDialog<State : VaniteState, Action : VaniteAction, Re
 
     /**
      * Call this in OnStart Method
+     * param id: R.id.design_bottom_sheet
      */
-    fun onStartFullScreenBehavior() {
-        val bottomSheet = dialog?.findViewById<View>(R.id.design_bottom_sheet)
+    fun onStartFullScreenBehavior(id: Int) {
+        val bottomSheet = dialog?.findViewById<View>(id)
         bottomSheet?.layoutParams?.height = ViewGroup.LayoutParams.MATCH_PARENT
     }
 
